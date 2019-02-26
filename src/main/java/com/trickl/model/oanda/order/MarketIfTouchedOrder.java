@@ -66,7 +66,7 @@ public class MarketIfTouchedOrder {
   private String instrument;
 
   /**
-   * The quantity requested to be filled by the MarketIfTouched Order. A posititive number of units
+   * The quantity requested to be filled by the MarketIfTouched Order. A positive number of units
    * results in a long Order, and a negative number of units results in a short Order.
    */
   @JsonPropertyDescription(
