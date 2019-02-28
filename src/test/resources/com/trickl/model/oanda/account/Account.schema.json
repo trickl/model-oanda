@@ -1,0 +1,200 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:account:Account",
+  "type": "object",
+  "properties": {
+    "createdByUserID": {
+      "description": "ID of the user that created the Account.",
+      "type": "integer"
+    },
+    "NAV": {
+      "description": "The net asset value of the Account. Equal to Account balance + unrealizedPL.",
+      "type": "string"
+    },
+    "marginCloseoutUnrealizedPL": {
+      "description": "The Account's margin closeout unrealized PL.",
+      "type": "string"
+    },
+    "marginCallMarginUsed": {
+      "description": "The Account's margin call margin used.",
+      "type": "string"
+    },
+    "openPositionCount": {
+      "description": "The number of Positions currently open in the Account.",
+      "type": "integer"
+    },
+    "withdrawalLimit": {
+      "description": "The current WithdrawalLimit for the account which will be zero or a positive value indicating how much can be withdrawn from the account.",
+      "type": "string"
+    },
+    "positionValue": {
+      "description": "The value of the Account's open positions represented in the Account's home currency.",
+      "type": "string"
+    },
+    "marginRate": {
+      "description": "Client-provided margin rate override for the Account. The effective margin rate of the Account is the lesser of this value and the OANDA margin rate for the Account's division. This value is only provided if a margin rate override exists for the Account.",
+      "type": "string"
+    },
+    "marginCallPercent": {
+      "description": "The Account's margin call percentage. When this value is 1.0 or above the Account is in a margin call situation.",
+      "type": "string"
+    },
+    "balance": {
+      "description": "The current balance of the Account.",
+      "type": "string"
+    },
+    "lastMarginCallExtensionTime": {
+      "description": "The date\/time of the Account's last margin call extension.",
+      "type": "string"
+    },
+    "marginCallExtensionCount": {
+      "description": "The number of times that the Account's current margin call was extended.",
+      "type": "integer"
+    },
+    "lastTransactionID": {
+      "description": "The ID of the last Transaction created for the Account.",
+      "type": "string"
+    },
+    "resettablePL": {
+      "description": "The total realized profit\/loss for the Account since it was last reset by the client.",
+      "type": "string"
+    },
+    "financing": {
+      "description": "The total amount of financing paid\/collected over the lifetime of the Account.",
+      "type": "string"
+    },
+    "alias": {
+      "description": "Client-assigned alias for the Account. Only provided if the Account has an alias set",
+      "type": "string"
+    },
+    "createdTime": {
+      "description": "The date\/time when the Account was created.",
+      "type": "string"
+    },
+    "currency": {
+      "description": "The home currency of the Account",
+      "type": "string"
+    },
+    "commission": {
+      "description": "The total amount of commission paid over the lifetime of the Account.",
+      "type": "string"
+    },
+    "marginCloseoutPercent": {
+      "description": "The Account's margin closeout percentage. When this value is 1.0 or above the Account is in a margin closeout situation.",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Account's identifier",
+      "type": "string"
+    },
+    "openTradeCount": {
+      "description": "The number of Trades currently open in the Account.",
+      "type": "integer"
+    },
+    "pendingOrderCount": {
+      "description": "The number of Orders currently pending in the Account.",
+      "type": "integer"
+    },
+    "hedgingEnabled": {
+      "description": "Flag indicating that the Account has hedging enabled.",
+      "type": "boolean"
+    },
+    "resettablePLTime": {
+      "description": "The date\/time that the Account's resettablePL was last reset.",
+      "type": "string"
+    },
+    "marginCallEnterTime": {
+      "description": "The date\/time when the Account entered a margin call state. Only provided if the Account is in a margin call.",
+      "type": "string"
+    },
+    "trades": {
+      "description": "The details of the Trades currently open in the Account",
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "positions": {
+      "description": "The details all Account Positions.",
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "marginAvailable": {
+      "description": "Margin available for Account currency.",
+      "type": "string"
+    },
+    "marginCloseoutPositionValue": {
+      "description": "The value of the Account's open positions as used for margin closeout calculations represented in the Account's home currency.",
+      "type": "string"
+    },
+    "marginCloseoutMarginUsed": {
+      "description": "The Account's margin closeout margin used.",
+      "type": "string"
+    },
+    "unrealizedPL": {
+      "description": "The total unrealized profit\/loss for all Trades currently open in the Account.",
+      "type": "string"
+    },
+    "marginCloseoutNAV": {
+      "description": "The Account's margin closeout NAV.",
+      "type": "string"
+    },
+    "guaranteedStopLossOrderMode": {
+      "description": "The current guaranteed Stop Loss Order mode of the Account.",
+      "type": "string",
+      "enum": [
+        "DISABLED",
+        "ALLOWED",
+        "REQUIRED"
+      ]
+    },
+    "marginUsed": {
+      "description": "Margin currently used for the Account.",
+      "type": "string"
+    },
+    "guaranteedExecutionFees": {
+      "description": "The total amount of fees charged over the lifetime of the Account for the execution of guaranteed Stop Loss Orders.",
+      "type": "string"
+    },
+    "lastOrderFillTimestamp": {
+      "description": "The date\/time of the last order that was filled for this account.",
+      "type": "string"
+    },
+    "orders": {
+      "description": "The details of the Orders currently pending in the Account.",
+      "type": "array",
+      "items": {
+        "id": "urn:jsonschema:com:trickl:model:oanda:order:Order",
+        "type": "object",
+        "properties": {
+          "createTime": {
+            "description": "The time when the Order was created.",
+            "type": "string"
+          },
+          "id": {
+            "description": "The Order's identifier, unique within the Order's Account.",
+            "type": "string"
+          },
+          "state": {
+            "description": "The current state of the Order.",
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "FILLED",
+              "TRIGGERED",
+              "CANCELLED"
+            ]
+          },
+          "clientExtensions": {
+            "type": "any"
+          }
+        }
+      }
+    },
+    "pl": {
+      "description": "The total profit\/loss realized over the lifetime of the Account.",
+      "type": "string"
+    }
+  }
+}
