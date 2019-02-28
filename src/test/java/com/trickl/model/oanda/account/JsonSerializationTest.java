@@ -1,6 +1,6 @@
 package com.trickl.model.oanda.account;
 
-import static com.trickl.assertj.core.api.Assertions.assertThat;
+import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
 import org.junit.Test;
 
 public class JsonSerializationTest {
@@ -13,8 +13,8 @@ public class JsonSerializationTest {
         .build();
     
     assertThat(account)
-        .jsonDeserializationAsExpected()
-        .jsonSerializationAsExpected()
-        .jsonSchemaAsExpected();
+        .serializationAsExpected()
+        .deserializationAsExpected()
+        .schemaAsExpected();
   }
 }
