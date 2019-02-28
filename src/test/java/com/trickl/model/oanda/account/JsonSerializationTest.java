@@ -13,8 +13,8 @@ public class JsonSerializationTest {
         .build();
     
     assertThat(account)
-        .serializationAsExpected()
-        .deserializationAsExpected()
+        .serializesAsExpected()
+        .deserializesAsExpected()
         .schemaAsExpected();
   }
 }
