@@ -8,8 +8,8 @@ import java.util.List;
 import lombok.Data;
 
 /**
- * The summary of a Trade within an Account. This representation does not provide the full details
- * of the Trade's dependent Orders.
+ * The specification of a Trade within an Account. This includes the full representation of the
+ * Trade's dependent Orders in addition to the IDs of those Orders.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -29,14 +29,14 @@ import lombok.Data;
     "financing",
     "closeTime",
     "clientExtensions",
-    "takeProfitOrderID",
-    "stopLossOrderID",
-    "trailingStopLossOrderID"
+    "takeProfitOrder",
+    "stopLossOrder",
+    "trailingStopLossOrder"
 })
 @Data
-public class TradeSummary {
+public class Trade {
 
-  /** The Trade's identifier, unique within the Trade's Account. */
+  /** The Trade's identifier, unique within the Trade's Account. */    
   @JsonPropertyDescription("The Trade's identifier, unique within the Trade's Account.")
   private String id;
   
@@ -55,7 +55,6 @@ public class TradeSummary {
   /** The current state of the Trade. */
   @JsonPropertyDescription("The current state of the Trade.")
   private TradeState state;
-  
   /**
    * The initial size of the Trade. Negative values indicate a short Trade, and positive values
    * indicate a long Trade.
@@ -64,16 +63,15 @@ public class TradeSummary {
       "The initial size of the Trade. Negative values indicate a short Trade, and"
               + " positive values indicate a long Trade.")
   private String initialUnits;
-  
   /**
    * The margin required at the time the Trade was created. Note, this is the 'pure' margin
    * required, it is not the 'effective' margin used that factors in the trade risk if a GSLO is
    * attached to the trade.
    */
   @JsonPropertyDescription(
-      "The margin required at the time the Trade was created. Note, this is the "
-              + "'pure' margin required, it is not the 'effective' margin used that "
-              + "factors in the trade risk if a GSLO is attached to the trade.")
+      "The margin required at the time the Trade was created. Note, this is the"
+              + " 'pure' margin required, it is not the 'effective' margin used"
+              + " that factors in the trade risk if a GSLO is attached to the trade.")
   private String initialMarginRequired;
   
   /**
@@ -81,13 +79,14 @@ public class TradeSummary {
    * closed.
    */
   @JsonPropertyDescription(
-      "The number of units currently open for the Trade. This value is reduced to"
-              + " 0.0 as the Trade is closed.")
+      "The number of units currently open for the Trade. This value is reduced "
+              + "to 0.0 as the Trade is closed.")
   private String currentUnits;
   
   /** The total profit/loss realized on the closed portion of the Trade. */
   @JsonProperty("realizedPL")
-  @JsonPropertyDescription("The total profit/loss realized on the closed portion of the Trade.")
+  @JsonPropertyDescription("The total profit/loss realized on the closed portion"
+          + " of the Trade.")
   private String realizedPandL;
   
   /** The unrealized profit/loss on the open portion of the Trade. */
@@ -113,35 +112,24 @@ public class TradeSummary {
   @JsonPropertyDescription("The IDs of the Transactions that have closed portions of this Trade.")
   private List<String> closingTransactionIds = null;
   
-  /** The financing paid/collected for this Trade. */
+  /** The financing paid/collected for this Trade. */  
   @JsonPropertyDescription("The financing paid/collected for this Trade.")
   private String financing;
   
   /**
-   * The date/time when the Trade was fully closed. Only provided for Trades whose state is CLOSED.
+   * The date/time when the Trade was fully closed. Only provided for Trades whose 
+   * state is CLOSED.
    */
   @JsonPropertyDescription(
       "The date/time when the Trade was fully closed. Only provided for Trades "
               + "whose state is CLOSED.")
   private String closeTime;
-  
+
   private Object clientExtensions;
-  
-  /** ID of the Trade's Take Profit Order, only provided if such an Order exists. */
-  @JsonProperty("takeProfitOrderID")
-  @JsonPropertyDescription(
-      "ID of the Trade's Take Profit Order, only provided if such an Order exists.")
-  private String takeProfitOrderId;
-  
-  /** ID of the Trade's Stop Loss Order, only provided if such an Order exists. */
-  @JsonProperty("stopLossOrderID")
-  @JsonPropertyDescription(
-      "ID of the Trade's Stop Loss Order, only provided if such an Order exists.")
-  private String stopLossOrderId;
-  
-  /** ID of the Trade's Trailing Stop Loss Order, only provided if such an Order exists. */
-  @JsonProperty("trailingStopLossOrderID")
-  @JsonPropertyDescription(
-      "ID of the Trade's Trailing Stop Loss Order, only provided if such an Order exists.")
-  private String trailingStopLossOrderId;
+
+  private Object takeProfitOrder;
+
+  private Object stopLossOrder;
+
+  private Object trailingStopLossOrder;
 }
