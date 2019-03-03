@@ -4,12 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.Data;
 
-/**
- * A OrderClientExtensionsModifyRejectTransaction represents the rejection of the modification of an
- * Order's Client Extensions.
- */
+/** An OrderCancelTransaction represents the cancellation of an Order in the client's Account. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
@@ -21,12 +17,10 @@ import lombok.Data;
     "type",
     "orderID",
     "clientOrderID",
-    "clientExtensionsModify",
-    "tradeClientExtensionsModify",
-    "rejectReason"
+    "reason",
+    "replacedByOrderID"
 })
-@Data
-public class OrderClientExtensionsModifyRejectTransaction {
+public class OrderCancelTransaction {
 
   /** The Transaction's Identifier. */
   @JsonPropertyDescription("The Transaction's Identifier.")
@@ -53,8 +47,8 @@ public class OrderClientExtensionsModifyRejectTransaction {
    */
   @JsonProperty("batchID")
   @JsonPropertyDescription(
-      "The ID of the \"batch\" that the Transaction belongs to. Transactions in the"
-              + " same batch are applied to the Account simultaneously.")
+      "The ID of the \"batch\" that the Transaction belongs to. Transactions"
+              + " in the same batch are applied to the Account simultaneously.")
   private String batchId;
   
   /** The Request ID of the request which generated the transaction. */
@@ -62,31 +56,35 @@ public class OrderClientExtensionsModifyRejectTransaction {
   @JsonPropertyDescription("The Request ID of the request which generated the transaction.")
   private String requestId;
   
-  /**
-   * The Type of the Transaction. Always set to "ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT" for a
-   * OrderClientExtensionsModifyRejectTransaction.
-   */
+  /** The Type of the Transaction. Always set to "ORDER_CANCEL" for an OrderCancelTransaction. */
   @JsonPropertyDescription(
-      "The Type of the Transaction. Always set to \"ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT\""
-              + " for a OrderClientExtensionsModifyRejectTransaction.")
+      "The Type of the Transaction. Always set to \"ORDER_CANCEL\" for an"
+              + " OrderCancelTransaction.")
   private TransactionType type;
   
-  /** The ID of the Order who's client extensions are to be modified. */
+  /** The ID of the Order cancelled. */
   @JsonProperty("orderID")
-  @JsonPropertyDescription("The ID of the Order who's client extensions are to be modified.")
+  @JsonPropertyDescription("The ID of the Order cancelled")
   private String orderId;
   
-  /** The original Client ID of the Order who's client extensions are to be modified. */
+  /** The client ID of the Order cancelled (only provided if the Order has a client Order ID). */
   @JsonProperty("clientOrderID")
   @JsonPropertyDescription(
-      "The original Client ID of the Order who's client extensions are to be modified.")
+      "The client ID of the Order cancelled (only provided if the Order has a"
+              + " client Order ID).")
   private String clientOrderId;
   
-  private Object clientExtensionsModify;
-
-  private Object tradeClientExtensionsModify;
+  /** The reason that the Order was cancelled. */
+  @JsonPropertyDescription("The reason that the Order was cancelled.")
+  private TransactionReason reason;
   
-  /** The reason that the Reject Transaction was created. */  
-  @JsonPropertyDescription("The reason that the Reject Transaction was created")
-  private RejectReason rejectReason;
+  /**
+   * The ID of the Order that replaced this Order (only provided if this Order was cancelled for
+   * replacement).
+   */
+  @JsonProperty("replacedByOrderID")
+  @JsonPropertyDescription(
+      "The ID of the Order that replaced this Order (only provided if this Order "
+              + "was cancelled for replacement).")
+  private String replacedByOrderId;
 }
