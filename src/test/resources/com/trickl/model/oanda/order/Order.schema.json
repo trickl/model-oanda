@@ -1,0 +1,27 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:order:Order",
+  "type": "object",
+  "properties": {
+    "createTime": {
+      "description": "The time when the Order was created.",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Order's identifier, unique within the Order's Account.",
+      "type": "string"
+    },
+    "state": {
+      "description": "The current state of the Order.",
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "FILLED",
+        "TRIGGERED",
+        "CANCELLED"
+      ]
+    },
+    "clientExtensions": {
+      "type": "any"
+    }
+  }
+}

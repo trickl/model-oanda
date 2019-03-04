@@ -1,6 +1,8 @@
 package com.trickl.model.oanda.account;
 
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
+import com.trickl.model.oanda.order.Order;
+import com.trickl.model.oanda.order.OrderState;
 import org.junit.Test;
 
 public class JsonSerializationTest {
@@ -32,6 +34,20 @@ public class JsonSerializationTest {
         .build();
     
     assertThat(account)
+        .serializesAsExpected()
+        .deserializesAsExpected()
+        .schemaAsExpected();
+  }
+  
+  @Test
+  public void testAccountChanges() throws Exception {
+    AccountChanges accountChanges = AccountChanges.builder()
+        .orderFilled(Order.builder()
+            .state(OrderState.FILLED)
+            .build())
+        .build();
+    
+    assertThat(accountChanges)
         .serializesAsExpected()
         .deserializesAsExpected()
         .schemaAsExpected();
