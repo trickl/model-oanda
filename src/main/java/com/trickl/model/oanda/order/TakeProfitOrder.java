@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -35,6 +37,7 @@ import lombok.Data;
     "replacesOrderID",
     "replacedByOrderID"
 })
+@Builder
 @Data
 public class TakeProfitOrder {
 
@@ -50,7 +53,7 @@ public class TakeProfitOrder {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
   
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
   
   /** The type of the Order. Always set to "TAKE_PROFIT" for Take Profit Orders. */  
   @JsonPropertyDescription(

@@ -1,0 +1,43 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TakeProfitDetails",
+  "type": "object",
+  "properties": {
+    "price": {
+      "description": "The price that the Take Profit Order will be triggered at. Only one of the price and distance fields may be specified.",
+      "type": "string"
+    },
+    "gtdTime": {
+      "description": "The date when the Take Profit Order will be cancelled on if timeInForce is GTD.",
+      "type": "string"
+    },
+    "timeInForce": {
+      "description": "The time in force for the created Take Profit Order. This may only be GTC, GTD or GFD.",
+      "type": "string",
+      "enum": [
+        "GTC",
+        "GTD",
+        "GFD",
+        "FOK",
+        "IOC"
+      ]
+    },
+    "clientExtensions": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+      "type": "object",
+      "properties": {
+        "comment": {
+          "description": "A comment associated with the Order\/Trade",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Client ID of the Order\/Trade",
+          "type": "string"
+        },
+        "tag": {
+          "description": "A tag associated with the Order\/Trade",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,11 @@ package com.trickl.model.oanda.order;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import com.trickl.model.oanda.transaction.StopLossDetails;
+import com.trickl.model.oanda.transaction.TakeProfitDetails;
+import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -26,6 +31,7 @@ import lombok.Data;
     "trailingStopLossOnFill",
     "tradeClientExtensions"
 })
+@Builder
 @Data
 public class MarketIfTouchedOrderRequest {
 
@@ -129,13 +135,13 @@ public class MarketIfTouchedOrderRequest {
               + " \"BID\", and for short trades \"DEFAULT\" and \"ASK\" are valid.")
   private OrderTriggerCondition triggerCondition;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 
-  private Object takeProfitOnFill;
+  private TakeProfitDetails takeProfitOnFill;
 
-  private Object stopLossOnFill;
+  private StopLossDetails stopLossOnFill;
 
-  private Object trailingStopLossOnFill;
+  private TrailingStopLossDetails trailingStopLossOnFill;
 
-  private Object tradeClientExtensions;
+  private ClientExtensions tradeClientExtensions;
 }

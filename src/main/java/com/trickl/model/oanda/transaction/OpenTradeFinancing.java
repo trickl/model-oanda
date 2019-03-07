@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * OpenTradeFinancing is used to pay/collect daily financing charge for an open Trade within an
@@ -11,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"tradeID", "financing"})
+@Data
+@Builder
 public class OpenTradeFinancing {
 
   /** The ID of the Trade that financing is being paid/collected for. */

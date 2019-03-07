@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.pricing.ClientPrice;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /** An OrderFillTransaction represents the filling of an Order in the client's Account. */
@@ -38,6 +40,7 @@ import lombok.Data;
     "halfSpreadCost"
 })
 @Data
+@Builder
 public class OrderFillTransaction {
 
   /** The Transaction's Identifier. */
@@ -148,7 +151,7 @@ public class OrderFillTransaction {
               + " and they will all be the exact same.")
   private String fullVwap;
   
-  private Object fullPrice;
+  private ClientPrice fullPrice;
   
   /** The reason that an Order was filled. */
   @JsonPropertyDescription("The reason that an Order was filled")
@@ -190,7 +193,7 @@ public class OrderFillTransaction {
   private String accountBalance;
 
   @JsonProperty("tradeOpened")
-  private Object tradeOpened;
+  private TradeOpen tradeOpened;
   
   /**
    * The Trades that were closed when the Order was filled (only provided if filling the Order
@@ -199,9 +202,9 @@ public class OrderFillTransaction {
   @JsonPropertyDescription(
       "The Trades that were closed when the Order was filled (only provided if "
               + "filling the Order resulted in a closing open Trades).")
-  private List<Object> tradesClosed = null;
+  private List<TradeReduce> tradesClosed = null;
 
-  private Object tradeReduced;
+  private TradeReduce tradeReduced;
   
   /**
    * The half spread cost for the OrderFill, which is the sum of the halfSpreadCost values in the

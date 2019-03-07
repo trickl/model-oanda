@@ -1,0 +1,44 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:instrument:PositionBook",
+  "type": "object",
+  "properties": {
+    "price": {
+      "description": "The price (midpoint) for the position book's instrument at the time of the position book snapshot",
+      "type": "string"
+    },
+    "buckets": {
+      "description": "The partitioned position book, divided into buckets using a default bucket width. These buckets are only provided for price ranges which actually contain order or position data.",
+      "type": "array",
+      "items": {
+        "id": "urn:jsonschema:com:trickl:model:oanda:instrument:PositionBookBucket",
+        "type": "object",
+        "properties": {
+          "shortCountPercent": {
+            "description": "The percentage of the total number of positions represented by the short positions found in this bucket.",
+            "type": "string"
+          },
+          "price": {
+            "description": "The lowest price (inclusive) covered by the bucket. The bucket covers the price range from the price to price + the position book's bucketWidth.",
+            "type": "string"
+          },
+          "longCountPercent": {
+            "description": "The percentage of the total number of positions represented by the long positions found in this bucket.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bucketWidth": {
+      "description": "The price width for each bucket. Each bucket covers the price range from the bucket's price to the bucket's price + bucketWidth.",
+      "type": "string"
+    },
+    "instrument": {
+      "description": "The position book's instrument",
+      "type": "string"
+    },
+    "time": {
+      "description": "The time when the position book snapshot was created",
+      "type": "string"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -15,6 +16,7 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"distance", "timeInForce", "gtdTime", "clientExtensions"})
 @Data
+@Builder
 public class TrailingStopLossDetails {
 
   /**
@@ -39,5 +41,5 @@ public class TrailingStopLossDetails {
       "The date when the Trailing Stop Loss Order will be cancelled on if timeInForce is GTD.")
   private String gtdTime;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 }

@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:instrument:OrderBookBucket",
+  "type": "object",
+  "properties": {
+    "shortCountPercent": {
+      "description": "The percentage of the total number of orders represented by the short orders found in this bucket.",
+      "type": "string"
+    },
+    "price": {
+      "description": "The lowest price (inclusive) covered by the bucket. The bucket covers the price range from the price to price + the order book's bucketWidth.",
+      "type": "string"
+    },
+    "longCountPercent": {
+      "description": "The percentage of the total number of orders represented by the long orders found in this bucket.",
+      "type": "string"
+    }
+  }
+}

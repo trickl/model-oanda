@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /** The price data (open, high, low, close) for the Candlestick representation. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"o", "h", "l", "c"})
+@Builder
 @Data
 public class CandlestickData {
 

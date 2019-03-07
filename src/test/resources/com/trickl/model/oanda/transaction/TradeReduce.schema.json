@@ -1,0 +1,34 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TradeReduce",
+  "type": "object",
+  "properties": {
+    "realizedPL": {
+      "description": "The PL realized when reducing the Trade",
+      "type": "string"
+    },
+    "halfSpreadCost": {
+      "description": "The half spread cost for the trade reduce\/close. This can be a positive or negative value and is represented in the home currency of the Account.",
+      "type": "string"
+    },
+    "price": {
+      "description": "The average price that the units were closed at. This price may be clamped for guaranteed Stop Loss Orders.",
+      "type": "string"
+    },
+    "financing": {
+      "description": "The financing paid\/collected when reducing the Trade",
+      "type": "string"
+    },
+    "guaranteedExecutionFee": {
+      "description": "This is the fee that is charged for closing the Trade if it has a guaranteed Stop Loss Order attached to it.",
+      "type": "string"
+    },
+    "units": {
+      "description": "The number of units that the Trade was reduced by",
+      "type": "string"
+    },
+    "tradeID": {
+      "description": "The ID of the Trade that was reduced or closed",
+      "type": "string"
+    }
+  }
+}

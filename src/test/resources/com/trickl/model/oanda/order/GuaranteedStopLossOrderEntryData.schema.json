@@ -1,0 +1,28 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:order:GuaranteedStopLossOrderEntryData",
+  "type": "object",
+  "properties": {
+    "premium": {
+      "description": "The amount that is charged to the account if a guaranteed Stop Loss Order is triggered and filled. The value is in price units and is charged for each unit of the Trade.",
+      "type": "string"
+    },
+    "minimumDistance": {
+      "description": "The minimum distance allowed between the Trade's fill price and the configured price for guaranteed Stop Loss Orders created for this instrument. Specified in price units.",
+      "type": "string"
+    },
+    "levelRestriction": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:primitives:GuaranteedStopLossOrderLevelRestriction",
+      "type": "object",
+      "properties": {
+        "volume": {
+          "description": "Applies to Trades with a guaranteed Stop Loss Order attached for the specified Instrument. This is the total allowed Trade volume that can exist within the priceRange based on the trigger prices of the guaranteed Stop Loss Orders.",
+          "type": "string"
+        },
+        "priceRange": {
+          "description": "The price range the volume applies to. This value is in price units.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

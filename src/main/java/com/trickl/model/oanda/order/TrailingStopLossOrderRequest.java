@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * A TrailingStopLossOrderRequest specifies the parameters that may be set when creating a Trailing
@@ -20,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "triggerCondition",
     "clientExtensions"
 })
+@Data
+@Builder
 public class TrailingStopLossOrderRequest {
 
   /**
@@ -98,5 +103,5 @@ public class TrailingStopLossOrderRequest {
               + "\"BID\", and for short trades \"DEFAULT\" and \"ASK\" are valid.")
   private OrderTriggerCondition triggerCondition;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 }

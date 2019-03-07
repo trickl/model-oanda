@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import com.trickl.model.oanda.transaction.StopLossDetails;
+import com.trickl.model.oanda.transaction.TakeProfitDetails;
+import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -49,7 +53,7 @@ public class FixedPriceOrder {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 
   /** The type of the Order. Always set to "FIXED_PRICE" for Fixed Price Orders. */
   @JsonPropertyDescription(
@@ -89,14 +93,14 @@ public class FixedPriceOrder {
       "The state that the trade resulting from the Fixed Price Order should be set to.")
   private String tradeState;
 
-  private Object takeProfitOnFill;
+  private TakeProfitDetails takeProfitOnFill;
 
   @JsonProperty("sTopLossOnFill")
-  private Object stopLossOnFill;
+  private StopLossDetails stopLossOnFill;
 
-  private Object trailingStopLossOnFill;
+  private TrailingStopLossDetails trailingStopLossOnFill;
 
-  private Object tradeClientExtensions;
+  private ClientExtensions tradeClientExtensions;
 
   /**
    * ID of the Transaction that filled this Order (only provided when the Order's state is FILLED).

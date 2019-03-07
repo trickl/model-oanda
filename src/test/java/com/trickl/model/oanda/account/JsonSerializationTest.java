@@ -47,7 +47,15 @@ public class JsonSerializationTest {
         .orderFilled(Order.builder()
             .state(OrderState.FILLED)
             .build())
-        .build()
+        .build(),
+       AccountChangesState.builder()
+       .build(),
+       AccountProperties.builder()
+       .build(),
+       AccountSummary.builder()
+       .build(),
+       CalculatedAccountState.builder()
+       .build()
      );
   }
 }

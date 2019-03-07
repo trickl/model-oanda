@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -26,6 +27,7 @@ import lombok.Data;
     "rejectReason"
 })
 @Data
+@Builder
 public class OrderClientExtensionsModifyRejectTransaction {
 
   /** The Transaction's Identifier. */
@@ -82,9 +84,9 @@ public class OrderClientExtensionsModifyRejectTransaction {
       "The original Client ID of the Order who's client extensions are to be modified.")
   private String clientOrderId;
   
-  private Object clientExtensionsModify;
+  private ClientExtensions clientExtensionsModify;
 
-  private Object tradeClientExtensionsModify;
+  private ClientExtensions tradeClientExtensionsModify;
   
   /** The reason that the Reject Transaction was created. */  
   @JsonPropertyDescription("The reason that the Reject Transaction was created")

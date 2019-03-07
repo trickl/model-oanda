@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:user:UserInfoExternal",
+  "type": "object",
+  "properties": {
+    "country": {
+      "description": "The country that the user is based in.",
+      "type": "string"
+    },
+    "FIFO": {
+      "description": "Flag indicating if the the user's Accounts adhere to FIFO execution rules.",
+      "type": "boolean"
+    },
+    "userID": {
+      "description": "The user's OANDA-assigned user ID.",
+      "type": "integer"
+    }
+  }
+}

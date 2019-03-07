@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.order.UnitsAvailable;
+import com.trickl.model.oanda.pricing.common.PriceBucket;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /** The specification of an Account-specific Price. */
@@ -23,6 +26,7 @@ import lombok.Data;
     "unitsAvailable"
 })
 @Data
+@Builder
 public class ClientPrice {
 
   /** The string "PRICE". Used to identify the a Price object when found in a stream. */
@@ -54,7 +58,7 @@ public class ClientPrice {
       "The list of prices and liquidity available on the Instrument's bid side. "
               + "It is possible for this list to be empty if there is no bid "
               + "liquidity currently available for the Instrument in the Account.")
-  private List<Object> bids = null;
+  private List<PriceBucket> bids = null;
   /**
    * The list of prices and liquidity available on the Instrument's ask side. It is possible for
    * this list to be empty if there is no ask liquidity currently available for the Instrument in
@@ -65,7 +69,7 @@ public class ClientPrice {
       "The list of prices and liquidity available on the Instrument's ask side. "
               + "It is possible for this list to be empty if there is no ask "
               + "liquidity currently available for the Instrument in the Account.")
-  private List<Object> asks = null;
+  private List<PriceBucket> asks = null;
   /**
    * The closeout bid Price. This Price is used when a bid is required to closeout a Position
    * (margin closeout or manual) yet there is no bid liquidity. The closeout bid is never used to
@@ -87,7 +91,7 @@ public class ClientPrice {
               + " liquidity. The closeout ask is never used to open a new position.")
   private String closeoutAsk;
 
-  private Object quoteHomeConversionFactors;
+  private QuoteHomeConversionFactors quoteHomeConversionFactors;
 
-  private Object unitsAvailable;
+  private UnitsAvailable unitsAvailable;
 }

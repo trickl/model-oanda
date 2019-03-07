@@ -1,0 +1,212 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:order:FixedPriceOrder",
+  "type": "object",
+  "properties": {
+    "tradeClientExtensions": {
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+    },
+    "tradeClosedIDs": {
+      "description": "Trade IDs of Trades closed when the Order was filled (only provided when the Order's state is FILLED and one or more Trades were closed as a result of the fill)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tradeReducedID": {
+      "description": "Trade ID of Trade reduced when the Order was filled (only provided when the Order's state is FILLED and a Trade was reduced as a result of the fill)",
+      "type": "string"
+    },
+    "sTopLossOnFill": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:StopLossDetails",
+      "type": "object",
+      "properties": {
+        "distance": {
+          "description": "Specifies the distance (in price units) from the Trade's open price to use as the Stop Loss Order price. Only one of the distance and price fields may be specified.",
+          "type": "string"
+        },
+        "price": {
+          "description": "The price that the Stop Loss Order will be triggered at. Only one of the price and distance fields may be specified.",
+          "type": "string"
+        },
+        "gtdTime": {
+          "description": "The date when the Stop Loss Order will be cancelled on if timeInForce is GTD.",
+          "type": "string"
+        },
+        "guaranteed": {
+          "description": "Flag indicating that the price for the Stop Loss Order is guaranteed. The default value depends on the GuaranteedStopLossOrderMode of the account, if it is REQUIRED, the default will be true, for DISABLED or ENABLED the default is false.",
+          "type": "boolean"
+        },
+        "timeInForce": {
+          "description": "The time in force for the created Stop Loss Order. This may only be GTC, GTD or GFD.",
+          "type": "string",
+          "enum": [
+            "GTC",
+            "GTD",
+            "GFD",
+            "FOK",
+            "IOC"
+          ]
+        },
+        "clientExtensions": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+        }
+      }
+    },
+    "tradeOpenedID": {
+      "description": "Trade ID of Trade opened when the Order was filled (only provided when the Order's state is FILLED and a Trade was opened as a result of the fill)",
+      "type": "string"
+    },
+    "takeProfitOnFill": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TakeProfitDetails",
+      "type": "object",
+      "properties": {
+        "price": {
+          "description": "The price that the Take Profit Order will be triggered at. Only one of the price and distance fields may be specified.",
+          "type": "string"
+        },
+        "gtdTime": {
+          "description": "The date when the Take Profit Order will be cancelled on if timeInForce is GTD.",
+          "type": "string"
+        },
+        "timeInForce": {
+          "description": "The time in force for the created Take Profit Order. This may only be GTC, GTD or GFD.",
+          "type": "string",
+          "enum": [
+            "GTC",
+            "GTD",
+            "GFD",
+            "FOK",
+            "IOC"
+          ]
+        },
+        "clientExtensions": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+        }
+      }
+    },
+    "instrument": {
+      "description": "The Fixed Price Order's Instrument.",
+      "type": "string"
+    },
+    "units": {
+      "description": "The quantity requested to be filled by the Fixed Price Order. A posititive number of units results in a long Order, and a negative number of units results in a short Order.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of the Order. Always set to \"FIXED_PRICE\" for Fixed Price Orders.",
+      "type": "string",
+      "enum": [
+        "MARKET",
+        "LIMIT",
+        "STOP",
+        "MARKET_IF_TOUCHED",
+        "TAKE_PROFIT",
+        "STOP_LOSS",
+        "TRAILING_STOP_LOSS",
+        "FIXED_PRICE"
+      ]
+    },
+    "cancellingTransactionID": {
+      "description": "ID of the Transaction that cancelled the Order (only provided when the Order's state is CANCELLED)",
+      "type": "string"
+    },
+    "positionFill": {
+      "description": "Specification of how Positions in the Account are modified when the Order is filled.",
+      "type": "string",
+      "enum": [
+        "OPEN_ONLY",
+        "REDUCE_FIRST",
+        "REDUCE_ONLY",
+        "DEFAULT"
+      ]
+    },
+    "clientExtensions": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+      "type": "object",
+      "properties": {
+        "comment": {
+          "description": "A comment associated with the Order\/Trade",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Client ID of the Order\/Trade",
+          "type": "string"
+        },
+        "tag": {
+          "description": "A tag associated with the Order\/Trade",
+          "type": "string"
+        }
+      }
+    },
+    "tradeState": {
+      "description": "The state that the trade resulting from the Fixed Price Order should be set to.",
+      "type": "string"
+    },
+    "createTime": {
+      "description": "The time when the Order was created.",
+      "type": "string"
+    },
+    "price": {
+      "description": "The price specified for the Fixed Price Order. This price is the exact price that the Fixed Price Order will be filled at.",
+      "type": "string"
+    },
+    "cancelledTime": {
+      "description": "Date\/time when the Order was cancelled (only provided when the state of the Order is CANCELLED)",
+      "type": "string"
+    },
+    "filledTime": {
+      "description": "Date\/time when the Order was filled (only provided when the Order's state is FILLED)",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Order's identifier, unique within the Order's Account.",
+      "type": "string"
+    },
+    "state": {
+      "description": "The current state of the Order.",
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "FILLED",
+        "TRIGGERED",
+        "CANCELLED"
+      ]
+    },
+    "fillingTransactionID": {
+      "description": "ID of the Transaction that filled this Order (only provided when the Order's state is FILLED)",
+      "type": "string"
+    },
+    "trailingStopLossOnFill": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TrailingStopLossDetails",
+      "type": "object",
+      "properties": {
+        "distance": {
+          "description": "The distance (in price units) from the Trade's fill price that the Trailing Stop Loss Order will be triggered at.",
+          "type": "string"
+        },
+        "gtdTime": {
+          "description": "The date when the Trailing Stop Loss Order will be cancelled on if timeInForce is GTD.",
+          "type": "string"
+        },
+        "timeInForce": {
+          "description": "The time in force for the created Trailing Stop Loss Order. This may only be GTC, GTD or GFD.",
+          "type": "string",
+          "enum": [
+            "GTC",
+            "GTD",
+            "GFD",
+            "FOK",
+            "IOC"
+          ]
+        },
+        "clientExtensions": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+        }
+      }
+    }
+  }
+}

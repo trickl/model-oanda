@@ -1,0 +1,21 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:account:AccountProperties",
+  "type": "object",
+  "properties": {
+    "mt4AccountID": {
+      "description": "The Account's associated MT4 Account ID. This field will not be present if the Account is not an MT4 account.",
+      "type": "integer"
+    },
+    "id": {
+      "description": "The Account's identifier",
+      "type": "string"
+    },
+    "tags": {
+      "description": "The Account's tags",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderDelayedTradeClose",
+  "type": "object",
+  "properties": {
+    "clientTradeID": {
+      "description": "The Client ID of the Trade being closed",
+      "type": "string"
+    },
+    "sourceTransactionID": {
+      "description": "The Transaction ID of the DelayedTradeClosure transaction to which this Delayed Trade Close belongs to",
+      "type": "string"
+    },
+    "tradeID": {
+      "description": "The ID of the Trade being closed",
+      "type": "string"
+    }
+  }
+}

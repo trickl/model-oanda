@@ -1,0 +1,14 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:pricing:PricingHeartbeat",
+  "type": "object",
+  "properties": {
+    "time": {
+      "description": "The date\/time when the Heartbeat was created.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The string \"HEARTBEAT\"",
+      "type": "string"
+    }
+  }
+}

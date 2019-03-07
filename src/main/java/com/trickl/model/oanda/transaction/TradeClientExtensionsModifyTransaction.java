@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -24,6 +25,7 @@ import lombok.Data;
     "tradeClientExtensionsModify"
 })
 @Data
+@Builder
 public class TradeClientExtensionsModifyTransaction {
 
   /** The Transaction's Identifier. */
@@ -80,5 +82,5 @@ public class TradeClientExtensionsModifyTransaction {
       "The original Client ID of the Trade who's client extensions are to be modified.")
   private String clientTradeId;  
 
-  private Object tradeClientExtensionsModify;
+  private ClientExtensions tradeClientExtensionsModify;
 }

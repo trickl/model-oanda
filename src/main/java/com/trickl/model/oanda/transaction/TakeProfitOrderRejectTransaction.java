@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -34,6 +35,7 @@ import lombok.Data;
     "rejectReason"
 })
 @Data
+@Builder
 public class TakeProfitOrderRejectTransaction {
 
   /** The Transaction's Identifier. */
@@ -154,7 +156,7 @@ public class TakeProfitOrderRejectTransaction {
   @JsonPropertyDescription("The reason that the Take Profit Order was initiated")
   private TransactionReason reason;  
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
   
   /**
    * The ID of the OrderFill Transaction that caused this Order to be created (only provided if this

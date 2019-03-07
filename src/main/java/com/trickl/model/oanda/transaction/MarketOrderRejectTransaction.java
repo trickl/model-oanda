@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.Builder;
 import lombok.Data;
 
 /** A MarketOrderRejectTransaction represents the rejection of the creation of a Market Order. */
@@ -36,6 +37,7 @@ import lombok.Data;
     "rejectReason"
 })
 @Data
+@Builder
 public class MarketOrderRejectTransaction {
 
   /** The Transaction's Identifier. */
@@ -112,29 +114,29 @@ public class MarketOrderRejectTransaction {
               + "is filled.")
   private PositionFill positionFill;
 
-  private Object tradeClose;
+  private MarketOrderTradeClose tradeClose;
 
-  private Object longPositionCloseout;
+  private MarketOrderPositionCloseout longPositionCloseout;
 
-  private Object shortPositionCloseout;
+  private MarketOrderPositionCloseout shortPositionCloseout;
 
-  private Object marginCloseout;
+  private MarketOrderMarginCloseout marginCloseout;
 
-  private Object delayedTradeClose;
+  private MarketOrderDelayedTradeClose delayedTradeClose;
   
   /** The reason that the Market Order was created. */
   @JsonPropertyDescription("The reason that the Market Order was created")
   private TransactionReason reason;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 
-  private Object takeProfitOnFill;
+  private TakeProfitDetails takeProfitOnFill;
 
-  private Object stopLossOnFill;
+  private StopLossDetails stopLossOnFill;
 
-  private Object trailingStopLossOnFill;
+  private TrailingStopLossDetails trailingStopLossOnFill;
 
-  private Object tradeClientExtensions;
+  private ClientExtensions tradeClientExtensions;
   
   /** The reason that the Reject Transaction was created. */
   @JsonPropertyDescription("The reason that the Reject Transaction was created")

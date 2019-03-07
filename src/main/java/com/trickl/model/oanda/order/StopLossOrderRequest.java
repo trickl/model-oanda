@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -23,6 +25,7 @@ import lombok.Data;
     "guaranteed",
     "clientExtensions"
 })
+@Builder
 @Data
 public class StopLossOrderRequest {
 
@@ -131,5 +134,5 @@ public class StopLossOrderRequest {
               + "the default is false.")
   private Boolean guaranteed;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 }

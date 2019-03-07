@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /** A CreateTransaction represents the creation of an Account. */
@@ -23,6 +24,7 @@ import lombok.Data;
     "homeCurrency"
 })
 @Data
+@Builder
 public class CreateTransaction {
 
   /** The Transaction's Identifier. */

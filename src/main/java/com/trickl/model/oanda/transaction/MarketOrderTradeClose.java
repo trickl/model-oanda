@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * A MarketOrderTradeClose specifies the extensions to a Market Order that has been created
@@ -11,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"tradeID", "clientTradeID", "units"})
+@Data
+@Builder
 public class MarketOrderTradeClose {
 
   /** The ID of the Trade requested to be closed. */

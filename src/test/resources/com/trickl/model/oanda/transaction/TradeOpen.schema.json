@@ -1,0 +1,48 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TradeOpen",
+  "type": "object",
+  "properties": {
+    "halfSpreadCost": {
+      "description": "The half spread cost for the trade open. This can be a positive or negative value and is represented in the home currency of the Account.",
+      "type": "string"
+    },
+    "initialMarginRequired": {
+      "description": "The margin required at the time the Trade was created. Note, this is the 'pure' margin required, it is not the 'effective' margin used that factors in the trade risk if a GSLO is attached to the trade.",
+      "type": "string"
+    },
+    "price": {
+      "description": "The average price that the units were opened at.",
+      "type": "string"
+    },
+    "guaranteedExecutionFee": {
+      "description": "This is the fee charged for opening the trade if it has a guaranteed Stop Loss Order attached to it.",
+      "type": "string"
+    },
+    "units": {
+      "description": "The number of units opened by the Trade",
+      "type": "string"
+    },
+    "tradeID": {
+      "description": "The ID of the Trade that was opened",
+      "type": "string"
+    },
+    "clientExtensions": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+      "type": "object",
+      "properties": {
+        "comment": {
+          "description": "A comment associated with the Order\/Trade",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Client ID of the Order\/Trade",
+          "type": "string"
+        },
+        "tag": {
+          "description": "A tag associated with the Order\/Trade",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.primitives.GuaranteedStopLossOrderLevelRestriction;
+import lombok.Builder;
 import lombok.Data;
 
 /** Details required by clients creating a Guaranteed Stop Loss Order. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"minimumDistance", "premium", "levelRestriction"})
+@Builder
 @Data
 public class GuaranteedStopLossOrderEntryData {
 

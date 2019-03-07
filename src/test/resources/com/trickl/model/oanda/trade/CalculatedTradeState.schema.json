@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:trade:CalculatedTradeState",
+  "type": "object",
+  "properties": {
+    "unrealizedPL": {
+      "description": "The Trade's unrealized profit\/loss.",
+      "type": "string"
+    },
+    "marginUsed": {
+      "description": "Margin currently used by the Trade.",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Trade's ID.",
+      "type": "string"
+    }
+  }
+}

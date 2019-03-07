@@ -1,0 +1,92 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:OrderCancelTransaction",
+  "type": "object",
+  "properties": {
+    "accountID": {
+      "description": "The ID of the Account the Transaction was created for.",
+      "type": "string"
+    },
+    "reason": {
+      "description": "The reason that the Order was cancelled.",
+      "type": "string",
+      "enum": [
+        "CLIENT_ORDER",
+        "REPLACEMENT",
+        "ON_FILL"
+      ]
+    },
+    "orderID": {
+      "description": "The ID of the Order cancelled",
+      "type": "string"
+    },
+    "requestID": {
+      "description": "The Request ID of the request which generated the transaction.",
+      "type": "string"
+    },
+    "clientOrderID": {
+      "description": "The client ID of the Order cancelled (only provided if the Order has a client Order ID).",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Transaction's Identifier.",
+      "type": "string"
+    },
+    "time": {
+      "description": "The date\/time when the Transaction was created.",
+      "type": "string"
+    },
+    "batchID": {
+      "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The Type of the Transaction. Always set to \"ORDER_CANCEL\" for an OrderCancelTransaction.",
+      "type": "string",
+      "enum": [
+        "CREATE",
+        "CLOSE",
+        "REOPEN",
+        "CLIENT_CONFIGURE",
+        "CLIENT_CONFIGURE_REJECT",
+        "TRANSFER_FUNDS",
+        "TRANSFER_FUNDS_REJECT",
+        "MARKET_ORDER",
+        "MARKET_ORDER_REJECT",
+        "FIXED_PRICE_ORDER",
+        "LIMIT_ORDER",
+        "LIMIT_ORDER_REJECT",
+        "STOP_ORDER",
+        "STOP_ORDER_REJECT",
+        "MARKET_IF_TOUCHED_ORDER",
+        "MARKET_IF_TOUCHED_ORDER_REJECT",
+        "TAKE_PROFIT_ORDER",
+        "TAKE_PROFIT_ORDER_REJECT",
+        "STOP_LOSS_ORDER",
+        "STOP_LOSS_ORDER_REJECT",
+        "TRAILING_STOP_LOSS_ORDER",
+        "TRAILING_STOP_LOSS_ORDER_REJECT",
+        "ORDER_FILL",
+        "ORDER_CANCEL",
+        "ORDER_CANCEL_REJECT",
+        "ORDER_CLIENT_EXTENSIONS_MODIFY",
+        "ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT",
+        "TRADE_CLIENT_EXTENSIONS_MODIFY",
+        "TRADE_CLIENT_EXTENSIONS_MODIFY_REJECT",
+        "MARGIN_CALL_ENTER",
+        "MARGIN_CALL_EXTEND",
+        "MARGIN_CALL_EXIT",
+        "DELAYED_TRADE_CLOSURE",
+        "DAILY_FINANCING",
+        "RESET_RESETTABLE_PL"
+      ]
+    },
+    "userID": {
+      "description": "The ID of the user that initiated the creation of the Transaction.",
+      "type": "integer"
+    },
+    "replacedByOrderID": {
+      "description": "The ID of the Order that replaced this Order (only provided if this Order was cancelled for replacement).",
+      "type": "string"
+    }
+  }
+}

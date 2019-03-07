@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -22,6 +23,7 @@ import lombok.Data;
     "guaranteed"
 })
 @Data
+@Builder
 public class StopLossDetails {
 
   /**
@@ -53,7 +55,7 @@ public class StopLossDetails {
       "The date when the Stop Loss Order will be cancelled on if timeInForce is GTD.")
   private String gtdTime;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
   /**
    * Flag indicating that the price for the Stop Loss Order is guaranteed. The default value depends
    * on the GuaranteedStopLossOrderMode of the account, if it is REQUIRED, the default will be true,

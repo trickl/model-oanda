@@ -1,0 +1,57 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:instrument:Candlestick",
+  "type": "object",
+  "properties": {
+    "volume": {
+      "description": "The number of prices created during the time-range represented by the candlestick.",
+      "type": "integer"
+    },
+    "ask": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
+      }
+    },
+    "mid": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
+      }
+    },
+    "time": {
+      "description": "The start time of the candlestick",
+      "type": "string"
+    },
+    "bid": {
+      "type": "array",
+      "items": {
+        "id": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData",
+        "type": "object",
+        "properties": {
+          "c": {
+            "description": "The last (closing) price in the time-range represented by the candlestick.",
+            "type": "string"
+          },
+          "h": {
+            "description": "The highest price in the time-range represented by the candlestick.",
+            "type": "string"
+          },
+          "l": {
+            "description": "The lowest price in the time-range represented by the candlestick.",
+            "type": "string"
+          },
+          "o": {
+            "description": "The first (open) price in the time-range represented by the candlestick.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "complete": {
+      "description": "A flag indicating if the candlestick is complete. A complete candlestick is one whose ending time is not in the future.",
+      "type": "boolean"
+    }
+  }
+}

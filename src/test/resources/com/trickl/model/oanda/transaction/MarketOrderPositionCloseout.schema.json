@@ -1,0 +1,14 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderPositionCloseout",
+  "type": "object",
+  "properties": {
+    "instrument": {
+      "description": "The instrument of the Position being closed out.",
+      "type": "string"
+    },
+    "units": {
+      "description": "Indication of how much of the Position to close. Either \"ALL\", or a DecimalNumber reflection a partial close of the Trade. The DecimalNumber must always be positive, and represent a number that doesn't exceed the absolute size of the Position.",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:StopLossDetails",
+  "type": "object",
+  "properties": {
+    "distance": {
+      "description": "Specifies the distance (in price units) from the Trade's open price to use as the Stop Loss Order price. Only one of the distance and price fields may be specified.",
+      "type": "string"
+    },
+    "price": {
+      "description": "The price that the Stop Loss Order will be triggered at. Only one of the price and distance fields may be specified.",
+      "type": "string"
+    },
+    "gtdTime": {
+      "description": "The date when the Stop Loss Order will be cancelled on if timeInForce is GTD.",
+      "type": "string"
+    },
+    "guaranteed": {
+      "description": "Flag indicating that the price for the Stop Loss Order is guaranteed. The default value depends on the GuaranteedStopLossOrderMode of the account, if it is REQUIRED, the default will be true, for DISABLED or ENABLED the default is false.",
+      "type": "boolean"
+    },
+    "timeInForce": {
+      "description": "The time in force for the created Stop Loss Order. This may only be GTC, GTD or GFD.",
+      "type": "string",
+      "enum": [
+        "GTC",
+        "GTD",
+        "GFD",
+        "FOK",
+        "IOC"
+      ]
+    },
+    "clientExtensions": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+      "type": "object",
+      "properties": {
+        "comment": {
+          "description": "A comment associated with the Order\/Trade",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Client ID of the Order\/Trade",
+          "type": "string"
+        },
+        "tag": {
+          "description": "A tag associated with the Order\/Trade",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

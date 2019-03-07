@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * A TransactionHeartbeat object is injected into the Transaction stream to ensure that the HTTP
@@ -11,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"type", "lastTransactionID", "time"})
+@Data
+@Builder
 public class TransactionHeartbeat {
 
   /** The string "HEARTBEAT". */

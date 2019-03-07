@@ -1,0 +1,14 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:pricing:common:PriceBucket",
+  "type": "object",
+  "properties": {
+    "price": {
+      "description": "The Price offered by the PriceBucket",
+      "type": "string"
+    },
+    "liquidity": {
+      "description": "The amount of liquidity offered by the PriceBucket",
+      "type": "integer"
+    }
+  }
+}

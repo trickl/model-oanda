@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /** Full specification of an Instrument. */
@@ -24,6 +25,7 @@ import lombok.Data;
     "commission"
 })
 @Data
+@Builder
 public class Instrument {
 
   /** The name of the Instrument. */

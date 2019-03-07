@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /** The representation of a Position for a single direction (long or short). */
@@ -20,6 +21,7 @@ import lombok.Data;
     "guaranteedExecutionFees"
 })
 @Data
+@Builder
 public class PositionSide {
 
   /**

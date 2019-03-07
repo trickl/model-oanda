@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:LiquidityRegenerationScheduleStep",
+  "type": "object",
+  "properties": {
+    "bidLiquidityUsed": {
+      "description": "The amount of bid liquidity used at this step in the schedule.",
+      "type": "string"
+    },
+    "askLiquidityUsed": {
+      "description": "The amount of ask liquidity used at this step in the schedule.",
+      "type": "string"
+    },
+    "timestamp": {
+      "description": "The timestamp of the schedule step.",
+      "type": "string"
+    }
+  }
+}

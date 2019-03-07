@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -25,6 +26,7 @@ import lombok.Data;
     "positionFinancings"
 })
 @Data
+@Builder
 public class DailyFinancingTransaction {
 
   /** The Transaction's Identifier. */
@@ -82,5 +84,5 @@ public class DailyFinancingTransaction {
   
   /** The financing paid/collected for each Position in the Account. */
   @JsonPropertyDescription("The financing paid/collected for each Position in the Account.")
-  private List<Object> positionFinancings = null;  
+  private List<PositionFinancing> positionFinancings = null;  
 }

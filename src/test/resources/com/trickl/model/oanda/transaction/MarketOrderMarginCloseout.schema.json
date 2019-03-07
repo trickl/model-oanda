@@ -1,0 +1,15 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderMarginCloseout",
+  "type": "object",
+  "properties": {
+    "reason": {
+      "description": "The reason the Market Order was created to perform a margin closeout",
+      "type": "string",
+      "enum": [
+        "MARGIN_CHECK_VIOLATION",
+        "REGULATORY_MARGIN_CALL_VIOLATION",
+        "REGULATORY_MARGIN_CHECK_VIOLATION"
+      ]
+    }
+  }
+}

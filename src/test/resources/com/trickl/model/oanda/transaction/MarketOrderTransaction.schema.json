@@ -1,0 +1,299 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderTransaction",
+  "type": "object",
+  "properties": {
+    "reason": {
+      "description": "The reason that the Market Order was created",
+      "type": "string",
+      "enum": [
+        "CLIENT_ORDER",
+        "REPLACEMENT",
+        "ON_FILL"
+      ]
+    },
+    "tradeClientExtensions": {
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+    },
+    "stopLossOnFill": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:StopLossDetails",
+      "type": "object",
+      "properties": {
+        "distance": {
+          "description": "Specifies the distance (in price units) from the Trade's open price to use as the Stop Loss Order price. Only one of the distance and price fields may be specified.",
+          "type": "string"
+        },
+        "price": {
+          "description": "The price that the Stop Loss Order will be triggered at. Only one of the price and distance fields may be specified.",
+          "type": "string"
+        },
+        "gtdTime": {
+          "description": "The date when the Stop Loss Order will be cancelled on if timeInForce is GTD.",
+          "type": "string"
+        },
+        "guaranteed": {
+          "description": "Flag indicating that the price for the Stop Loss Order is guaranteed. The default value depends on the GuaranteedStopLossOrderMode of the account, if it is REQUIRED, the default will be true, for DISABLED or ENABLED the default is false.",
+          "type": "boolean"
+        },
+        "timeInForce": {
+          "description": "The time in force for the created Stop Loss Order. This may only be GTC, GTD or GFD.",
+          "type": "string",
+          "enum": [
+            "GTC",
+            "GTD",
+            "GFD",
+            "FOK",
+            "IOC"
+          ]
+        },
+        "clientExtensions": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+        }
+      }
+    },
+    "takeProfitOnFill": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TakeProfitDetails",
+      "type": "object",
+      "properties": {
+        "price": {
+          "description": "The price that the Take Profit Order will be triggered at. Only one of the price and distance fields may be specified.",
+          "type": "string"
+        },
+        "gtdTime": {
+          "description": "The date when the Take Profit Order will be cancelled on if timeInForce is GTD.",
+          "type": "string"
+        },
+        "timeInForce": {
+          "description": "The time in force for the created Take Profit Order. This may only be GTC, GTD or GFD.",
+          "type": "string",
+          "enum": [
+            "GTC",
+            "GTD",
+            "GFD",
+            "FOK",
+            "IOC"
+          ]
+        },
+        "clientExtensions": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+        }
+      }
+    },
+    "instrument": {
+      "description": "The Market Order's Instrument.",
+      "type": "string"
+    },
+    "tradeClose": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderTradeClose",
+      "type": "object",
+      "properties": {
+        "clientTradeID": {
+          "description": "The client ID of the Trade requested to be closed",
+          "type": "string"
+        },
+        "units": {
+          "description": "Indication of how much of the Trade to close. Either \"ALL\", or a DecimalNumber reflection a partial close of the Trade.",
+          "type": "string"
+        },
+        "tradeID": {
+          "description": "The ID of the Trade requested to be closed",
+          "type": "string"
+        }
+      }
+    },
+    "units": {
+      "description": "The quantity requested to be filled by the Market Order. A positive number of units results in a long Order, and a negative number of units results in a short Order.",
+      "type": "string"
+    },
+    "batchID": {
+      "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The Type of the Transaction. Always set to \"MARKET_ORDER\" in a MarketOrderTransaction.",
+      "type": "string",
+      "enum": [
+        "CREATE",
+        "CLOSE",
+        "REOPEN",
+        "CLIENT_CONFIGURE",
+        "CLIENT_CONFIGURE_REJECT",
+        "TRANSFER_FUNDS",
+        "TRANSFER_FUNDS_REJECT",
+        "MARKET_ORDER",
+        "MARKET_ORDER_REJECT",
+        "FIXED_PRICE_ORDER",
+        "LIMIT_ORDER",
+        "LIMIT_ORDER_REJECT",
+        "STOP_ORDER",
+        "STOP_ORDER_REJECT",
+        "MARKET_IF_TOUCHED_ORDER",
+        "MARKET_IF_TOUCHED_ORDER_REJECT",
+        "TAKE_PROFIT_ORDER",
+        "TAKE_PROFIT_ORDER_REJECT",
+        "STOP_LOSS_ORDER",
+        "STOP_LOSS_ORDER_REJECT",
+        "TRAILING_STOP_LOSS_ORDER",
+        "TRAILING_STOP_LOSS_ORDER_REJECT",
+        "ORDER_FILL",
+        "ORDER_CANCEL",
+        "ORDER_CANCEL_REJECT",
+        "ORDER_CLIENT_EXTENSIONS_MODIFY",
+        "ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT",
+        "TRADE_CLIENT_EXTENSIONS_MODIFY",
+        "TRADE_CLIENT_EXTENSIONS_MODIFY_REJECT",
+        "MARGIN_CALL_ENTER",
+        "MARGIN_CALL_EXTEND",
+        "MARGIN_CALL_EXIT",
+        "DELAYED_TRADE_CLOSURE",
+        "DAILY_FINANCING",
+        "RESET_RESETTABLE_PL"
+      ]
+    },
+    "userID": {
+      "description": "The ID of the user that initiated the creation of the Transaction.",
+      "type": "integer"
+    },
+    "positionFill": {
+      "description": "Specification of how Positions in the Account are modified when the Order is filled.",
+      "type": "string",
+      "enum": [
+        "OPEN_ONLY",
+        "REDUCE_FIRST",
+        "REDUCE_ONLY",
+        "DEFAULT"
+      ]
+    },
+    "clientExtensions": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+      "type": "object",
+      "properties": {
+        "comment": {
+          "description": "A comment associated with the Order\/Trade",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Client ID of the Order\/Trade",
+          "type": "string"
+        },
+        "tag": {
+          "description": "A tag associated with the Order\/Trade",
+          "type": "string"
+        }
+      }
+    },
+    "accountID": {
+      "description": "The ID of the Account the Transaction was created for.",
+      "type": "string"
+    },
+    "longPositionCloseout": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderPositionCloseout",
+      "type": "object",
+      "properties": {
+        "instrument": {
+          "description": "The instrument of the Position being closed out.",
+          "type": "string"
+        },
+        "units": {
+          "description": "Indication of how much of the Position to close. Either \"ALL\", or a DecimalNumber reflection a partial close of the Trade. The DecimalNumber must always be positive, and represent a number that doesn't exceed the absolute size of the Position.",
+          "type": "string"
+        }
+      }
+    },
+    "requestID": {
+      "description": "The Request ID of the request which generated the transaction.",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Transaction's Identifier.",
+      "type": "string"
+    },
+    "time": {
+      "description": "The date\/time when the Transaction was created.",
+      "type": "string"
+    },
+    "priceBound": {
+      "description": "The worst price that the client is willing to have the Market Order filled at.",
+      "type": "string"
+    },
+    "marginCloseout": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderMarginCloseout",
+      "type": "object",
+      "properties": {
+        "reason": {
+          "description": "The reason the Market Order was created to perform a margin closeout",
+          "type": "string",
+          "enum": [
+            "MARGIN_CHECK_VIOLATION",
+            "REGULATORY_MARGIN_CALL_VIOLATION",
+            "REGULATORY_MARGIN_CHECK_VIOLATION"
+          ]
+        }
+      }
+    },
+    "timeInForce": {
+      "description": "The time-in-force requested for the Market Order. Restricted to FOK or IOC for a MarketOrder.",
+      "type": "string",
+      "enum": [
+        "GTC",
+        "GTD",
+        "GFD",
+        "FOK",
+        "IOC"
+      ]
+    },
+    "shortPositionCloseout": {
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderPositionCloseout"
+    },
+    "delayedTradeClose": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderDelayedTradeClose",
+      "type": "object",
+      "properties": {
+        "clientTradeID": {
+          "description": "The Client ID of the Trade being closed",
+          "type": "string"
+        },
+        "sourceTransactionID": {
+          "description": "The Transaction ID of the DelayedTradeClosure transaction to which this Delayed Trade Close belongs to",
+          "type": "string"
+        },
+        "tradeID": {
+          "description": "The ID of the Trade being closed",
+          "type": "string"
+        }
+      }
+    },
+    "trailingStopLossOnFill": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TrailingStopLossDetails",
+      "type": "object",
+      "properties": {
+        "distance": {
+          "description": "The distance (in price units) from the Trade's fill price that the Trailing Stop Loss Order will be triggered at.",
+          "type": "string"
+        },
+        "gtdTime": {
+          "description": "The date when the Trailing Stop Loss Order will be cancelled on if timeInForce is GTD.",
+          "type": "string"
+        },
+        "timeInForce": {
+          "description": "The time in force for the created Trailing Stop Loss Order. This may only be GTC, GTD or GFD.",
+          "type": "string",
+          "enum": [
+            "GTC",
+            "GTD",
+            "GFD",
+            "FOK",
+            "IOC"
+          ]
+        },
+        "clientExtensions": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
+        }
+      }
+    }
+  }
+}

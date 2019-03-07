@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -14,6 +15,7 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"price", "timeInForce", "gtdTime", "clientExtensions"})
 @Data
+@Builder
 public class TakeProfitDetails {
 
   /**
@@ -36,5 +38,5 @@ public class TakeProfitDetails {
   private String gtdTime;
   
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 }

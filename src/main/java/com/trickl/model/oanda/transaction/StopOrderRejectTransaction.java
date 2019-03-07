@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.Builder;
 import lombok.Data;
 
 /** A StopOrderRejectTransaction represents the rejection of the creation of a Stop Order. */
@@ -36,6 +37,7 @@ import lombok.Data;
     "rejectReason"
 })
 @Data
+@Builder
 public class StopOrderRejectTransaction {
 
   /** The Transaction's Identifier. */
@@ -172,15 +174,15 @@ public class StopOrderRejectTransaction {
   @JsonPropertyDescription("The reason that the Stop Order was initiated")
   private TransactionReason reason;  
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 
-  private Object takeProfitOnFill;
+  private TakeProfitDetails takeProfitOnFill;
   
-  private Object stopLossOnFill;
+  private StopLossDetails stopLossOnFill;
 
-  private Object trailingStopLossOnFill;
+  private TrailingStopLossDetails trailingStopLossOnFill;
 
-  private Object tradeClientExtensions;
+  private ClientExtensions tradeClientExtensions;
   /**
    * The ID of the Order that this Order was intended to replace (only provided if this Order was
    * intended to replace an existing Order).

@@ -17,9 +17,48 @@ public class JsonSerializationTest {
   }
   
   static Stream<Object> pojoProvider() {
-     return Stream.of(Order.builder()
-        .state(OrderState.FILLED)
-        .build()
+     return Stream.of(
+         DynamicOrderState.builder()
+         .build(),
+         FixedPriceOrder.builder()
+         .build(),
+         GuaranteedStopLossOrderEntryData.builder()
+         .build(),
+         LimitOrder.builder()
+         .build(),
+         LimitOrderRequest.builder()
+         .build(),
+         MarketIfTouchedOrder.builder()
+         .build(),
+         MarketIfTouchedOrderRequest.builder()
+         .build(),
+         MarketOrder.builder()
+         .build(),
+         Order.builder()
+           .state(OrderState.FILLED)
+         .build(),
+         OrderIdentifier.builder()
+         .build(),
+         StopLossOrder.builder()
+         .build(),
+         StopLossOrderRequest.builder()
+         .build(),
+         StopOrder.builder()
+         .build(),
+         StopOrderRequest.builder()
+         .build(),
+         TakeProfitOrder.builder()
+         .build(),
+         TakeProfitOrderRequest.builder()
+         .build(),
+         TrailingStopLossOrder.builder()
+         .build(),
+         TrailingStopLossOrderRequest.builder()
+         .build(),
+         UnitsAvailable.builder()
+         .build(),
+         UnitsAvailableDetails.builder()
+         .build()
      );
   }        
 }

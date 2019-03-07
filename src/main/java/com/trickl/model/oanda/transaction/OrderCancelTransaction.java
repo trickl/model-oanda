@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
+import lombok.Data;
 
 /** An OrderCancelTransaction represents the cancellation of an Order in the client's Account. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,6 +22,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "reason",
     "replacedByOrderID"
 })
+@Data
+@Builder
 public class OrderCancelTransaction {
 
   /** The Transaction's Identifier. */

@@ -1,0 +1,77 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:primitives:Instrument",
+  "type": "object",
+  "properties": {
+    "pipLocation": {
+      "description": "The location of the \"pip\" for this instrument. The decimal position of the pip in this Instrument's price can be found at 10 ^ pipLocation (e.g. -4 pipLocation results in a decimal pip position of 10 ^ -4 = 0.0001).",
+      "type": "integer"
+    },
+    "displayName": {
+      "description": "The display name of the Instrument",
+      "type": "string"
+    },
+    "maximumPositionSize": {
+      "description": "The maximum position size allowed for this instrument. Specified in units.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of the Instrument",
+      "type": "string",
+      "enum": [
+        "CURRENCY",
+        "CFD",
+        "METAL"
+      ]
+    },
+    "minimumTrailingStopDistance": {
+      "description": "The minimum trailing stop distance allowed for a trailing stop loss created for this instrument. Specified in price units.",
+      "type": "string"
+    },
+    "marginRate": {
+      "description": "The margin rate for this instrument.",
+      "type": "string"
+    },
+    "minimumTradeSize": {
+      "description": "The smallest number of units allowed to be traded for this instrument.",
+      "type": "string"
+    },
+    "displayPrecision": {
+      "description": "The number of decimal places that should be used to display prices for this instrument. (e.g. a displayPrecision of 5 would result in a price of \"1\" being displayed as \"1.00000\")",
+      "type": "integer"
+    },
+    "name": {
+      "description": "The name of the Instrument",
+      "type": "string"
+    },
+    "tradeUnitsPrecision": {
+      "description": "The amount of decimal places that may be provided when specifying the number of units traded for this instrument.",
+      "type": "integer"
+    },
+    "commission": {
+      "id": "urn:jsonschema:com:trickl:model:oanda:primitives:InstrumentCommission",
+      "type": "object",
+      "properties": {
+        "commission": {
+          "description": "The commission amount (in the Account's home currency) charged per unitsTraded of the instrument",
+          "type": "string"
+        },
+        "unitsTraded": {
+          "description": "The number of units traded that the commission amount is based on.",
+          "type": "string"
+        },
+        "minimumCommission": {
+          "description": "The minimum commission amount (in the Account's home currency) that is charged when an Order is filled for this instrument.",
+          "type": "string"
+        }
+      }
+    },
+    "maximumTrailingStopDistance": {
+      "description": "The maximum trailing stop distance allowed for a trailing stop loss created for this instrument. Specified in price units.",
+      "type": "string"
+    },
+    "maximumOrderUnits": {
+      "description": "The maximum units allowed for an Order placed for this instrument. Specified in units.",
+      "type": "string"
+    }
+  }
+}

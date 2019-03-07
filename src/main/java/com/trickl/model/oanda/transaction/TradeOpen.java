@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -22,6 +23,7 @@ import lombok.Data;
     "initialMarginRequired"
 })
 @Data
+@Builder
 public class TradeOpen {
 
   /** The ID of the Trade that was opened. */
@@ -45,7 +47,7 @@ public class TradeOpen {
               + " Order attached to it.")
   private String guaranteedExecutionFee;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
   
   /**
    * The half spread cost for the trade open. This can be a positive or negative value and is

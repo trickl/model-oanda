@@ -3,11 +3,13 @@ package com.trickl.model.oanda.instrument;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /** The position book data for a partition of the instrument's prices. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"price", "longCountPercent", "shortCountPercent"})
+@Builder
 @Data
 public class PositionBookBucket {
 

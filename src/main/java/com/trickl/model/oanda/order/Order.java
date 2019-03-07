@@ -3,6 +3,7 @@ package com.trickl.model.oanda.order;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
 import lombok.Builder;
 import lombok.Data;
 
@@ -25,5 +26,5 @@ public class Order {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 }

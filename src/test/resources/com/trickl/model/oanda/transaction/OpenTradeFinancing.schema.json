@@ -1,0 +1,14 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:OpenTradeFinancing",
+  "type": "object",
+  "properties": {
+    "financing": {
+      "description": "The amount of financing paid\/collected for the Trade.",
+      "type": "string"
+    },
+    "tradeID": {
+      "description": "The ID of the Trade that financing is being paid\/collected for.",
+      "type": "string"
+    }
+  }
+}

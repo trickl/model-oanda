@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -34,6 +36,7 @@ import lombok.Data;
     "trailingStopLossOrderID"
 })
 @Data
+@Builder
 public class TradeSummary {
 
   /** The Trade's identifier, unique within the Trade's Account. */
@@ -125,7 +128,7 @@ public class TradeSummary {
               + "whose state is CLOSED.")
   private String closeTime;
   
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
   
   /** ID of the Trade's Take Profit Order, only provided if such an Order exists. */
   @JsonProperty("takeProfitOrderID")

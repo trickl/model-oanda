@@ -1,0 +1,32 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:PositionFinancing",
+  "type": "object",
+  "properties": {
+    "financing": {
+      "description": "The amount of financing paid\/collected for the Position.",
+      "type": "string"
+    },
+    "instrument": {
+      "description": "The instrument of the Position that financing is being paid\/collected for.",
+      "type": "string"
+    },
+    "openTradeFinancings": {
+      "description": "The financing paid\/collecte for each open Trade within the Position.",
+      "type": "array",
+      "items": {
+        "id": "urn:jsonschema:com:trickl:model:oanda:transaction:OpenTradeFinancing",
+        "type": "object",
+        "properties": {
+          "financing": {
+            "description": "The amount of financing paid\/collected for the Trade.",
+            "type": "string"
+          },
+          "tradeID": {
+            "description": "The ID of the Trade that financing is being paid\/collected for.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

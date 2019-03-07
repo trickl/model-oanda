@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /** The representation of an instrument's position book at a point in time. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"instrument", "time", "price", "bucketWidth", "buckets"})
+@Builder
 @Data
 public class PositionBook {
 

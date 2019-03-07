@@ -4,6 +4,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import com.trickl.model.oanda.transaction.MarketOrderDelayedTradeClose;
+import com.trickl.model.oanda.transaction.MarketOrderMarginCloseout;
+import com.trickl.model.oanda.transaction.MarketOrderPositionCloseout;
+import com.trickl.model.oanda.transaction.MarketOrderTradeClose;
+import com.trickl.model.oanda.transaction.StopLossDetails;
+import com.trickl.model.oanda.transaction.TakeProfitDetails;
+import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -57,7 +65,7 @@ public class MarketOrder {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 
   /** The type of the Order. Always set to "MARKET" for Market Orders. */
   @JsonPropertyDescription("The type of the Order. Always set to \"MARKET\" for Market Orders.")
@@ -96,31 +104,31 @@ public class MarketOrder {
   private OrderPositionFill positionFill;
 
   @JsonProperty("tradeClose")
-  private Object tradeClose;
+  private MarketOrderTradeClose tradeClose;
 
   @JsonProperty("longPositionCloseout")
-  private Object longPositionCloseout;
+  private MarketOrderPositionCloseout longPositionCloseout;
 
   @JsonProperty("shortPositionCloseout")
-  private Object shortPositionCloseout;
+  private MarketOrderPositionCloseout shortPositionCloseout;
 
   @JsonProperty("marginCloseout")
-  private Object marginCloseout;
+  private MarketOrderMarginCloseout marginCloseout;
 
   @JsonProperty("delayedTradeClose")
-  private Object delayedTradeClose;
+  private MarketOrderDelayedTradeClose delayedTradeClose;
 
   @JsonProperty("takeProfitOnFill")
-  private Object takeProfitOnFill;
+  private TakeProfitDetails takeProfitOnFill;
 
   @JsonProperty("stopLossOnFill")
-  private Object stopLossOnFill;
+  private StopLossDetails stopLossOnFill;
 
   @JsonProperty("trailingStopLossOnFill")
-  private Object trailingStopLossOnFill;
+  private TrailingStopLossDetails trailingStopLossOnFill;
 
   @JsonProperty("tradeClientExtensions")
-  private Object tradeClientExtensions;
+  private ClientExtensions tradeClientExtensions;
 
   /**
    * ID of the Transaction that filled this Order (only provided when the

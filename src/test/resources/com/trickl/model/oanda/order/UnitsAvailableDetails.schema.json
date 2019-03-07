@@ -1,0 +1,14 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:order:UnitsAvailableDetails",
+  "type": "object",
+  "properties": {
+    "short": {
+      "description": "The units available for short Orders.",
+      "type": "string"
+    },
+    "long": {
+      "description": "The units available for long Orders.",
+      "type": "string"
+    }
+  }
+}

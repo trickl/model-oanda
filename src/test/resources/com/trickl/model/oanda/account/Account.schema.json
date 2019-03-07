@@ -134,7 +134,22 @@
             "type": "string"
           },
           "clientExtensions": {
-            "type": "any"
+            "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+            "type": "object",
+            "properties": {
+              "comment": {
+                "description": "A comment associated with the Order\/Trade",
+                "type": "string"
+              },
+              "id": {
+                "description": "The Client ID of the Order\/Trade",
+                "type": "string"
+              },
+              "tag": {
+                "description": "A tag associated with the Order\/Trade",
+                "type": "string"
+              }
+            }
           },
           "realizedPL": {
             "description": "The total profit\/loss realized on the closed portion of the Trade.",
@@ -210,13 +225,37 @@
             "description": "The unrealized profit\/loss of all open Trades that contribute to this Position.",
             "type": "string"
           },
+          "marginUsed": {
+            "description": "Margin currently used by the Position.",
+            "type": "string"
+          },
           "resettablePL": {
             "description": "Profit\/loss realized by the Position since the Account's resettablePL was last reset by the client.",
+            "type": "string"
+          },
+          "guaranteedExecutionFees": {
+            "description": "The total amount of fees charged over the lifetime of the Account for the execution of guaranteed Stop Loss Orders for this instrument.",
+            "type": "string"
+          },
+          "financing": {
+            "description": "The total amount of financing paid\/collected for this instrument over the lifetime of the Account.",
             "type": "string"
           },
           "short": {
             "type": "object",
             "$ref": "urn:jsonschema:com:trickl:model:oanda:position:PositionSide"
+          },
+          "instrument": {
+            "description": "The Position's Instrument.",
+            "type": "string"
+          },
+          "commission": {
+            "description": "The total amount of commission paid for this instrument over the lifetime of the Account.",
+            "type": "string"
+          },
+          "pandl": {
+            "description": "Profit\/loss realized by the Position over the lifetime of the Account.",
+            "type": "string"
           },
           "long": {
             "id": "urn:jsonschema:com:trickl:model:oanda:position:PositionSide",
@@ -329,7 +368,8 @@
             ]
           },
           "clientExtensions": {
-            "type": "any"
+            "type": "object",
+            "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"
           }
         }
       }

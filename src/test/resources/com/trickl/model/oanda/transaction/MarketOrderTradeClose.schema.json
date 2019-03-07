@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:MarketOrderTradeClose",
+  "type": "object",
+  "properties": {
+    "clientTradeID": {
+      "description": "The client ID of the Trade requested to be closed",
+      "type": "string"
+    },
+    "units": {
+      "description": "Indication of how much of the Trade to close. Either \"ALL\", or a DecimalNumber reflection a partial close of the Trade.",
+      "type": "string"
+    },
+    "tradeID": {
+      "description": "The ID of the Trade requested to be closed",
+      "type": "string"
+    }
+  }
+}

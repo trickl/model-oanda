@@ -18,6 +18,12 @@ public class JsonSerializationTest {
   
   static Stream<Object> pojoProvider() {
      return Stream.of(
+         GuaranteedStopLossOrderLevelRestriction.builder()
+         .build(),
+         Instrument.builder()
+         .build(),
+         InstrumentCommission.builder()
+         .build()
      );
   }   
 }

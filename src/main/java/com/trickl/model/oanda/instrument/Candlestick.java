@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /** The Candlestick representation. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"time", "bid", "ask", "mid", "volume", "complete"})
+@Builder
 @Data
 public class Candlestick {
 

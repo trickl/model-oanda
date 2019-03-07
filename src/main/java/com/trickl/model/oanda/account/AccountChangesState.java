@@ -8,6 +8,7 @@ import com.trickl.model.oanda.order.Order;
 import com.trickl.model.oanda.position.Position;
 import com.trickl.model.oanda.trade.TradeSummary;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -32,6 +33,7 @@ import lombok.Data;
     "marginCallPercent"
 })
 @Data
+@Builder
 public class AccountChangesState {
 
   /** The total unrealized profit/loss for all Trades currently open in the Account. */

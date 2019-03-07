@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+  "type": "object",
+  "properties": {
+    "comment": {
+      "description": "A comment associated with the Order\/Trade",
+      "type": "string"
+    },
+    "id": {
+      "description": "The Client ID of the Order\/Trade",
+      "type": "string"
+    },
+    "tag": {
+      "description": "A tag associated with the Order\/Trade",
+      "type": "string"
+    }
+  }
+}

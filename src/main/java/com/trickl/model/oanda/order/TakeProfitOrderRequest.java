@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * A TakeProfitOrderRequest specifies the parameters that may be set when creating a Take Profit
@@ -20,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "triggerCondition",
     "clientExtensions"
 })
+@Data
+@Builder
 public class TakeProfitOrderRequest {
 
   /**
@@ -104,5 +109,5 @@ public class TakeProfitOrderRequest {
               + "\"BID\", and for short trades \"DEFAULT\" and \"ASK\" are valid.")
   private OrderTriggerCondition triggerCondition;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
 }

@@ -3,12 +3,14 @@ package com.trickl.model.oanda.primitives;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /** An InstrumentCommission represents an instrument-specific commission. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"commission", "unitsTraded", "minimumCommission"})
 @Data
+@Builder
 public class InstrumentCommission {
 
   /**

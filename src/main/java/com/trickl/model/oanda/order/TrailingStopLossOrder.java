@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -39,6 +41,7 @@ import lombok.Data;
     "replacesOrderID",
     "replacedByOrderID"
 })
+@Builder
 @Data
 public class TrailingStopLossOrder {
 
@@ -54,7 +57,7 @@ public class TrailingStopLossOrder {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
  
   /** The type of the Order. Always set to "TRAILING_STOP_LOSS" for Trailing Stop Loss Orders. */
   @JsonPropertyDescription(

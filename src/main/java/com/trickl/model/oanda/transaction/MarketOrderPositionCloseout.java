@@ -3,6 +3,8 @@ package com.trickl.model.oanda.transaction;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * A MarketOrderPositionCloseout specifies the extensions to a Market Order when it has been created
@@ -10,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"instrument", "units"})
+@Data
+@Builder
 public class MarketOrderPositionCloseout {
 
   /** The instrument of the Position being closed out. */

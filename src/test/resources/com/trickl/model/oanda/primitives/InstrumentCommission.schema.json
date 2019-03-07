@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:primitives:InstrumentCommission",
+  "type": "object",
+  "properties": {
+    "commission": {
+      "description": "The commission amount (in the Account's home currency) charged per unitsTraded of the instrument",
+      "type": "string"
+    },
+    "unitsTraded": {
+      "description": "The number of units traded that the commission amount is based on.",
+      "type": "string"
+    },
+    "minimumCommission": {
+      "description": "The minimum commission amount (in the Account's home currency) that is charged when an Order is filled for this instrument.",
+      "type": "string"
+    }
+  }
+}

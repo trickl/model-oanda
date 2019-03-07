@@ -4,7 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.transaction.ClientExtensions;
+import com.trickl.model.oanda.transaction.StopLossDetails;
+import com.trickl.model.oanda.transaction.TakeProfitDetails;
+import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.util.List;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * A StopOrder is an order that is created with a price threshold, and will only be filled by a
@@ -39,6 +45,8 @@ import java.util.List;
     "replacesOrderID",
     "replacedByOrderID"
 })
+@Data
+@Builder
 public class StopOrder {
 
   /** The Order's identifier, unique within the Order's Account. */
@@ -53,7 +61,7 @@ public class StopOrder {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
 
-  private Object clientExtensions;
+  private ClientExtensions clientExtensions;
   
   /** The type of the Order. Always set to "STOP" for Stop Orders. */
   @JsonPropertyDescription("The type of the Order. Always set to \"STOP\" for Stop Orders.")
@@ -142,13 +150,13 @@ public class StopOrder {
             + "and for short trades \"DEFAULT\" and \"ASK\" are valid.")
   private OrderTriggerCondition triggerCondition;
 
-  private Object takeProfitOnFill;
+  private TakeProfitDetails takeProfitOnFill;
 
-  private Object stopLossOnFill;
+  private StopLossDetails stopLossOnFill;
 
-  private Object trailingStopLossOnFill;
+  private TrailingStopLossDetails trailingStopLossOnFill;
 
-  private Object tradeClientExtensions;
+  private ClientExtensions tradeClientExtensions;
   /**
    * ID of the Transaction that filled this Order (only provided when the Order's state is FILLED.
    */

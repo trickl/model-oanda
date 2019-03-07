@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Builder;
 import lombok.Data;
 
 /** A ClientConfigureTransaction represents the configuration of an Account by a client. */
@@ -20,6 +21,7 @@ import lombok.Data;
     "marginRate"
 })
 @Data
+@Builder
 public class ClientConfigureTransaction {
 
   /** The Transaction's Identifier. */
