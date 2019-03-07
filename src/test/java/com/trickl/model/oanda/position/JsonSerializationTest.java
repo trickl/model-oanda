@@ -1,4 +1,4 @@
-package com.trickl.model.oanda.order;
+package com.trickl.model.oanda.position;
 
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
 import java.util.stream.Stream;
@@ -17,9 +17,7 @@ public class JsonSerializationTest {
   }
   
   static Stream<Object> pojoProvider() {
-     return Stream.of(Order.builder()
-        .state(OrderState.FILLED)
-        .build()
+     return Stream.of(
      );
-  }        
+  }   
 }

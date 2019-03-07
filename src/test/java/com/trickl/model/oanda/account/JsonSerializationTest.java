@@ -3,13 +3,24 @@ package com.trickl.model.oanda.account;
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
 import com.trickl.model.oanda.order.Order;
 import com.trickl.model.oanda.order.OrderState;
-import org.junit.Test;
+import java.util.stream.Stream;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class JsonSerializationTest {
-
-  @Test
-  public void testAccount() throws Exception {
-    Account account = Account.builder()
+  
+  @ParameterizedTest
+  @MethodSource("pojoProvider")
+  public void testSerialization(Object obj) throws Exception {  
+    assertThat(obj)
+        .serializesAsExpected()
+        .deserializesAsExpected()
+        .schemaAsExpected();
+  }
+  
+  static Stream<Object> pojoProvider() {
+     return Stream.of(
+       Account.builder()
         .netAssetValue("43650.78835") 
         .alias("My New Account #2") 
         .balance("43650.78835") 
@@ -31,25 +42,12 @@ public class JsonSerializationTest {
         .openTradeCount(0) 
         .pl("-56034.41199") 
         .positionValue("0.00000") 
-        .build();
-    
-    assertThat(account)
-        .serializesAsExpected()
-        .deserializesAsExpected()
-        .schemaAsExpected();
-  }
-  
-  @Test
-  public void testAccountChanges() throws Exception {
-    AccountChanges accountChanges = AccountChanges.builder()
+        .build(),
+       AccountChanges.builder()
         .orderFilled(Order.builder()
             .state(OrderState.FILLED)
             .build())
-        .build();
-    
-    assertThat(accountChanges)
-        .serializesAsExpected()
-        .deserializesAsExpected()
-        .schemaAsExpected();
+        .build()
+     );
   }
 }
