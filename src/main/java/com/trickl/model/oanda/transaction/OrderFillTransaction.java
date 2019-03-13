@@ -116,7 +116,7 @@ public class OrderFillTransaction extends Transaction {
   
   /** The reason that an Order was filled. */
   @JsonPropertyDescription("The reason that an Order was filled")
-  private TransactionReason reason;
+  private OrderFillReason reason;
   
   /** The profit or loss incurred when the Order was filled. */
   @JsonProperty("pl")
