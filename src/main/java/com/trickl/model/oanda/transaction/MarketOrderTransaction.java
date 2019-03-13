@@ -88,7 +88,7 @@ public class MarketOrderTransaction extends Transaction {
   
   /** The reason that the Market Order was created. */
   @JsonPropertyDescription("The reason that the Market Order was created")
-  private TransactionReason reason;
+  private MarketOrderReason reason;
 
   private ClientExtensions clientExtensions;
   
