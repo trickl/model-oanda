@@ -32,7 +32,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The Type of the Transaction. Always set to \"ORDER_FILL\" for an OrderFillTransaction.",
+      "description": "The Type of the Transaction.",
       "type": "string",
       "enum": [
         "CREATE",
@@ -183,10 +183,6 @@
         }
       }
     },
-    "batchId": {
-      "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
-      "type": "string"
-    },
     "userID": {
       "description": "The ID of the user that initiated the creation of the Transaction.",
       "type": "integer"
@@ -273,6 +269,10 @@
     },
     "orderID": {
       "description": "The ID of the Order filled.",
+      "type": "string"
+    },
+    "batchID": {
+      "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
       "type": "string"
     },
     "requestID": {

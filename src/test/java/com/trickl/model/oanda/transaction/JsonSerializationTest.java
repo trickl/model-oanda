@@ -1,7 +1,6 @@
 package com.trickl.model.oanda.transaction;
 
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
-import com.trickl.model.oanda.order.Order;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14,6 +13,7 @@ public class JsonSerializationTest {
     assertThat(obj)
         .serializesAsExpected()
         .deserializesAsExpected()
+@JsonPropertyOrder({"id", "time", "userID", "accountID", "batchID", "requestID"})
         .schemaAsExpected();
   }
   
@@ -108,8 +108,6 @@ public class JsonSerializationTest {
          TrailingStopLossOrderRejectTransaction.builder()
          .build(),
          TrailingStopLossOrderTransaction.builder()
-         .build(),
-         Transaction.builder()
          .build(),
          TransactionHeartbeat.builder()
          .build(),

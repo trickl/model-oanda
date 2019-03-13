@@ -45,7 +45,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The Type of the Transaction. Always set to \"TRADE_CLIENT_EXTENSIONS_MODIFY\" for a TradeClientExtensionsModifyTransaction.",
+      "description": "The Type of the Transaction.",
       "type": "string",
       "enum": [
         "CREATE",

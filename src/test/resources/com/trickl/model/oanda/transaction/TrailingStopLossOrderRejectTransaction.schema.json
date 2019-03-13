@@ -31,7 +31,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The Type of the Transaction. Always set to \"TRAILING_STOP_LOSS_ORDER_REJECT\" in a TrailingStopLossOrderRejectTransaction.",
+      "description": "The Type of the Transaction.",
       "type": "string",
       "enum": [
         "CREATE",
@@ -72,7 +72,7 @@
       ]
     },
     "userID": {
-      "description": "The ID of the user that initiated the creation of theTransaction.",
+      "description": "The ID of the user that initiated the creation of the Transaction.",
       "type": "integer"
     },
     "clientExtensions": {

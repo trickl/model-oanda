@@ -23,7 +23,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The Type of the Transaction. Always set to \"REOPEN\" in a ReopenTransaction.",
+      "description": "The Type of the Transaction.",
       "type": "string",
       "enum": [
         "CREATE",

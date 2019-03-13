@@ -105,7 +105,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The Type of the Transaction. Always set to \"LIMIT_ORDER\" in a LimitOrderTransaction.",
+      "description": "The Type of the Transaction.",
       "type": "string",
       "enum": [
         "CREATE",

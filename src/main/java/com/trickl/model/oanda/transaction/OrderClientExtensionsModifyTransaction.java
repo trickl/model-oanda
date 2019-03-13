@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * A OrderClientExtensionsModifyRejectTransaction represents the rejection of the modification of an
+ * A OrderClientExtensionsModifyTransaction represents the rejection of the modification of an
  * Order's Client Extensions.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,7 +28,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class OrderClientExtensionsModifyRejectTransaction extends Transaction {
+public class OrderClientExtensionsModifyTransaction extends Transaction {
   
   /** The ID of the Order who's client extensions are to be modified. */
   @JsonProperty("orderID")
@@ -44,8 +44,4 @@ public class OrderClientExtensionsModifyRejectTransaction extends Transaction {
   private ClientExtensions clientExtensionsModify;
 
   private ClientExtensions tradeClientExtensionsModify;
-  
-  /** The reason that the Reject Transaction was created. */  
-  @JsonPropertyDescription("The reason that the Reject Transaction was created")
-  private RejectReason rejectReason;
 }
