@@ -7,8 +7,10 @@
       "type": "string",
       "enum": [
         "CLIENT_ORDER",
-        "REPLACEMENT",
-        "ON_FILL"
+        "TRADE_CLOSE",
+        "POSITION_CLOSEOUT",
+        "MARGIN_CLOSEOUT",
+        "DELAYED_TRADE_CLOSE"
       ]
     },
     "tradeClientExtensions": {
