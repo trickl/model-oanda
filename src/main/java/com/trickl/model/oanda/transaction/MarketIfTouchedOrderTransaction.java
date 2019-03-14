@@ -137,7 +137,7 @@ public class MarketIfTouchedOrderTransaction extends Transaction {
   
   /** The reason that the Market-if-touched Order was initiated. */
   @JsonPropertyDescription("The reason that the Market-if-touched Order was initiated")
-  private TransactionReason reason;
+  private MarketIfTouchedOrderReason reason;
   
   private ClientExtensions clientExtensions;
 

@@ -130,7 +130,7 @@ public class StopOrderRejectTransaction extends Transaction {
 
   /** The reason that the Stop Order was initiated. */
   @JsonPropertyDescription("The reason that the Stop Order was initiated")
-  private TransactionReason reason;  
+  private StopOrderReason reason;  
 
   private ClientExtensions clientExtensions;
 

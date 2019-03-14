@@ -109,7 +109,7 @@ public class TrailingStopLossOrderRejectTransaction extends Transaction {
   
   /** The reason that the Trailing Stop Loss Order was initiated. */
   @JsonPropertyDescription("The reason that the Trailing Stop Loss Order was initiated")
-  private TransactionReason reason;
+  private TrailingStopLossOrderReason reason;
   
   private ClientExtensions clientExtensions;
   /**

@@ -139,7 +139,7 @@ public class StopLossOrderRejectTransaction extends Transaction {
   
   /** The reason that the Stop Loss Order was initiated. */
   @JsonPropertyDescription("The reason that the Stop Loss Order was initiated")
-  private TransactionReason reason;
+  private StopLossOrderReason reason;
 
   private ClientExtensions clientExtensions;
   /**

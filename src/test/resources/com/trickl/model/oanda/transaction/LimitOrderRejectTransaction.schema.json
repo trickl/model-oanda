@@ -7,8 +7,7 @@
       "type": "string",
       "enum": [
         "CLIENT_ORDER",
-        "REPLACEMENT",
-        "ON_FILL"
+        "REPLACEMENT"
       ]
     },
     "triggerCondition": {

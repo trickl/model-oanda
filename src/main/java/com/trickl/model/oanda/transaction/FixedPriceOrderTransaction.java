@@ -71,7 +71,7 @@ public class FixedPriceOrderTransaction extends Transaction {
   
   /** The reason that the Fixed Price Order was created. */
   @JsonPropertyDescription("The reason that the Fixed Price Order was created")
-  private TransactionReason reason;
+  private FixedPriceOrderReason reason;
 
   private ClientExtensions clientExtensions;
 

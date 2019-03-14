@@ -117,7 +117,7 @@ public class LimitOrderTransaction extends Transaction {
   
   /** The reason that the Limit Order was initiated .*/
   @JsonPropertyDescription("The reason that the Limit Order was initiated")
-  private TransactionReason reason;
+  private LimitOrderReason reason;
   
   private ClientExtensions clientExtensions;
   

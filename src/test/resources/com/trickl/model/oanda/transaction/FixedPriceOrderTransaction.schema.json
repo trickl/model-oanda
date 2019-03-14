@@ -6,9 +6,7 @@
       "description": "The reason that the Fixed Price Order was created",
       "type": "string",
       "enum": [
-        "CLIENT_ORDER",
-        "REPLACEMENT",
-        "ON_FILL"
+        "PLATFORM_ACCOUNT_MIGRATION"
       ]
     },
     "tradeClientExtensions": {

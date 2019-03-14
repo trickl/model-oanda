@@ -111,7 +111,7 @@ public class TakeProfitOrderTransaction extends Transaction {
   
   /** The reason that the Take Profit Order was initiated. */
   @JsonPropertyDescription("The reason that the Take Profit Order was initiated")
-  private TransactionReason reason;
+  private TakeProfitOrderReason reason;
 
   private ClientExtensions clientExtensions;
   

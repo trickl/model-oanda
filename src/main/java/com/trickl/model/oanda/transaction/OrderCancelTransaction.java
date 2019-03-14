@@ -40,7 +40,7 @@ public class OrderCancelTransaction extends Transaction {
   
   /** The reason that the Order was cancelled. */
   @JsonPropertyDescription("The reason that the Order was cancelled.")
-  private TransactionReason reason;
+  private OrderCancelReason reason;
   
   /**
    * The ID of the Order that replaced this Order (only provided if this Order was cancelled for
