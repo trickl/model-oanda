@@ -25,17 +25,8 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class TakeProfitOrderRequest {
+public class TakeProfitOrderRequest extends OrderRequest {
 
-  /**
-   * The type of the Order to Create. Must be set to "TAKE_PROFIT" when creating a Take Profit
-   * Order.
-   */
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"TAKE_PROFIT\" when creating "
-              + "a Take Profit Order.")
-  private OrderType type;
-  
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")
   @JsonPropertyDescription("The ID of the Trade to close when the price threshold "

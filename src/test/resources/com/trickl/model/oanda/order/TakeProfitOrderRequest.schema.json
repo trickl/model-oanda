@@ -26,7 +26,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The type of the Order to Create. Must be set to \"TAKE_PROFIT\" when creating a Take Profit Order.",
+      "description": "The type of the Order to create.",
       "type": "string",
       "enum": [
         "MARKET",
@@ -35,8 +35,7 @@
         "MARKET_IF_TOUCHED",
         "TAKE_PROFIT",
         "STOP_LOSS",
-        "TRAILING_STOP_LOSS",
-        "FIXED_PRICE"
+        "TRAILING_STOP_LOSS"
       ]
     },
     "timeInForce": {

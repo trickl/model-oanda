@@ -30,19 +30,14 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class LimitOrderRequest {
-
-  /** The type of the Order to Create. Must be set to "LIMIT" when creating a Market Order. */
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"LIMIT\" when creating a Market Order.")
-  private OrderType type;
+public class LimitOrderRequest extends OrderRequest {
   
   /** The Limit Order's Instrument. */  
   @JsonPropertyDescription("The Limit Order's Instrument.")
   private String instrument;
   
   /**
-   * The quantity requested to be filled by the Limit Order. A posititive number of units results in
+   * The quantity requested to be filled by the Limit Order. A positive number of units results in
    * a long Order, and a negative number of units results in a short Order.
    */
   @JsonPropertyDescription(

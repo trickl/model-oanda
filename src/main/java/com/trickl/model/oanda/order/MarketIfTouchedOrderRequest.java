@@ -33,16 +33,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class MarketIfTouchedOrderRequest {
-
-  /**
-   * The type of the Order to Create. Must be set to "MARKET_IF_TOUCHED" when creating a Market If
-   * Touched Order.
-   */
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"MARKET_IF_TOUCHED\" when "
-              + "creating a Market If Touched Order.")
-  private OrderType type;
+public class MarketIfTouchedOrderRequest extends OrderRequest {
 
   /** The MarketIfTouched Order's Instrument. */
   @JsonPropertyDescription("The MarketIfTouched Order's Instrument.")

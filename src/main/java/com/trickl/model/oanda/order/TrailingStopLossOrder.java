@@ -43,26 +43,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class TrailingStopLossOrder {
-
-  /** The Order's identifier, unique within the Order's Account. */
-  @JsonPropertyDescription("The Order's identifier, unique within the Order's Account.")
-  private String id;
- 
-  /** The time when the Order was created. */
-  @JsonPropertyDescription("The time when the Order was created.")
-  private String createTime;
- 
-  /** The current state of the Order. */
-  @JsonPropertyDescription("The current state of the Order.")
-  private OrderState state;
-
-  private ClientExtensions clientExtensions;
- 
-  /** The type of the Order. Always set to "TRAILING_STOP_LOSS" for Trailing Stop Loss Orders. */
-  @JsonPropertyDescription(
-      "The type of the Order. Always set to \"TRAILING_STOP_LOSS\" for Trailing Stop Loss Orders.")
-  private OrderType type;
+public class TrailingStopLossOrder extends Order {
  
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")

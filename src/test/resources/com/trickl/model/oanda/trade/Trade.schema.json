@@ -53,7 +53,7 @@
           "type": "string"
         },
         "type": {
-          "description": "The type of the Order. Always set to \"TAKE_PROFIT\" for Take Profit Orders.",
+          "description": "The type of the Order.",
           "type": "string",
           "enum": [
             "MARKET",
@@ -233,7 +233,7 @@
           "type": "boolean"
         },
         "type": {
-          "description": "The type of the Order. Always set to \"STOP_LOSS\" for Stop Loss Orders.",
+          "description": "The type of the Order.",
           "type": "string",
           "enum": [
             "MARKET",
@@ -360,7 +360,7 @@
           "type": "string"
         },
         "type": {
-          "description": "The type of the Order. Always set to \"TRAILING_STOP_LOSS\" for Trailing Stop Loss Orders.",
+          "description": "The type of the Order.",
           "type": "string",
           "enum": [
             "MARKET",

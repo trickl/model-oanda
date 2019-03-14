@@ -27,16 +27,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopLossOrderRequest {
-
-  /**
-   * The type of the Order to Create. Must be set to "STOP_LOSS" when creating a Stop Loss Order.
-   */
-  @JsonProperty("type")
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"STOP_LOSS\" when creating"
-              + " a Stop Loss Order.")
-  private OrderType type;
+public class StopLossOrderRequest extends OrderRequest {
 
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")

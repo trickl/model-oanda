@@ -51,25 +51,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class MarketOrder {
-
-  /** The Order's identifier, unique within the Order's Account. */
-  @JsonPropertyDescription("The Order's identifier, unique within the Order's Account.")
-  private String id;
-
-  /** The time when the Order was created. */
-  @JsonPropertyDescription("The time when the Order was created.")
-  private String createTime;
-
-  /** The current state of the Order. */
-  @JsonPropertyDescription("The current state of the Order.")
-  private OrderState state;
-
-  private ClientExtensions clientExtensions;
-
-  /** The type of the Order. Always set to "MARKET" for Market Orders. */
-  @JsonPropertyDescription("The type of the Order. Always set to \"MARKET\" for Market Orders.")
-  private OrderType type;
+public class MarketOrder extends Order {
 
   /** The Market Order's Instrument. */
   @JsonPropertyDescription("The Market Order's Instrument.")

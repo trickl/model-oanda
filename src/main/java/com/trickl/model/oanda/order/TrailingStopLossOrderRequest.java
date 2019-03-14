@@ -25,16 +25,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class TrailingStopLossOrderRequest {
-
-  /**
-   * The type of the Order to Create. Must be set to "TRAILING_STOP_LOSS" when creating a Trailng
-   * Stop Loss Order.
-   */
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"TRAILING_STOP_LOSS\" when "
-              + "creating a Trailng Stop Loss Order.")
-  private OrderType type;
+public class TrailingStopLossOrderRequest extends OrderRequest {
 
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")

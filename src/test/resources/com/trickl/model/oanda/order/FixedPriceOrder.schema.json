@@ -96,7 +96,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The type of the Order. Always set to \"FIXED_PRICE\" for Fixed Price Orders.",
+      "description": "The type of the Order.",
       "type": "string",
       "enum": [
         "MARKET",

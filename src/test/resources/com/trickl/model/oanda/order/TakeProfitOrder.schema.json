@@ -29,7 +29,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The type of the Order. Always set to \"TAKE_PROFIT\" for Take Profit Orders.",
+      "description": "The type of the Order.",
       "type": "string",
       "enum": [
         "MARKET",

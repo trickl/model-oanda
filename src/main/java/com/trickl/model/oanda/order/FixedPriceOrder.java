@@ -39,26 +39,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class FixedPriceOrder {
-
-  /** The Order's identifier, unique within the Order's Account. */
-  @JsonPropertyDescription("The Order's identifier, unique within the Order's Account.")
-  private String id;
-
-  /** The time when the Order was created. */
-  @JsonPropertyDescription("The time when the Order was created.")
-  private String createTime;
-
-  /** The current state of the Order. */
-  @JsonPropertyDescription("The current state of the Order.")
-  private OrderState state;
-
-  private ClientExtensions clientExtensions;
-
-  /** The type of the Order. Always set to "FIXED_PRICE" for Fixed Price Orders. */
-  @JsonPropertyDescription(
-      "The type of the Order. Always set to \"FIXED_PRICE\" for Fixed Price Orders.")
-  private OrderType type;
+public class FixedPriceOrder extends Order {
 
   /** The Fixed Price Order's Instrument. */
   @JsonPropertyDescription("The Fixed Price Order's Instrument.")

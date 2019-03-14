@@ -42,26 +42,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopLossOrder {
-
-  /** The Order's identifier, unique within the Order's Account. */
-  @JsonPropertyDescription("The Order's identifier, unique within the Order's Account.")
-  private String id;
-  
-  /** The time when the Order was created. */
-  @JsonPropertyDescription("The time when the Order was created.")
-  private String createTime;
- 
-  /** The current state of the Order. */
-  @JsonPropertyDescription("The current state of the Order.")
-  private OrderState state;
-
-  private ClientExtensions clientExtensions;
- 
-  /** The type of the Order. Always set to "STOP_LOSS" for Stop Loss Orders. */
-  @JsonPropertyDescription(
-      "The type of the Order. Always set to \"STOP_LOSS\" for Stop Loss Orders.")
-  private OrderType type;
+public class StopLossOrder extends Order {
  
   /**
    * The premium that will be charged if the Stop Loss Order is guaranteed and the Order is filled

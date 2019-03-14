@@ -31,12 +31,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopOrderRequest {
-
-  /** The type of the Order to Create. Must be set to "STOP" when creating a Stop Order. */
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"STOP\" when creating a Stop Order.")
-  private OrderType type;
+public class StopOrderRequest extends OrderRequest {
   
   /** The Stop Order's Instrument. */
   @JsonPropertyDescription("The Stop Order's Instrument.")

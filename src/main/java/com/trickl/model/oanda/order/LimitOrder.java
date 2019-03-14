@@ -46,27 +46,8 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class LimitOrder {
-
-  /** The Order's identifier, unique within the Order's Account. */
-  @JsonPropertyDescription("The Order's identifier, unique within the Order's Account.")
-  private String id;
- 
-  /** The time when the Order was created. */
-  @JsonPropertyDescription("The time when the Order was created.")
-  private String createTime;
- 
-  /** The current state of the Order. */
-  @JsonPropertyDescription("The current state of the Order.")
-  private OrderState state;
-
-  private ClientExtensions clientExtensions;
- 
-  /** The type of the Order. Always set to "LIMIT" for Limit Orders. */
-  @JsonProperty("type")
-  @JsonPropertyDescription("The type of the Order. Always set to \"LIMIT\" for Limit Orders.")
-  private OrderType type;
-  
+public class LimitOrder extends Order {
+   
   /** The Limit Order's Instrument. */
   @JsonPropertyDescription("The Limit Order's Instrument.")
   private String instrument;

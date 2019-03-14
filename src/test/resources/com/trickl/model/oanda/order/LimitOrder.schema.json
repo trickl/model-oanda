@@ -92,7 +92,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The type of the Order. Always set to \"LIMIT\" for Limit Orders.",
+      "description": "The type of the Order.",
       "type": "string",
       "enum": [
         "MARKET",

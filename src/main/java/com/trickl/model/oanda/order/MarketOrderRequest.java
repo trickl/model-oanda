@@ -27,12 +27,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class MarketOrderRequest {
-
-  /** The type of the Order to Create. Must be set to "MARKET" when creating a Market Order. */
-  @JsonPropertyDescription(
-      "The type of the Order to Create. Must be set to \"MARKET\" when creating a Market Order.")
-  private OrderType type;
+public class MarketOrderRequest extends OrderRequest {
   
   /** The Market Order's Instrument. */
   @JsonPropertyDescription("The Market Order's Instrument.")

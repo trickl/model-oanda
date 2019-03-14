@@ -1,6 +1,7 @@
 package com.trickl.model.oanda.account;
 
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
+import com.trickl.model.oanda.order.LimitOrder;
 import com.trickl.model.oanda.order.Order;
 import com.trickl.model.oanda.order.OrderState;
 import java.util.stream.Stream;
@@ -44,8 +45,7 @@ public class JsonSerializationTest {
         .positionValue("0.00000") 
         .build(),
        AccountChanges.builder()
-        .orderFilled(Order.builder()
-            .state(OrderState.FILLED)
+        .orderFilled(LimitOrder.builder()
             .build())
         .build(),
        AccountChangesState.builder()

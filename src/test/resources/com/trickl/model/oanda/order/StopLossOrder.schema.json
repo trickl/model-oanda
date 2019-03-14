@@ -41,7 +41,7 @@
       "type": "boolean"
     },
     "type": {
-      "description": "The type of the Order. Always set to \"STOP_LOSS\" for Stop Loss Orders.",
+      "description": "The type of the Order.",
       "type": "string",
       "enum": [
         "MARKET",

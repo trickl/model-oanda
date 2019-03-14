@@ -37,7 +37,7 @@
       "type": "string"
     },
     "type": {
-      "description": "The type of the Order. Always set to \"TRAILING_STOP_LOSS\" for Trailing Stop Loss Orders.",
+      "description": "The type of the Order.",
       "type": "string",
       "enum": [
         "MARKET",

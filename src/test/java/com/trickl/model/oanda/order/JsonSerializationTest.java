@@ -34,9 +34,6 @@ public class JsonSerializationTest {
          .build(),
          MarketOrder.builder()
          .build(),
-         Order.builder()
-           .state(OrderState.FILLED)
-         .build(),
          OrderIdentifier.builder()
          .build(),
          StopLossOrder.builder()
