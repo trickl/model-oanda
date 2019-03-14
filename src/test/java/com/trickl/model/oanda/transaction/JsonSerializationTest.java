@@ -114,6 +114,10 @@ public class JsonSerializationTest {
          TransferFundsRejectTransaction.builder()
          .build(),
          TransferFundsTransaction.builder()
+         .build(),
+         TransactionIdRangeResponse.builder()
+         .build(),
+         TransactionDateRangeResponse.builder()
          .build()
      );
   }   

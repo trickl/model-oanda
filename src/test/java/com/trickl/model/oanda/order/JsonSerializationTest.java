@@ -55,7 +55,9 @@ public class JsonSerializationTest {
          UnitsAvailable.builder()
          .build(),
          UnitsAvailableDetails.builder()
-         .build()
+         .build(),
+         OrderRangeResponse.builder()
+         .build()                
      );
   }        
 }
