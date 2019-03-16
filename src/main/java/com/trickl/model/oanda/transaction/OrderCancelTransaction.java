@@ -25,6 +25,11 @@ import lombok.Data;
 @Data
 @Builder
 public class OrderCancelTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.ORDER_CANCEL;
   
   /** The ID of the Order cancelled. */
   @JsonProperty("orderID")

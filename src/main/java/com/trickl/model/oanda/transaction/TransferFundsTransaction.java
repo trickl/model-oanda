@@ -23,7 +23,13 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class TransferFundsTransaction extends Transaction {  
+public class TransferFundsTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.TRANSFER_FUNDS;
+  
   /**
    * The amount to deposit/withdraw from the Account in the Account's home currency. A positive
    * value indicates a deposit, a negative value indicates a withdrawal.

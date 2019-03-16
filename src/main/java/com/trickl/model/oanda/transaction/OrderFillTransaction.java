@@ -42,7 +42,12 @@ import lombok.Data;
 @Data
 @Builder
 public class OrderFillTransaction extends Transaction {
-    
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.ORDER_FILL;
+  
   /** The ID of the Order filled. */
   @JsonProperty("orderID")
   @JsonPropertyDescription("The ID of the Order filled.")

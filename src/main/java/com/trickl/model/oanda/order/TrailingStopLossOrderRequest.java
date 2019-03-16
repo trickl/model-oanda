@@ -25,8 +25,11 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class TrailingStopLossOrderRequest extends OrderRequest {
+public class TrailingStopLossOrderRequest implements OrderRequest {
 
+  @JsonPropertyDescription("The type of the Order to create.")
+  private final OrderRequestType type = OrderRequestType.TRAILING_STOP_LOSS;  
+    
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")
   @JsonPropertyDescription("The ID of the Trade to close when the price threshold "

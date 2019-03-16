@@ -23,7 +23,13 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class MarginCallExtendTransaction extends Transaction {  
+public class MarginCallExtendTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.MARGIN_CALL_EXTEND; 
+  
   /**
    * The number of the extensions to the Account's current margin call that have been applied. This
    * value will be set to 1 for the first MarginCallExtend Transaction

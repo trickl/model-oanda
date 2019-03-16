@@ -30,7 +30,11 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class LimitOrderRequest extends OrderRequest {
+public class LimitOrderRequest implements OrderRequest {
+      
+  /** The type of the Order. */
+  @JsonPropertyDescription("The type of the Order to create.")
+  private final OrderRequestType type = OrderRequestType.LIMIT;
   
   /** The Limit Order's Instrument. */  
   @JsonPropertyDescription("The Limit Order's Instrument.")

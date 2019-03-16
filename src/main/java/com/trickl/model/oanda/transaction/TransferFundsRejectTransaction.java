@@ -27,6 +27,11 @@ import lombok.Data;
 @Data
 @Builder
 public class TransferFundsRejectTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.TRANSFER_FUNDS_REJECT;
   
   /**
    * The amount to deposit/withdraw from the Account in the Account's home currency. A positive

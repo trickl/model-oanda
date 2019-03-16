@@ -28,7 +28,12 @@ import lombok.Data;
 @Data
 @Builder
 public class DelayedTradeClosureTransaction extends Transaction {
-
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.DELAYED_TRADE_CLOSURE;  
+    
   /** The reason for the delayed trade closure. */
   @JsonPropertyDescription("The reason for the delayed trade closure")
   private DelayedTradeClosureReason reason;

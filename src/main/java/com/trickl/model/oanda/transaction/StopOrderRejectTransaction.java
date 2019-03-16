@@ -39,6 +39,11 @@ import lombok.Data;
 @Data
 @Builder
 public class StopOrderRejectTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.STOP_ORDER_REJECT;
   
   /** The Stop Order's Instrument. */
   @JsonPropertyDescription("The Stop Order's Instrument.")

@@ -52,10 +52,4 @@ public abstract class Transaction {
   @JsonProperty("requestID")
   @JsonPropertyDescription("The Request ID of the request which generated the transaction.")
   private String requestId;
-  
-  /**
-   * The Type of the Transaction.
-   */
-  @JsonPropertyDescription("The Type of the Transaction.")
-  private TransactionType type;
 }

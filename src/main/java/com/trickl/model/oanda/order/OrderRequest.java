@@ -1,7 +1,6 @@
 package com.trickl.model.oanda.order;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
 import lombok.Data;
@@ -16,10 +15,5 @@ import lombok.Data;
     property = "type"
 )
 @JsonTypeIdResolver(OrderRequestTypeIdResolver.class)
-@Data
-public abstract class OrderRequest {
-
-  /** The type of the Order. */
-  @JsonPropertyDescription("The type of the Order to create.")
-  private OrderRequestType type;
+public interface OrderRequest {
 }

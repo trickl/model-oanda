@@ -1,5 +1,6 @@
 package com.trickl.model.oanda.transaction;
 
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,4 +8,9 @@ import lombok.Data;
 @Data
 @Builder
 public class MarginCallEnterTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.MARGIN_CALL_ENTER; 
 }

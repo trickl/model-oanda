@@ -33,7 +33,10 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class MarketIfTouchedOrderRequest extends OrderRequest {
+public class MarketIfTouchedOrderRequest implements OrderRequest {
+    
+  @JsonPropertyDescription("The type of the Order to create.")
+  private final OrderRequestType type = OrderRequestType.MARKET_IF_TOUCHED;
 
   /** The MarketIfTouched Order's Instrument. */
   @JsonPropertyDescription("The MarketIfTouched Order's Instrument.")

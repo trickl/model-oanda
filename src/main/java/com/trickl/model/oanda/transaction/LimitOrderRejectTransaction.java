@@ -38,6 +38,11 @@ import lombok.Data;
 @Data
 @Builder
 public class LimitOrderRejectTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.LIMIT_ORDER_REJECT; 
   
   /** The Limit Order's Instrument. */
   @JsonPropertyDescription("The Limit Order's Instrument.")

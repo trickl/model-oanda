@@ -29,6 +29,11 @@ import lombok.Data;
 @Data
 @Builder
 public class OrderClientExtensionsModifyRejectTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT;
   
   /** The ID of the Order who's client extensions are to be modified. */
   @JsonProperty("orderID")

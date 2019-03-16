@@ -26,6 +26,12 @@ import lombok.Data;
 @Data
 @Builder
 public class CreateTransaction extends Transaction {
+  /**
+   * The Type of the Transaction.
+   */
+  @JsonPropertyDescription("The Type of the Transaction.")
+  private final TransactionType type = TransactionType.CREATE;  
+    
   /** The ID of the Division that the Account is in. */
   @JsonProperty("divisionID")
   @JsonPropertyDescription("The ID of the Division that the Account is in")

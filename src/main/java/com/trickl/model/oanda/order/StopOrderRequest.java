@@ -31,7 +31,10 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopOrderRequest extends OrderRequest {
+public class StopOrderRequest implements OrderRequest {
+    
+  @JsonPropertyDescription("The type of the Order to create.")
+  private final OrderRequestType type = OrderRequestType.STOP;
   
   /** The Stop Order's Instrument. */
   @JsonPropertyDescription("The Stop Order's Instrument.")
