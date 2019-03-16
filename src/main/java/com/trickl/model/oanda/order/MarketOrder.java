@@ -52,6 +52,10 @@ import lombok.Data;
 @Data
 @Builder
 public class MarketOrder extends Order {
+      
+  /** The type of the Order. */
+  @JsonPropertyDescription("The type of the Order.")
+  private final OrderType type = OrderType.MARKET;
 
   /** The Market Order's Instrument. */
   @JsonPropertyDescription("The Market Order's Instrument.")

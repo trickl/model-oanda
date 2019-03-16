@@ -43,6 +43,10 @@ import lombok.Data;
 @Builder
 @Data
 public class StopLossOrder extends Order {
+    
+  /** The type of the Order. */
+  @JsonPropertyDescription("The type of the Order.")
+  private final OrderType type = OrderType.STOP_LOSS;
  
   /**
    * The premium that will be charged if the Stop Loss Order is guaranteed and the Order is filled

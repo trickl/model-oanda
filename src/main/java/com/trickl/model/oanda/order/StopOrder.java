@@ -48,6 +48,10 @@ import lombok.Data;
 @Data
 @Builder
 public class StopOrder extends Order {
+    
+  /** The type of the Order. */
+  @JsonPropertyDescription("The type of the Order.")
+  private final OrderType type = OrderType.STOP;
  
   /** The Stop Order's Instrument. */
   @JsonPropertyDescription("The Stop Order's Instrument.")

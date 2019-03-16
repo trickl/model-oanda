@@ -367,20 +367,6 @@
               "CANCELLED"
             ]
           },
-          "type": {
-            "description": "The type of the Order.",
-            "type": "string",
-            "enum": [
-              "MARKET",
-              "LIMIT",
-              "STOP",
-              "MARKET_IF_TOUCHED",
-              "TAKE_PROFIT",
-              "STOP_LOSS",
-              "TRAILING_STOP_LOSS",
-              "FIXED_PRICE"
-            ]
-          },
           "clientExtensions": {
             "type": "object",
             "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions"

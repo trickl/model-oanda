@@ -40,6 +40,10 @@ import lombok.Data;
 @Data
 @Builder
 public class FixedPriceOrder extends Order {
+    
+  /** The type of the Order. */
+  @JsonPropertyDescription("The type of the Order.")
+  private final OrderType type = OrderType.FIXED_PRICE;
 
   /** The Fixed Price Order's Instrument. */
   @JsonPropertyDescription("The Fixed Price Order's Instrument.")

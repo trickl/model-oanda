@@ -31,8 +31,4 @@ public abstract class Order {
   private OrderState state;
 
   private ClientExtensions clientExtensions;  
-  
-  /** The type of the Order. */
-  @JsonPropertyDescription("The type of the Order.")
-  private OrderType type;
 }
