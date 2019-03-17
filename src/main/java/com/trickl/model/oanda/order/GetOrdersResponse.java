@@ -1,4 +1,4 @@
-package com.trickl.model.oanda.transaction;
+package com.trickl.model.oanda.order;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,18 +8,18 @@ import java.util.List;
 import lombok.Builder;
 import lombok.Data;
 
-/** The response from the /v3/accounts/{accountId}/transactions/idrange edpoint. */
+/** The response from the /v3/accounts/{accountId}/orders endpoint. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "transactions",
+    "orders",
     "lastTransactionID",
 })
 @Data
 @Builder
-public class TransactionIdRangeResponse {
-  /* The list of Transactions that satisfy the request. */
-  @JsonPropertyDescription("The list of Transactions that satisfy the request.")
-  private List<Transaction> transactions;
+public class GetOrdersResponse {
+  /* The list of Orders that satisfy the request. */
+  @JsonPropertyDescription("The list of Orders that satisfy the request.")
+  private List<Order> orders;
 
   /* The ID of the most recent Transaction created for the Account. */
   @JsonProperty("lastTransactionID")

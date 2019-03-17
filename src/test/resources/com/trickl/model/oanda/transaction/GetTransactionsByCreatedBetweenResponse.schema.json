@@ -1,5 +1,5 @@
 {
-  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TransactionDateRangeResponse",
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:GetTransactionsByCreatedBetweenResponse",
   "type": "object",
   "properties": {
     "pages": {

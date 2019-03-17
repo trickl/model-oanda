@@ -1,7 +1,6 @@
 package com.trickl.model.oanda.position;
 
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
-import com.trickl.model.oanda.order.Order;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -24,7 +23,11 @@ public class JsonSerializationTest {
          Position.builder()
          .build(),
          PositionSide.builder()
-         .build()     
+         .build(),
+         GetPositionsResponse.builder()
+         .build(),
+         GetPositionResponse.builder()
+         .build()
      );
   }   
 }

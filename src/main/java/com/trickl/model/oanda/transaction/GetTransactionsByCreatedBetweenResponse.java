@@ -13,7 +13,7 @@ import lombok.Data;
 @JsonPropertyOrder({"from", "to", "pageSize", "type", "count", "pages", "lastTransactionID"})
 @Data
 @Builder
-public class TransactionDateRangeResponse {
+public class GetTransactionsByCreatedBetweenResponse {
   /* The starting time provided in the request. */
   @JsonPropertyDescription("The starting time provided in the request.")
   private String from;

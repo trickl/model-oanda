@@ -115,9 +115,9 @@ public class JsonSerializationTest {
          .build(),
          TransferFundsTransaction.builder()
          .build(),
-         TransactionIdRangeResponse.builder()
+         GetTransactionsByIdsBetweenRespose.builder()
          .build(),
-         TransactionDateRangeResponse.builder()
+         GetTransactionsByCreatedBetweenResponse.builder()
          .build()
      );
   }   

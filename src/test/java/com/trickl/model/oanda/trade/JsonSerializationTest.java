@@ -1,7 +1,6 @@
 package com.trickl.model.oanda.trade;
 
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
-import com.trickl.model.oanda.order.Order;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -24,6 +23,8 @@ public class JsonSerializationTest {
          Trade.builder()
          .build(),
          TradeSummary.builder()
+         .build(),
+         GetTradesResponse.builder()
          .build()
      );
   }   

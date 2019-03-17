@@ -1,5 +1,5 @@
 {
-  "id": "urn:jsonschema:com:trickl:model:oanda:order:OrderRangeResponse",
+  "id": "urn:jsonschema:com:trickl:model:oanda:order:GetOrdersResponse",
   "type": "object",
   "properties": {
     "lastTransactionID": {
