@@ -21,7 +21,7 @@ public class GetAccountsResponse {
    * and their associated properties. */
   @JsonPropertyDescription("The list of Accounts the client is authorized to access "
           + "and their associated properties.")
-  private List<Account> accounts;
+  private List<AccountProperties> accounts;
 
   /* The ID of the most recent Transaction created for the Account. */
   @JsonProperty("lastTransactionID")
