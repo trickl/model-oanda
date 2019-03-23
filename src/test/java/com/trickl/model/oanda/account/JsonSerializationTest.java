@@ -55,6 +55,10 @@ public class JsonSerializationTest {
        AccountSummary.builder()
        .build(),
        CalculatedAccountState.builder()
+       .build(),
+       GetAccountsResponse.builder()
+       .build(),
+       GetAccountResponse.builder()
        .build()
      );
   }
