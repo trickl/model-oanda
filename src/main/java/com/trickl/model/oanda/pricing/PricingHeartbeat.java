@@ -1,8 +1,10 @@
 package com.trickl.model.oanda.pricing;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.time.Instant;
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,16 +13,11 @@ import lombok.Data;
  * remains active.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"type", "time"})
+@JsonPropertyOrder({"time"})
 @Data
 @Builder
 public class PricingHeartbeat {
-
-  /** The string "HEARTBEAT". */
-  @JsonPropertyDescription("The string \"HEARTBEAT\"")
-  private String type;
- 
   /** The date/time when the Heartbeat was created. */
-  @JsonPropertyDescription("The date/time when the Heartbeat was created.")
-  private String time;
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnXXX", timezone = "UTC")
+  private Instant time;
 }

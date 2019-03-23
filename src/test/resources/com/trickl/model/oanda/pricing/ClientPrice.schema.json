@@ -77,7 +77,7 @@
         "properties": {
           "price": {
             "description": "The Price offered by the PriceBucket",
-            "type": "string"
+            "type": "number"
           },
           "liquidity": {
             "description": "The amount of liquidity offered by the PriceBucket",

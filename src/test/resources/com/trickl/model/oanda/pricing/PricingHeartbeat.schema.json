@@ -3,11 +3,7 @@
   "type": "object",
   "properties": {
     "time": {
-      "description": "The date\/time when the Heartbeat was created.",
-      "type": "string"
-    },
-    "type": {
-      "description": "The string \"HEARTBEAT\"",
+      "format": "date-time",
       "type": "string"
     }
   }
