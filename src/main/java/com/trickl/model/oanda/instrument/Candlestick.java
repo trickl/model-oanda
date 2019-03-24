@@ -18,11 +18,11 @@ public class Candlestick {
   @JsonPropertyDescription("The start time of the candlestick")
   private String time;
 
-  private List<CandlestickData> bid;
+  private CandlestickData bid;
 
-  private List<CandlestickData> ask;
+  private CandlestickData ask;
 
-  private List<CandlestickData> mid;
+  private CandlestickData mid;
 
   /** The number of prices created during the time-range represented by the candlestick. */
   @JsonPropertyDescription(

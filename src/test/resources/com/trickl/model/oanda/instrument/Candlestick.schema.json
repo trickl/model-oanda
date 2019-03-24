@@ -7,45 +7,36 @@
       "type": "integer"
     },
     "ask": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
-      }
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
     },
     "mid": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
-      }
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
     },
     "time": {
       "description": "The start time of the candlestick",
       "type": "string"
     },
     "bid": {
-      "type": "array",
-      "items": {
-        "id": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData",
-        "type": "object",
-        "properties": {
-          "c": {
-            "description": "The last (closing) price in the time-range represented by the candlestick.",
-            "type": "string"
-          },
-          "h": {
-            "description": "The highest price in the time-range represented by the candlestick.",
-            "type": "string"
-          },
-          "l": {
-            "description": "The lowest price in the time-range represented by the candlestick.",
-            "type": "string"
-          },
-          "o": {
-            "description": "The first (open) price in the time-range represented by the candlestick.",
-            "type": "string"
-          }
+      "id": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData",
+      "type": "object",
+      "properties": {
+        "c": {
+          "description": "The last (closing) price in the time-range represented by the candlestick.",
+          "type": "string"
+        },
+        "h": {
+          "description": "The highest price in the time-range represented by the candlestick.",
+          "type": "string"
+        },
+        "l": {
+          "description": "The lowest price in the time-range represented by the candlestick.",
+          "type": "string"
+        },
+        "o": {
+          "description": "The first (open) price in the time-range represented by the candlestick.",
+          "type": "string"
         }
       }
     },
