@@ -4,19 +4,19 @@
   "properties": {
     "c": {
       "description": "The last (closing) price in the time-range represented by the candlestick.",
-      "type": "string"
+      "type": "number"
     },
     "h": {
       "description": "The highest price in the time-range represented by the candlestick.",
-      "type": "string"
+      "type": "number"
     },
     "l": {
       "description": "The lowest price in the time-range represented by the candlestick.",
-      "type": "string"
+      "type": "number"
     },
     "o": {
       "description": "The first (open) price in the time-range represented by the candlestick.",
-      "type": "string"
+      "type": "number"
     }
   }
 }

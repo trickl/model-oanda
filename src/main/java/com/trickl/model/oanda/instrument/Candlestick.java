@@ -1,9 +1,10 @@
 package com.trickl.model.oanda.instrument;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import java.util.List;
+import java.time.Instant;
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,7 +17,8 @@ public class Candlestick {
 
   /** The start time of the candlestick. */
   @JsonPropertyDescription("The start time of the candlestick")
-  private String time;
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnXXX", timezone = "UTC")
+  private Instant time;
 
   private CandlestickData bid;
 
@@ -27,7 +29,7 @@ public class Candlestick {
   /** The number of prices created during the time-range represented by the candlestick. */
   @JsonPropertyDescription(
       "The number of prices created during the time-range represented by the candlestick.")
-  private Integer volume;
+  private long volume;
 
   /**
    * A flag indicating if the candlestick is complete. A complete candlestick is one whose ending
