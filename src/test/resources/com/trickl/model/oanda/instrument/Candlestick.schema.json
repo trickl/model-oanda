@@ -15,17 +15,9 @@
       "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
     },
     "time": {
+      "format": "date-time",
       "description": "The start time of the candlestick",
-      "id": "urn:jsonschema:java:time:Instant",
-      "type": "object",
-      "properties": {
-        "nano": {
-          "type": "integer"
-        },
-        "epochSecond": {
-          "type": "integer"
-        }
-      }
+      "type": "string"
     },
     "bid": {
       "id": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData",

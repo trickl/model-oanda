@@ -1,0 +1,87 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:instrument:GetCandlesResponse",
+  "type": "object",
+  "properties": {
+    "granularity": {
+      "type": "string",
+      "enum": [
+        "S5",
+        "S10",
+        "S15",
+        "S30",
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M10",
+        "M15",
+        "M30",
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H6",
+        "H8",
+        "H12",
+        "D",
+        "W",
+        "M"
+      ]
+    },
+    "candles": {
+      "type": "array",
+      "items": {
+        "id": "urn:jsonschema:com:trickl:model:oanda:instrument:Candlestick",
+        "type": "object",
+        "properties": {
+          "volume": {
+            "description": "The number of prices created during the time-range represented by the candlestick.",
+            "type": "integer"
+          },
+          "ask": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
+          },
+          "mid": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData"
+          },
+          "time": {
+            "format": "date-time",
+            "description": "The start time of the candlestick",
+            "type": "string"
+          },
+          "bid": {
+            "id": "urn:jsonschema:com:trickl:model:oanda:instrument:CandlestickData",
+            "type": "object",
+            "properties": {
+              "c": {
+                "description": "The last (closing) price in the time-range represented by the candlestick.",
+                "type": "number"
+              },
+              "h": {
+                "description": "The highest price in the time-range represented by the candlestick.",
+                "type": "number"
+              },
+              "l": {
+                "description": "The lowest price in the time-range represented by the candlestick.",
+                "type": "number"
+              },
+              "o": {
+                "description": "The first (open) price in the time-range represented by the candlestick.",
+                "type": "number"
+              }
+            }
+          },
+          "complete": {
+            "description": "A flag indicating if the candlestick is complete. A complete candlestick is one whose ending time is not in the future.",
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "instrument": {
+      "type": "string"
+    }
+  }
+}
