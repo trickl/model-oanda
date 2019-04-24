@@ -4,15 +4,15 @@
   "properties": {
     "shortCountPercent": {
       "description": "The percentage of the total number of orders represented by the short orders found in this bucket.",
-      "type": "string"
+      "type": "number"
     },
     "price": {
       "description": "The lowest price (inclusive) covered by the bucket. The bucket covers the price range from the price to price + the order book's bucketWidth.",
-      "type": "string"
+      "type": "number"
     },
     "longCountPercent": {
       "description": "The percentage of the total number of orders represented by the long orders found in this bucket.",
-      "type": "string"
+      "type": "number"
     }
   }
 }

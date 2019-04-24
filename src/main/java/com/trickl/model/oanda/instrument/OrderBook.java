@@ -1,9 +1,12 @@
 package com.trickl.model.oanda.instrument;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -21,13 +24,14 @@ public class OrderBook {
 
   /** The time when the order book snapshot was created. */
   @JsonPropertyDescription("The time when the order book snapshot was created.")
-  private String time;
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
+  private Instant time;
 
   /** The price (midpoint) for the order book's instrument at the time of the 
    * order book snapshot. */
   @JsonPropertyDescription(
       "The price (midpoint) for the order book's instrument at the time of the order book snapshot")
-  private String price;
+  private BigDecimal price;
 
   /**
    * The price width for each bucket. Each bucket covers the price range from the bucket's price to

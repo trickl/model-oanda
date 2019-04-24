@@ -3,6 +3,7 @@ package com.trickl.model.oanda.instrument;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -20,7 +21,7 @@ public class OrderBookBucket {
   @JsonPropertyDescription(
       "The lowest price (inclusive) covered by the bucket. The bucket covers"
           + " the price range from the price to price + the order book's bucketWidth.")
-  private String price;
+  private BigDecimal price;
 
   /**
    * The percentage of the total number of orders represented by the long orders found in this
@@ -29,7 +30,7 @@ public class OrderBookBucket {
   @JsonPropertyDescription(
       "The percentage of the total number of orders represented by the long "
           + "orders found in this bucket.")
-  private String longCountPercent;
+  private BigDecimal longCountPercent;
 
   /**
    * The percentage of the total number of orders represented by the short orders found in this
@@ -38,5 +39,5 @@ public class OrderBookBucket {
   @JsonPropertyDescription(
       "The percentage of the total number of orders represented by the short "
           + "orders found in this bucket.")
-  private String shortCountPercent;
+  private BigDecimal shortCountPercent;
 }
