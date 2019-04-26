@@ -1,9 +1,11 @@
 package com.trickl.model.oanda.transaction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.time.Instant;
 import lombok.Builder;
 import lombok.Data;
 
@@ -28,5 +30,6 @@ public class TransactionHeartbeat {
 
   /** The date/time when the TransactionHeartbeat was created. */
   @JsonPropertyDescription("The date/time when the TransactionHeartbeat was created.")
-  private String time;
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnXXX", timezone = "UTC")
+  private Instant time;
 }
