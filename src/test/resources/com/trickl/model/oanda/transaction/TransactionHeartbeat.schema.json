@@ -7,6 +7,7 @@
       "type": "string"
     },
     "time": {
+      "format": "date-time",
       "description": "The date\/time when the TransactionHeartbeat was created.",
       "type": "string"
     },
