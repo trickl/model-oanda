@@ -28,7 +28,7 @@ public abstract class Transaction {
   
   /** The date/time when the Transaction was created. */  
   @JsonPropertyDescription("The date/time when the Transaction was created.")
-  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
   private Instant time;
   
   /** The ID of the user that initiated the creation of the Transaction. */
