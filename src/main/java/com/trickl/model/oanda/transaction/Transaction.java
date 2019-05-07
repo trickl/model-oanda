@@ -1,10 +1,12 @@
 package com.trickl.model.oanda.transaction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
+import java.time.Instant;
 import lombok.Data;
 
 /**
@@ -26,7 +28,8 @@ public abstract class Transaction {
   
   /** The date/time when the Transaction was created. */  
   @JsonPropertyDescription("The date/time when the Transaction was created.")
-  private String time;
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX", timezone = "UTC")
+  private Instant time;
   
   /** The ID of the user that initiated the creation of the Transaction. */
   @JsonProperty("userID")

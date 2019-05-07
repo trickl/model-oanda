@@ -299,7 +299,16 @@
               },
               "time": {
                 "description": "The date\/time when the Transaction was created.",
-                "type": "string"
+                "id": "urn:jsonschema:java:time:Instant",
+                "type": "object",
+                "properties": {
+                  "nano": {
+                    "type": "integer"
+                  },
+                  "epochSecond": {
+                    "type": "integer"
+                  }
+                }
               },
               "batchID": {
                 "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
