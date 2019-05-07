@@ -1,0 +1,552 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:order:CreateOrderResponse",
+  "type": "object",
+  "properties": {
+    "orderCreateTransaction": {
+      "description": "The list of Orders that satisfy the request.",
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:Transaction",
+      "type": "object",
+      "properties": {
+        "accountID": {
+          "description": "The ID of the Account the Transaction was created for.",
+          "type": "string"
+        },
+        "requestID": {
+          "description": "The Request ID of the request which generated the transaction.",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Transaction's Identifier.",
+          "type": "string"
+        },
+        "time": {
+          "description": "The date\/time when the Transaction was created.",
+          "id": "urn:jsonschema:java:time:Instant",
+          "type": "object",
+          "properties": {
+            "nano": {
+              "type": "integer"
+            },
+            "epochSecond": {
+              "type": "integer"
+            }
+          }
+        },
+        "batchID": {
+          "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
+          "type": "string"
+        },
+        "userID": {
+          "description": "The ID of the user that initiated the creation of the Transaction.",
+          "type": "integer"
+        }
+      }
+    },
+    "orderCancelTransaction": {
+      "description": "The Transaction that cancelled the newly created Order. Only provided\n * when the Order was immediately cancelled. ",
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:OrderCancelTransaction",
+      "type": "object",
+      "properties": {
+        "accountID": {
+          "description": "The ID of the Account the Transaction was created for.",
+          "type": "string"
+        },
+        "reason": {
+          "description": "The reason that the Order was cancelled.",
+          "type": "string",
+          "enum": [
+            "INTERNAL_SERVER_ERROR",
+            "ACCOUNT_LOCKED",
+            "ACCOUNT_NEW_POSITIONS_LOCKED",
+            "ACCOUNT_ORDER_CREATION_LOCKED",
+            "ACCOUNT_ORDER_FILL_LOCKED",
+            "CLIENT_REQUEST",
+            "MIGRATION",
+            "MARKET_HALTED",
+            "LINKED_TRADE_CLOSED",
+            "TIME_IN_FORCE_EXPIRED",
+            "INSUFFICIENT_MARGIN",
+            "FIFO_VIOLATION",
+            "BOUNDS_VIOLATION",
+            "CLIENT_REQUEST_REPLACED",
+            "INSUFFICIENT_LIQUIDITY",
+            "TAKE_PROFIT_ON_FILL_GTD_TIMESTAMP_IN_PAST",
+            "TAKE_PROFIT_ON_FILL_LOSS",
+            "LOSING_TAKE_PROFIT",
+            "STOP_LOSS_ON_FILL_GTD_TIMESTAMP_IN_PAST",
+            "STOP_LOSS_ON_FILL_LOSS",
+            "STOP_LOSS_ON_FILL_PRICE_DISTANCE_MAXIMUM_EXCEEDED",
+            "STOP_LOSS_ON_FILL_REQUIRED",
+            "STOP_LOSS_ON_FILL_GUARANTEED_REQUIRED",
+            "STOP_LOSS_ON_FILL_GUARANTEED_NOT_ALLOWED",
+            "STOP_LOSS_ON_FILL_GUARANTEED_MINIMUM_DISTANCE_NOT_MET",
+            "STOP_LOSS_ON_FILL_GUARANTEED_LEVEL_RESTRICTION_EXCEEDED",
+            "STOP_LOSS_ON_FILL_GUARANTEED_HEDGING_NOT_ALLOWED",
+            "STOP_LOSS_ON_FILL_TIME_IN_FORCE_INVALID",
+            "STOP_LOSS_ON_FILL_TRIGGER_CONDITION_INVALID",
+            "TAKE_PROFIT_ON_FILL_PRICE_DISTANCE_MAXIMUM_EXCEEDED",
+            "TRAILING_STOP_LOSS_ON_FILL_GTD_TIMESTAMP_IN_PAST",
+            "CLIENT_TRADE_ID_ALREADY_EXISTS",
+            "POSITION_CLOSEOUT_FAILED",
+            "OPEN_TRADES_ALLOWED_EXCEEDED",
+            "PENDING_ORDERS_ALLOWED_EXCEEDED",
+            "TAKE_PROFIT_ON_FILL_CLIENT_ORDER_ID_ALREADY_EXISTS",
+            "STOP_LOSS_ON_FILL_CLIENT_ORDER_ID_ALREADY_EXISTS",
+            "TRAILING_STOP_LOSS_ON_FILL_CLIENT_ORDER_ID_ALREADY_EXISTS",
+            "POSITION_SIZE_EXCEEDED",
+            "HEDGING_GSLO_VIOLATION",
+            "ACCOUNT_POSITION_VALUE_LIMIT_EXCEEDED",
+            "INSTRUMENT_BID_REDUCE_ONLY",
+            "INSTRUMENT_ASK_REDUCE_ONLY",
+            "INSTRUMENT_BID_HALTED",
+            "INSTRUMENT_ASK_HALTED",
+            "STOP_LOSS_ON_FILL_GUARANTEED_BID_HALTED",
+            "STOP_LOSS_ON_FILL_GUARANTEED_ASK_HALTED"
+          ]
+        },
+        "orderID": {
+          "description": "The ID of the Order cancelled",
+          "type": "string"
+        },
+        "requestID": {
+          "description": "The Request ID of the request which generated the transaction.",
+          "type": "string"
+        },
+        "clientOrderID": {
+          "description": "The client ID of the Order cancelled (only provided if the Order has a client Order ID).",
+          "type": "string"
+        },
+        "id": {
+          "description": "The Transaction's Identifier.",
+          "type": "string"
+        },
+        "time": {
+          "description": "The date\/time when the Transaction was created.",
+          "type": "object",
+          "$ref": "urn:jsonschema:java:time:Instant"
+        },
+        "batchID": {
+          "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
+          "type": "string"
+        },
+        "type": {
+          "description": "The Type of the Transaction.",
+          "type": "string",
+          "enum": [
+            "CREATE",
+            "CLOSE",
+            "REOPEN",
+            "CLIENT_CONFIGURE",
+            "CLIENT_CONFIGURE_REJECT",
+            "TRANSFER_FUNDS",
+            "TRANSFER_FUNDS_REJECT",
+            "MARKET_ORDER",
+            "MARKET_ORDER_REJECT",
+            "FIXED_PRICE_ORDER",
+            "LIMIT_ORDER",
+            "LIMIT_ORDER_REJECT",
+            "STOP_ORDER",
+            "STOP_ORDER_REJECT",
+            "MARKET_IF_TOUCHED_ORDER",
+            "MARKET_IF_TOUCHED_ORDER_REJECT",
+            "TAKE_PROFIT_ORDER",
+            "TAKE_PROFIT_ORDER_REJECT",
+            "STOP_LOSS_ORDER",
+            "STOP_LOSS_ORDER_REJECT",
+            "TRAILING_STOP_LOSS_ORDER",
+            "TRAILING_STOP_LOSS_ORDER_REJECT",
+            "ORDER_FILL",
+            "ORDER_CANCEL",
+            "ORDER_CANCEL_REJECT",
+            "ORDER_CLIENT_EXTENSIONS_MODIFY",
+            "ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT",
+            "TRADE_CLIENT_EXTENSIONS_MODIFY",
+            "TRADE_CLIENT_EXTENSIONS_MODIFY_REJECT",
+            "MARGIN_CALL_ENTER",
+            "MARGIN_CALL_EXTEND",
+            "MARGIN_CALL_EXIT",
+            "DELAYED_TRADE_CLOSURE",
+            "DAILY_FINANCING",
+            "RESET_RESETTABLE_PL"
+          ]
+        },
+        "userID": {
+          "description": "The ID of the user that initiated the creation of the Transaction.",
+          "type": "integer"
+        },
+        "replacedByOrderID": {
+          "description": "The ID of the Order that replaced this Order (only provided if this Order was cancelled for replacement).",
+          "type": "string"
+        }
+      }
+    },
+    "lastTransactionID": {
+      "description": "The ID of the most recent Transaction created for the Account",
+      "type": "string"
+    },
+    "orderFillTransaction": {
+      "description": "The Transaction that filled the newly created Order. Only provided when\n * the Order was immediately filled.",
+      "id": "urn:jsonschema:com:trickl:model:oanda:transaction:OrderFillTransaction",
+      "type": "object",
+      "properties": {
+        "reason": {
+          "description": "The reason that an Order was filled",
+          "type": "string",
+          "enum": [
+            "LIMIT_ORDER",
+            "STOP_ORDER",
+            "MARKET_IF_TOUCHED_ORDER",
+            "TAKE_PROFIT_ORDER",
+            "STOP_LOSS_ORDER",
+            "TRAILING_STOP_LOSS_ORDER",
+            "MARKET_ORDER",
+            "MARKET_ORDER_TRADE_CLOSE",
+            "MARKET_ORDER_POSITION_CLOSEOUT",
+            "MARKET_ORDER_MARGIN_CLOSEOUT",
+            "MARKET_ORDER_DELAYED_TRADE_CLOSE"
+          ]
+        },
+        "clientOrderID": {
+          "description": "The client Order ID of the Order filled (only provided if the client has assigned one).",
+          "type": "string"
+        },
+        "fullVwap": {
+          "description": "The price that all of the units of the OrderFill should have been filled at, in the absence of guaranteed price execution. This factors in the Account's current ClientPrice, used liquidity and the units of the OrderFill only. If no Trades were closed with their price clamped for guaranteed stop loss enforcement, then this value will match the price fields of each Trade opened, closed, and reduced, and they will all be the exact same.",
+          "type": "string"
+        },
+        "guaranteedExecutionFee": {
+          "description": "The total guaranteed execution fees charged for all Trades opened, closed or reduced with guaranteed Stop Loss Orders.",
+          "type": "string"
+        },
+        "instrument": {
+          "description": "The name of the filled Order's instrument.",
+          "type": "string"
+        },
+        "units": {
+          "description": "The number of units filled by the OrderFill.",
+          "type": "string"
+        },
+        "type": {
+          "description": "The Type of the Transaction.",
+          "type": "string",
+          "enum": [
+            "CREATE",
+            "CLOSE",
+            "REOPEN",
+            "CLIENT_CONFIGURE",
+            "CLIENT_CONFIGURE_REJECT",
+            "TRANSFER_FUNDS",
+            "TRANSFER_FUNDS_REJECT",
+            "MARKET_ORDER",
+            "MARKET_ORDER_REJECT",
+            "FIXED_PRICE_ORDER",
+            "LIMIT_ORDER",
+            "LIMIT_ORDER_REJECT",
+            "STOP_ORDER",
+            "STOP_ORDER_REJECT",
+            "MARKET_IF_TOUCHED_ORDER",
+            "MARKET_IF_TOUCHED_ORDER_REJECT",
+            "TAKE_PROFIT_ORDER",
+            "TAKE_PROFIT_ORDER_REJECT",
+            "STOP_LOSS_ORDER",
+            "STOP_LOSS_ORDER_REJECT",
+            "TRAILING_STOP_LOSS_ORDER",
+            "TRAILING_STOP_LOSS_ORDER_REJECT",
+            "ORDER_FILL",
+            "ORDER_CANCEL",
+            "ORDER_CANCEL_REJECT",
+            "ORDER_CLIENT_EXTENSIONS_MODIFY",
+            "ORDER_CLIENT_EXTENSIONS_MODIFY_REJECT",
+            "TRADE_CLIENT_EXTENSIONS_MODIFY",
+            "TRADE_CLIENT_EXTENSIONS_MODIFY_REJECT",
+            "MARGIN_CALL_ENTER",
+            "MARGIN_CALL_EXTEND",
+            "MARGIN_CALL_EXIT",
+            "DELAYED_TRADE_CLOSURE",
+            "DAILY_FINANCING",
+            "RESET_RESETTABLE_PL"
+          ]
+        },
+        "fullPrice": {
+          "id": "urn:jsonschema:com:trickl:model:oanda:pricing:ClientPrice",
+          "type": "object",
+          "properties": {
+            "closeoutBid": {
+              "description": "The closeout bid Price. This Price is used when a bid is required to closeout a Position (margin closeout or manual) yet there is no bid liquidity. The closeout bid is never used to open a new position.",
+              "type": "string"
+            },
+            "unitsAvailable": {
+              "id": "urn:jsonschema:com:trickl:model:oanda:order:UnitsAvailable",
+              "type": "object",
+              "properties": {
+                "default": {
+                  "id": "urn:jsonschema:com:trickl:model:oanda:order:UnitsAvailableDetails",
+                  "type": "object",
+                  "properties": {
+                    "short": {
+                      "description": "The units available for short Orders.",
+                      "type": "string"
+                    },
+                    "long": {
+                      "description": "The units available for long Orders.",
+                      "type": "string"
+                    }
+                  }
+                },
+                "reduceOnly": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:trickl:model:oanda:order:UnitsAvailableDetails"
+                },
+                "reduceFirst": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:trickl:model:oanda:order:UnitsAvailableDetails"
+                },
+                "openOnly": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:trickl:model:oanda:order:UnitsAvailableDetails"
+                }
+              }
+            },
+            "closeoutAsk": {
+              "description": "The closeout ask Price. This Price is used when a ask is required to closeout a Position (margin closeout or manual) yet there is no ask liquidity. The closeout ask is never used to open a new position.",
+              "type": "string"
+            },
+            "quoteHomeConversionFactors": {
+              "id": "urn:jsonschema:com:trickl:model:oanda:pricing:QuoteHomeConversionFactors",
+              "type": "object",
+              "properties": {
+                "negativeUnits": {
+                  "description": "The factor used to convert a negative amount of the Price's Instrument's quote currency into a negative amount of the Account's home currency. Conversion is performed by multiplying the quote units by the conversion factor.",
+                  "type": "string"
+                },
+                "positiveUnits": {
+                  "description": "The factor used to convert a positive amount of the Price's Instrument's quote currency into a positive amount of the Account's home currency. Conversion is performed by multiplying the quote units by the conversion factor.",
+                  "type": "string"
+                }
+              }
+            },
+            "asks": {
+              "description": "The list of prices and liquidity available on the Instrument's ask side. It is possible for this list to be empty if there is no ask liquidity currently available for the Instrument in the Account.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:trickl:model:oanda:pricing:common:PriceBucket"
+              }
+            },
+            "tradeable": {
+              "description": "Flag indicating if the Price is tradeable or not",
+              "type": "boolean"
+            },
+            "bids": {
+              "description": "The list of prices and liquidity available on the Instrument's bid side. It is possible for this list to be empty if there is no bid liquidity currently available for the Instrument in the Account.",
+              "type": "array",
+              "items": {
+                "id": "urn:jsonschema:com:trickl:model:oanda:pricing:common:PriceBucket",
+                "type": "object",
+                "properties": {
+                  "price": {
+                    "description": "The Price offered by the PriceBucket",
+                    "type": "number"
+                  },
+                  "liquidity": {
+                    "description": "The amount of liquidity offered by the PriceBucket",
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "instrument": {
+              "description": "The Price's Instrument.",
+              "type": "string"
+            },
+            "time": {
+              "description": "The date\/time when the Price was created",
+              "type": "string"
+            },
+            "type": {
+              "description": "The string \"PRICE\". Used to identify the a Price object when found in a stream.",
+              "type": "string"
+            },
+            "status": {
+              "description": "The status of the Price.",
+              "type": "string",
+              "enum": [
+                "tradeable",
+                "non-tradeable",
+                "invalid"
+              ]
+            }
+          }
+        },
+        "userID": {
+          "description": "The ID of the user that initiated the creation of the Transaction.",
+          "type": "integer"
+        },
+        "accountID": {
+          "description": "The ID of the Account the Transaction was created for.",
+          "type": "string"
+        },
+        "price": {
+          "description": "This field is now deprecated and should no longer be used. The individual tradesClosed, tradeReduced and tradeOpened fields contain the exact\/official price each unit was filled at.",
+          "type": "string"
+        },
+        "financing": {
+          "description": "The financing paid or collected when the Order was filled.",
+          "type": "string"
+        },
+        "commission": {
+          "description": "The commission charged in the Account's home currency as a result of filling the Order. The commission is always represented as a positive quantity of the Account's home currency, however it reduces the balance in the Account.",
+          "type": "string"
+        },
+        "tradeOpened": {
+          "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TradeOpen",
+          "type": "object",
+          "properties": {
+            "halfSpreadCost": {
+              "description": "The half spread cost for the trade open. This can be a positive or negative value and is represented in the home currency of the Account.",
+              "type": "string"
+            },
+            "initialMarginRequired": {
+              "description": "The margin required at the time the Trade was created. Note, this is the 'pure' margin required, it is not the 'effective' margin used that factors in the trade risk if a GSLO is attached to the trade.",
+              "type": "string"
+            },
+            "price": {
+              "description": "The average price that the units were opened at.",
+              "type": "string"
+            },
+            "guaranteedExecutionFee": {
+              "description": "This is the fee charged for opening the trade if it has a guaranteed Stop Loss Order attached to it.",
+              "type": "string"
+            },
+            "units": {
+              "description": "The number of units opened by the Trade",
+              "type": "string"
+            },
+            "tradeID": {
+              "description": "The ID of the Trade that was opened",
+              "type": "string"
+            },
+            "clientExtensions": {
+              "id": "urn:jsonschema:com:trickl:model:oanda:transaction:ClientExtensions",
+              "type": "object",
+              "properties": {
+                "comment": {
+                  "description": "A comment associated with the Order\/Trade",
+                  "type": "string"
+                },
+                "id": {
+                  "description": "The Client ID of the Order\/Trade",
+                  "type": "string"
+                },
+                "tag": {
+                  "description": "A tag associated with the Order\/Trade",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "id": {
+          "description": "The Transaction's Identifier.",
+          "type": "string"
+        },
+        "gainQuoteHomeConversionFactor": {
+          "description": "This is the conversion factor in effect for the Account at the time of the OrderFill for converting any gains realized in Instrument quote units into units of the Account's home currency.",
+          "type": "string"
+        },
+        "lossQuoteHomeConversionFactor": {
+          "description": "This is the conversion factor in effect for the Account at the time of the OrderFill for converting any losses realized in Instrument quote units into units of the Account's home currency.",
+          "type": "string"
+        },
+        "halfSpreadCost": {
+          "description": "The half spread cost for the OrderFill, which is the sum of the halfSpreadCost values in the tradeOpened, tradesClosed and tradeReduced fields. This can be a positive or negative value and is represented in the home currency of the Account.",
+          "type": "string"
+        },
+        "orderID": {
+          "description": "The ID of the Order filled.",
+          "type": "string"
+        },
+        "batchID": {
+          "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
+          "type": "string"
+        },
+        "requestID": {
+          "description": "The Request ID of the request which generated the transaction.",
+          "type": "string"
+        },
+        "tradeReduced": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:TradeReduce"
+        },
+        "tradesClosed": {
+          "description": "The Trades that were closed when the Order was filled (only provided if filling the Order resulted in a closing open Trades).",
+          "type": "array",
+          "items": {
+            "id": "urn:jsonschema:com:trickl:model:oanda:transaction:TradeReduce",
+            "type": "object",
+            "properties": {
+              "realizedPL": {
+                "description": "The PL realized when reducing the Trade",
+                "type": "string"
+              },
+              "halfSpreadCost": {
+                "description": "The half spread cost for the trade reduce\/close. This can be a positive or negative value and is represented in the home currency of the Account.",
+                "type": "string"
+              },
+              "price": {
+                "description": "The average price that the units were closed at. This price may be clamped for guaranteed Stop Loss Orders.",
+                "type": "string"
+              },
+              "financing": {
+                "description": "The financing paid\/collected when reducing the Trade",
+                "type": "string"
+              },
+              "guaranteedExecutionFee": {
+                "description": "This is the fee that is charged for closing the Trade if it has a guaranteed Stop Loss Order attached to it.",
+                "type": "string"
+              },
+              "units": {
+                "description": "The number of units that the Trade was reduced by",
+                "type": "string"
+              },
+              "tradeID": {
+                "description": "The ID of the Trade that was reduced or closed",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "time": {
+          "description": "The date\/time when the Transaction was created.",
+          "type": "object",
+          "$ref": "urn:jsonschema:java:time:Instant"
+        },
+        "pl": {
+          "description": "The profit or loss incurred when the Order was filled.",
+          "type": "string"
+        },
+        "accountBalance": {
+          "description": "The Account's balance after the Order was filled.",
+          "type": "string"
+        }
+      }
+    },
+    "orderReissueTransaction": {
+      "description": "The Transaction that reissues the Order. Only provided when the Order is\n * configured to be reissued for its remaining units after a partial fill\n * and the reissue was successful. ",
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:Transaction"
+    },
+    "relatedTransactionIDs": {
+      "description": "The IDs of all Transactions that were created while satisfying the\n request.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "orderReissueRejectTransaction": {
+      "description": "The Transaction that rejects the reissue of the Order. Only provided when\n * the Order is configured to be reissued for its remaining units after a\n * partial fill and the reissue was rejected.",
+      "type": "object",
+      "$ref": "urn:jsonschema:com:trickl:model:oanda:transaction:Transaction"
+    }
+  }
+}
