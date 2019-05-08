@@ -3,6 +3,7 @@ package com.trickl.model.oanda.order;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.instrument.HasInstrument;
 import com.trickl.model.oanda.transaction.ClientExtensions;
 import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
@@ -27,7 +28,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class MarketOrderRequest implements OrderRequest {
+public class MarketOrderRequest implements OrderRequest, HasInstrument {
     
   @JsonPropertyDescription("The type of the Order to create.")
   private final OrderRequestType type = OrderRequestType.MARKET;

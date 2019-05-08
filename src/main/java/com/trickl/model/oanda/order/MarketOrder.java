@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.instrument.HasInstrument;
 import com.trickl.model.oanda.transaction.ClientExtensions;
 import com.trickl.model.oanda.transaction.MarketOrderDelayedTradeClose;
 import com.trickl.model.oanda.transaction.MarketOrderMarginCloseout;
@@ -51,7 +52,8 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class MarketOrder extends Order {
+public class MarketOrder extends Order 
+    implements HasInstrument {
       
   /** The type of the Order. */
   @JsonPropertyDescription("The type of the Order.")

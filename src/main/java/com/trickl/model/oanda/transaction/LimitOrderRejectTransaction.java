@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.instrument.HasInstrument;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
 import lombok.Builder;
@@ -37,7 +38,8 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class LimitOrderRejectTransaction extends Transaction {
+public class LimitOrderRejectTransaction extends Transaction
+    implements HasInstrument {
   /**
    * The Type of the Transaction.
    */

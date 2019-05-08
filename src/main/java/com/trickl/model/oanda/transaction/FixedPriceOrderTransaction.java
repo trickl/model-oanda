@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.trickl.model.oanda.instrument.HasInstrument;
 import lombok.Builder;
 import lombok.Data;
 
@@ -34,7 +35,8 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class FixedPriceOrderTransaction extends Transaction {
+public class FixedPriceOrderTransaction extends Transaction
+    implements HasInstrument {
   /**
    * The Type of the Transaction.
    */
