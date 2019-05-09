@@ -24,7 +24,7 @@ public abstract class Transaction {
 
   /** The Transaction's Identifier. */  
   @JsonPropertyDescription("The Transaction's Identifier.")
-  private String id;
+  private int id;
   
   /** The date/time when the Transaction was created. */  
   @JsonPropertyDescription("The date/time when the Transaction was created.")

@@ -261,7 +261,7 @@
     },
     "id": {
       "description": "The Transaction's Identifier.",
-      "type": "string"
+      "type": "integer"
     },
     "gainQuoteHomeConversionFactor": {
       "description": "This is the conversion factor in effect for the Account at the time of the OrderFill for converting any gains realized in Instrument quote units into units of the Account's home currency.",
