@@ -24,5 +24,5 @@ public class GetOrdersResponse {
   /* The ID of the most recent Transaction created for the Account. */
   @JsonProperty("lastTransactionID")
   @JsonPropertyDescription("The ID of the most recent Transaction created for the Account")
-  private String lastTransactionId;
+  private int lastTransactionId;
 }
