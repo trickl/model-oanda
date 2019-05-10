@@ -128,9 +128,11 @@ public class JsonSerializationTest {
          .build(),
          TransferFundsTransaction.builder()
          .build(),
-         GetTransactionsByIdsBetweenRespose.builder()
+         GetTransactionsByIdsBetweenResponse.builder()
          .build(),
          GetTransactionsByCreatedBetweenResponse.builder()
+         .build(),
+         GetTransactionResponse.builder()
          .build()
      );
   }   

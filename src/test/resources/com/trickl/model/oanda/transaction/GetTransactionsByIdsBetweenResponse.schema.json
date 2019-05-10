@@ -1,5 +1,5 @@
 {
-  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:GetTransactionsByIdsBetweenRespose",
+  "id": "urn:jsonschema:com:trickl:model:oanda:transaction:GetTransactionsByIdsBetweenResponse",
   "type": "object",
   "properties": {
     "lastTransactionID": {

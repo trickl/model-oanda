@@ -16,7 +16,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class GetTransactionsByIdsBetweenRespose {
+public class GetTransactionsByIdsBetweenResponse {
   /* The list of Transactions that satisfy the request. */
   @JsonPropertyDescription("The list of Transactions that satisfy the request.")
   private List<Transaction> transactions;
