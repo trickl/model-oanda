@@ -1,10 +1,12 @@
 package com.trickl.model.oanda.order;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
 import com.trickl.model.oanda.transaction.ClientExtensions;
+import java.time.Instant;
 import lombok.Data;
 
 /** The base Order definition specifies the properties that are common to all Orders. */
@@ -24,7 +26,8 @@ public abstract class Order {
 
   /** The time when the Order was created. */
   @JsonPropertyDescription("The time when the Order was created.")
-  private String createTime;
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
+  private Instant createTime;
 
   /** The current state of the Order. */
   @JsonPropertyDescription("The current state of the Order.")

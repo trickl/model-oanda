@@ -15,11 +15,11 @@
         "properties": {
           "initialMarginRequired": {
             "description": "The margin required at the time the Trade was created. Note, this is the 'pure' margin required, it is not the 'effective' margin used that factors in the trade risk if a GSLO is attached to the trade.",
-            "type": "string"
+            "type": "number"
           },
           "currentUnits": {
             "description": "The number of units currently open for the Trade. This value is reduced to 0.0 as the Trade is closed.",
-            "type": "string"
+            "type": "number"
           },
           "instrument": {
             "description": "The Trade's Instrument.",
@@ -27,11 +27,11 @@
           },
           "averageClosePrice": {
             "description": "The average closing price of the Trade. Only present if the Trade has been closed or reduced at least once.",
-            "type": "string"
+            "type": "number"
           },
           "initialUnits": {
             "description": "The initial size of the Trade. Negative values indicate a short Trade, and positive values indicate a long Trade.",
-            "type": "string"
+            "type": "number"
           },
           "takeProfitOrder": {
             "id": "urn:jsonschema:com:trickl:model:oanda:order:TakeProfitOrder",
@@ -87,7 +87,8 @@
               },
               "createTime": {
                 "description": "The time when the Order was created.",
-                "type": "string"
+                "type": "object",
+                "$ref": "urn:jsonschema:java:time:Instant"
               },
               "price": {
                 "description": "The price threshold specified for the TakeProfit Order. The associated Trade will be closed by a market price that is equal to or better than this threshold.",
@@ -172,34 +173,35 @@
           },
           "realizedPL": {
             "description": "The total profit\/loss realized on the closed portion of the Trade.",
-            "type": "string"
+            "type": "number"
           },
           "unrealizedPL": {
             "description": "The unrealized profit\/loss on the open portion of the Trade.",
-            "type": "string"
+            "type": "number"
           },
           "marginUsed": {
             "description": "Margin currently used by the Trade.",
-            "type": "string"
+            "type": "number"
           },
           "closingTransactionIDs": {
             "description": "The IDs of the Transactions that have closed portions of this Trade.",
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "integer"
             }
           },
           "price": {
             "description": "The execution price of the Trade.",
-            "type": "string"
+            "type": "number"
           },
           "financing": {
             "description": "The financing paid\/collected for this Trade.",
-            "type": "string"
+            "type": "number"
           },
           "closeTime": {
             "description": "The date\/time when the Trade was fully closed. Only provided for Trades whose state is CLOSED.",
-            "type": "string"
+            "type": "object",
+            "$ref": "urn:jsonschema:java:time:Instant"
           },
           "stopLossOrder": {
             "id": "urn:jsonschema:com:trickl:model:oanda:order:StopLossOrder",
@@ -267,7 +269,8 @@
               },
               "createTime": {
                 "description": "The time when the Order was created.",
-                "type": "string"
+                "type": "object",
+                "$ref": "urn:jsonschema:java:time:Instant"
               },
               "price": {
                 "description": "The price threshold specified for the Stop Loss Order. If the guaranteed flag is false, the associated Trade will be closed by a market price that is equal to or worse than this threshold. If the flag is true the associated Trade will be closed at this price.",
@@ -394,7 +397,8 @@
               },
               "createTime": {
                 "description": "The time when the Order was created.",
-                "type": "string"
+                "type": "object",
+                "$ref": "urn:jsonschema:java:time:Instant"
               },
               "cancelledTime": {
                 "description": "Date\/time when the Order was cancelled (only provided when the state of the Order is CANCELLED)",
@@ -470,7 +474,16 @@
           },
           "openTime": {
             "description": "The date\/time when the Trade was opened.",
-            "type": "string"
+            "id": "urn:jsonschema:java:time:Instant",
+            "type": "object",
+            "properties": {
+              "nano": {
+                "type": "integer"
+              },
+              "epochSecond": {
+                "type": "integer"
+              }
+            }
           }
         }
       }

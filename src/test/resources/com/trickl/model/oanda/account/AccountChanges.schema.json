@@ -11,7 +11,16 @@
         "properties": {
           "createTime": {
             "description": "The time when the Order was created.",
-            "type": "string"
+            "id": "urn:jsonschema:java:time:Instant",
+            "type": "object",
+            "properties": {
+              "nano": {
+                "type": "integer"
+              },
+              "epochSecond": {
+                "type": "integer"
+              }
+            }
           },
           "id": {
             "description": "The Order's identifier, unique within the Order's Account.",
@@ -290,16 +299,8 @@
           },
           "time": {
             "description": "The date\/time when the Transaction was created.",
-            "id": "urn:jsonschema:java:time:Instant",
             "type": "object",
-            "properties": {
-              "nano": {
-                "type": "integer"
-              },
-              "epochSecond": {
-                "type": "integer"
-              }
-            }
+            "$ref": "urn:jsonschema:java:time:Instant"
           },
           "batchID": {
             "description": "The ID of the \"batch\" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.",
