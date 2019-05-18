@@ -19,7 +19,7 @@
     },
     "price": {
       "description": "The price threshold specified for the Stop Loss Order. If the guaranteed flag is false, the associated Trade will be closed by a market price that is equal to or worse than this threshold. If the flag is true the associated Trade will be closed at this price.",
-      "type": "string"
+      "type": "number"
     },
     "gtdTime": {
       "description": "The date\/time when the StopLoss Order will be cancelled if its timeInForce is \"GTD\".",

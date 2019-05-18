@@ -9,6 +9,7 @@ import com.trickl.model.oanda.transaction.ClientExtensions;
 import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -31,7 +32,8 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class LimitOrderRequest implements OrderRequest, HasInstrument {
+public class LimitOrderRequest implements 
+    OrderRequest, HasInstrument, HasTimeInForce, HasUnits, HasPrice {
       
   /** The type of the Order. */
   @JsonPropertyDescription("The type of the Order to create.")
@@ -49,7 +51,7 @@ public class LimitOrderRequest implements OrderRequest, HasInstrument {
       "The quantity requested to be filled by the Limit Order. A posititive number"
               + " of units results in a long Order, and a negative number of units "
               + "results in a short Order.")
-  private String units;
+  private BigDecimal units;
   
   /**
    * The price threshold specified for the Limit Order. The Limit Order will only be filled by a
@@ -58,7 +60,7 @@ public class LimitOrderRequest implements OrderRequest, HasInstrument {
   @JsonPropertyDescription(
       "The price threshold specified for the Limit Order. The Limit Order will only"
               + " be filled by a market price that is equal to or better than this price.")
-  private String price;
+  private BigDecimal price;
   
   /** The time-in-force requested for the Limit Order. */ 
   @JsonPropertyDescription("The time-in-force requested for the Limit Order.")

@@ -89,7 +89,7 @@
     },
     "units": {
       "description": "The quantity requested to be filled by the MarketIfTouched Order. A positive number of units results in a long Order, and a negative number of units results in a short Order.",
-      "type": "string"
+      "type": "number"
     },
     "type": {
       "description": "The type of the Order to create.",
@@ -134,7 +134,7 @@
     },
     "price": {
       "description": "The price threshold specified for the MarketIfTouched Order. The MarketIfTouched Order will only be filled by a market price that crosses this price from the direction of the market price at the time when the Order was created (the initialMarketPrice). Depending on the value of the Order's price and initialMarketPrice, the MarketIfTouchedOrder will behave like a Limit or a Stop Order.",
-      "type": "string"
+      "type": "number"
     },
     "gtdTime": {
       "description": "The date\/time when the MarketIfTouched Order will be cancelled if its timeInForce is \"GTD\".",

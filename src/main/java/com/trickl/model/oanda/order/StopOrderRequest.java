@@ -9,6 +9,7 @@ import com.trickl.model.oanda.transaction.ClientExtensions;
 import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -32,7 +33,8 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopOrderRequest implements OrderRequest, HasInstrument {
+public class StopOrderRequest 
+    implements OrderRequest, HasInstrument, HasTimeInForce, HasUnits, HasPrice {
     
   @JsonPropertyDescription("The type of the Order to create.")
   private final OrderRequestType type = OrderRequestType.STOP;
@@ -49,7 +51,7 @@ public class StopOrderRequest implements OrderRequest, HasInstrument {
       "The quantity requested to be filled by the Stop Order. A posititive number "
               + "of units results in a long Order, and a negative number of units"
               + " results in a short Order.")
-  private String units;
+  private BigDecimal units;
  
   /**
    * The price threshold specified for the Stop Order. The Stop Order will only be filled by a
@@ -58,7 +60,7 @@ public class StopOrderRequest implements OrderRequest, HasInstrument {
   @JsonPropertyDescription(
       "The price threshold specified for the Stop Order. The Stop Order will only "
               + "be filled by a market price that is equal to or worse than this price.")
-  private String price;
+  private BigDecimal price;
   
   /**
    * The worst market price that may be used to fill this Stop Order. If the market gaps and crosses
@@ -69,7 +71,7 @@ public class StopOrderRequest implements OrderRequest, HasInstrument {
       "The worst market price that may be used to fill this Stop Order. If the market gaps"
               + " and crosses through both the price and the priceBound, the Stop Order"
               + " will be cancelled instead of being filled.")
-  private String priceBound;
+  private BigDecimal priceBound;
  
   /** The time-in-force requested for the Stop Order. */
   @JsonPropertyDescription("The time-in-force requested for the Stop Order.")

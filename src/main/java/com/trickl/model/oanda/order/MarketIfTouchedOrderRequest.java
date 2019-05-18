@@ -8,6 +8,7 @@ import com.trickl.model.oanda.transaction.ClientExtensions;
 import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -34,7 +35,8 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class MarketIfTouchedOrderRequest implements OrderRequest, HasInstrument {
+public class MarketIfTouchedOrderRequest 
+    implements OrderRequest, HasInstrument, HasUnits, HasPrice {
     
   @JsonPropertyDescription("The type of the Order to create.")
   private final OrderRequestType type = OrderRequestType.MARKET_IF_TOUCHED;
@@ -51,7 +53,7 @@ public class MarketIfTouchedOrderRequest implements OrderRequest, HasInstrument 
       "The quantity requested to be filled by the MarketIfTouched Order. A positive "
               + "number of units results in a long Order, and a negative number of"
               + " units results in a short Order.")
-  private String units;
+  private BigDecimal units;
  
   /**
    * The price threshold specified for the MarketIfTouched Order. The MarketIfTouched Order will
@@ -67,7 +69,7 @@ public class MarketIfTouchedOrderRequest implements OrderRequest, HasInstrument 
               + "was created (the initialMarketPrice). Depending on the value of"
               + " the Order's price and initialMarketPrice, the MarketIfTouchedOrder "
               + "will behave like a Limit or a Stop Order.")
-  private String price;
+  private BigDecimal price;
   
   /** The worst market price that may be used to fill this MarketIfTouched Order. */
   @JsonPropertyDescription(

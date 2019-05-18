@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.transaction.ClientExtensions;
+import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
 
@@ -27,7 +28,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopLossOrderRequest implements OrderRequest {
+public class StopLossOrderRequest implements OrderRequest, HasTimeInForce, HasPrice {
     
   @JsonPropertyDescription("The type of the Order to create.")
   private final OrderRequestType type = OrderRequestType.STOP_LOSS;
@@ -53,7 +54,7 @@ public class StopLossOrderRequest implements OrderRequest {
               + " is false, the associated Trade will be closed by a market price "
               + "that is equal to or worse than this threshold. If the flag is true"
               + " the associated Trade will be closed at this price.")
-  private String price;
+  private BigDecimal price;
 
   /**
    * Specifies the distance (in price units) from the Account's current price to use as the Stop

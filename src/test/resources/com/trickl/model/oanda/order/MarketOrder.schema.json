@@ -96,7 +96,7 @@
     },
     "units": {
       "description": "The quantity requested to be filled by the Market Order. A posititive number of units results in a long Order, and a negative number of units results in a short Order.",
-      "type": "string"
+      "type": "number"
     },
     "type": {
       "description": "The type of the Order.",
@@ -287,7 +287,8 @@
     },
     "filledTime": {
       "description": "Date\/time when the Order was filled (only provided when the Order's state is FILLED)",
-      "type": "string"
+      "type": "object",
+      "$ref": "urn:jsonschema:java:time:Instant"
     },
     "fillingTransactionID": {
       "description": "ID of the Transaction that filled this Order (only provided when the Order's state is FILLED)",

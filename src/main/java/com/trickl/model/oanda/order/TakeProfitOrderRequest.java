@@ -25,7 +25,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class TakeProfitOrderRequest implements OrderRequest {
+public class TakeProfitOrderRequest implements OrderRequest, HasTimeInForce {
     
   @JsonPropertyDescription("The type of the Order to create.")
   private final OrderRequestType type = OrderRequestType.TAKE_PROFIT;

@@ -1,5 +1,6 @@
 package com.trickl.model.oanda.order;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -9,6 +10,8 @@ import com.trickl.model.oanda.transaction.ClientExtensions;
 import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
+import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -50,7 +53,7 @@ import lombok.Data;
 @Builder
 @Data
 public class MarketIfTouchedOrder extends Order 
-    implements HasInstrument {
+    implements HasInstrument, HasFilledTime, HasTimeInForce, HasUnits, HasPrice {
     
   /** The type of the Order. */
   @JsonPropertyDescription("The type of the Order.")
@@ -68,7 +71,7 @@ public class MarketIfTouchedOrder extends Order
       "The quantity requested to be filled by the MarketIfTouched Order."
           + " A posititive number of units results in a long Order, and a "
           + "negative number of units results in a short Order.")
-  private String units;
+  private BigDecimal units;
 
   /**
    * The price threshold specified for the MarketIfTouched Order. The MarketIfTouched Order will
@@ -84,7 +87,7 @@ public class MarketIfTouchedOrder extends Order
           + "was created (the initialMarketPrice). Depending on the value of the"
           + " Order's price and initialMarketPrice, the MarketIfTouchedOrder "
           + "will behave like a Limit or a Stop Order.")
-  private String price;
+  private BigDecimal price;
 
   /** The worst market price that may be used to fill this MarketIfTouched Order. */
   @JsonPropertyDescription(
@@ -169,10 +172,11 @@ public class MarketIfTouchedOrder extends Order
           + " state is FILLED)")
   private String fillingTransactionId;
 
-  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */
+  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */  
   @JsonPropertyDescription(
-      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")
-  private String filledTime;
+      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")  
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
+  private Instant filledTime;
 
   /**
    * Trade ID of Trade opened when the Order was filled (only provided when the Order's state is

@@ -93,7 +93,7 @@
     },
     "units": {
       "description": "The quantity requested to be filled by the Fixed Price Order. A posititive number of units results in a long Order, and a negative number of units results in a short Order.",
-      "type": "string"
+      "type": "number"
     },
     "type": {
       "description": "The type of the Order.",
@@ -160,7 +160,7 @@
     },
     "price": {
       "description": "The price specified for the Fixed Price Order. This price is the exact price that the Fixed Price Order will be filled at.",
-      "type": "string"
+      "type": "number"
     },
     "cancelledTime": {
       "description": "Date\/time when the Order was cancelled (only provided when the state of the Order is CANCELLED)",
@@ -168,7 +168,8 @@
     },
     "filledTime": {
       "description": "Date\/time when the Order was filled (only provided when the Order's state is FILLED)",
-      "type": "string"
+      "type": "object",
+      "$ref": "urn:jsonschema:java:time:Instant"
     },
     "id": {
       "description": "The Order's identifier, unique within the Order's Account.",

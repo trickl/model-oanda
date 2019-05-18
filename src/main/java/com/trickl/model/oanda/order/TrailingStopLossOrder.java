@@ -1,10 +1,12 @@
 package com.trickl.model.oanda.order;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.transaction.ClientExtensions;
+import java.time.Instant;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -43,7 +45,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class TrailingStopLossOrder extends Order {
+public class TrailingStopLossOrder extends Order implements HasFilledTime, HasTimeInForce {
     
   /** The type of the Order. */
   @JsonPropertyDescription("The type of the Order.")
@@ -139,10 +141,11 @@ public class TrailingStopLossOrder extends Order {
               + " state is FILLED)")
   private String fillingTransactionId;
  
-  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */
+  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */  
   @JsonPropertyDescription(
-      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")
-  private String filledTime;
+      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")  
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
+  private Instant filledTime;
  
   /**
    * Trade ID of Trade opened when the Order was filled (only provided when the Order's state is

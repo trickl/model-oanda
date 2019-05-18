@@ -1,5 +1,6 @@
 package com.trickl.model.oanda.order;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -13,6 +14,8 @@ import com.trickl.model.oanda.transaction.MarketOrderTradeClose;
 import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
+import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -53,7 +56,7 @@ import lombok.Data;
 @Data
 @Builder
 public class MarketOrder extends Order 
-    implements HasInstrument {
+    implements HasInstrument, HasFilledTime, HasTimeInForce, HasUnits {
       
   /** The type of the Order. */
   @JsonPropertyDescription("The type of the Order.")
@@ -71,7 +74,7 @@ public class MarketOrder extends Order
       "The quantity requested to be filled by the Market Order. A posititive number"
             + " of units results in a long Order, and a negative number of units"
             + " results in a short Order.")
-  private String units;
+  private BigDecimal units;
 
   /**
    * The time-in-force requested for the Market Order. Restricted to FOK or IOC for a MarketOrder.
@@ -128,12 +131,11 @@ public class MarketOrder extends Order
           + "the Order's state is FILLED)")
   private String fillingTransactionId;
 
-  /** Date/time when the Order was filled (only provided when the Order's 
-   * state is FILLED).
-   */
+  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */  
   @JsonPropertyDescription(
-      "Date/time when the Order was filled (only provided when the Order's " + "state is FILLED)")
-  private String filledTime;
+      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")  
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
+  private Instant filledTime;
 
   /**
    * Trade ID of Trade opened when the Order was filled (only provided when

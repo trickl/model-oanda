@@ -1,10 +1,12 @@
 package com.trickl.model.oanda.order;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.trickl.model.oanda.transaction.ClientExtensions;
+import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
@@ -42,7 +44,7 @@ import lombok.Data;
 })
 @Builder
 @Data
-public class StopLossOrder extends Order {
+public class StopLossOrder extends Order implements HasFilledTime, HasTimeInForce, HasPrice {
     
   /** The type of the Order. */
   @JsonPropertyDescription("The type of the Order.")
@@ -79,7 +81,7 @@ public class StopLossOrder extends Order {
               + "is false, the associated Trade will be closed by a market price that"
               + " is equal to or worse than this threshold. If the flag is true "
               + "the associated Trade will be closed at this price.")
-  private String price;
+  private BigDecimal price;
  
   /**
    * Specifies the distance (in price units) from the Account's current price to use as the Stop
@@ -164,10 +166,11 @@ public class StopLossOrder extends Order {
               + "state is FILLED)")
   private String fillingTransactionId;
  
-  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */
+  /** Date/time when the Order was filled (only provided when the Order's state is FILLED). */  
   @JsonPropertyDescription(
-      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")
-  private String filledTime;
+      "Date/time when the Order was filled (only provided when the Order's state is FILLED)")  
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
+  private Instant filledTime;
   
   /**
    * Trade ID of Trade opened when the Order was filled (only provided when the Order's state is

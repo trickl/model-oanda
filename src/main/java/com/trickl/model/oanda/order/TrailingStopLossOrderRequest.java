@@ -25,7 +25,7 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class TrailingStopLossOrderRequest implements OrderRequest {
+public class TrailingStopLossOrderRequest implements OrderRequest, HasTimeInForce {
 
   @JsonPropertyDescription("The type of the Order to create.")
   private final OrderRequestType type = OrderRequestType.TRAILING_STOP_LOSS;  
