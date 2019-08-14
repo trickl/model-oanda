@@ -33,5 +33,7 @@ public abstract class Order {
   @JsonPropertyDescription("The current state of the Order.")
   private OrderState state;
 
-  private ClientExtensions clientExtensions;  
+  private ClientExtensions clientExtensions;
+  
+  abstract OrderType getType();
 }

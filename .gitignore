@@ -1,1 +1,8 @@
 /target/
+
+# Visual Studio Code
+.classpath
+.factorypath
+.project
+.settings/
+

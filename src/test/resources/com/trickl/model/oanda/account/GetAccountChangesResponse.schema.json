@@ -256,31 +256,31 @@
                   },
                   "unrealizedPL": {
                     "description": "The unrealized profit\/loss of all open Trades that contribute to this PositionSide.",
-                    "type": "string"
+                    "type": "number"
                   },
                   "resettablePL": {
                     "description": "Profit\/loss realized by the PositionSide since the Account's resettablePL was last reset by the client.",
-                    "type": "string"
+                    "type": "number"
                   },
                   "guaranteedExecutionFees": {
                     "description": "The total amount of fees charged over the lifetime of the Account for the execution of guaranteed Stop Loss Orders attached to Trades for this PositionSide.",
-                    "type": "string"
+                    "type": "number"
                   },
                   "financing": {
                     "description": "The total amount of financing paid\/collected for this PositionSide over the lifetime of the Account.",
-                    "type": "string"
+                    "type": "number"
                   },
                   "units": {
                     "description": "Number of units in the position (negative value indicates short position, positive indicates long position).",
-                    "type": "string"
+                    "type": "number"
                   },
                   "averagePrice": {
                     "description": "Volume-weighted average of the underlying Trade open prices for the Position.",
-                    "type": "string"
+                    "type": "number"
                   },
                   "pl": {
                     "description": "Profit\/loss realized by the PositionSide over the lifetime of the Account.",
-                    "type": "string"
+                    "type": "number"
                   }
                 }
               }

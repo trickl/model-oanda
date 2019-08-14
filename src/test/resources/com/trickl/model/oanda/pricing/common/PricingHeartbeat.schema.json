@@ -1,0 +1,18 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:pricing:common:PricingHeartbeat",
+  "type": "object",
+  "properties": {
+    "time": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of the price message.",
+      "type": "string",
+      "enum": [
+        "HEARTBEAT",
+        "PRICE"
+      ]
+    }
+  }
+}

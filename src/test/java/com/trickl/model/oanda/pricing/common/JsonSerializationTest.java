@@ -43,6 +43,8 @@ public class JsonSerializationTest {
             .tradeable(false)
             .instrument("EUR_GBP")
          .build(),
+         PricingHeartbeat.builder().time(Instant.parse("2007-12-03T10:15:30.00Z"))
+         .build(),
          PriceBucket.builder().price(new BigDecimal("0.89443")).liquidity(1000000)
          .build()
      );

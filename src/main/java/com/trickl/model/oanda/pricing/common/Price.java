@@ -26,7 +26,9 @@ import lombok.Singular;
 })
 @Data
 @Builder
-public class Price {
+public class Price implements PriceMessage {
+  @JsonPropertyDescription("The type of the price message.")
+  private final PriceMessageType type = PriceMessageType.PRICE;
 
   /** The Price's Instrument. */
   @JsonPropertyDescription("The Price's Instrument.")
@@ -60,7 +62,7 @@ public class Price {
               + " liquidity currently available for the Instrument in the Account.")
   @Singular
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<PriceBucket> bids = null;
+  private List<PriceBucket> bids;
   
   /**
    * The list of prices and liquidity available on the Instrument's ask side. It is possible for
@@ -73,7 +75,7 @@ public class Price {
               + " liquidity currently available for the Instrument in the Account.")
   @Singular
   @JsonInclude(JsonInclude.Include.NON_EMPTY)
-  private List<PriceBucket> asks = null;
+  private List<PriceBucket> asks;
  
   /**
    * The closeout bid price. This price is used when a bid is required to closeout a Position
