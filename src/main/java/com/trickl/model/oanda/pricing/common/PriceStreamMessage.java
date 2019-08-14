@@ -13,6 +13,6 @@ import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
     include = JsonTypeInfo.As.PROPERTY, 
     property = "type"
 )
-@JsonTypeIdResolver(PriceMessageTypeIdResolver.class)
-public interface PriceMessage {
+@JsonTypeIdResolver(PriceStreamMessageTypeIdResolver.class)
+public interface PriceStreamMessage {
 }

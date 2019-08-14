@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.DatabindContext;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.jsontype.impl.TypeIdResolverBase;
 
-public class PriceMessageTypeIdResolver extends TypeIdResolverBase {
+public class PriceStreamMessageTypeIdResolver extends TypeIdResolverBase {
 
   private JavaType superType;
 
@@ -22,14 +22,15 @@ public class PriceMessageTypeIdResolver extends TypeIdResolverBase {
 
   @Override
   public String idFromValueAndType(Object obj, Class<?> subType) {
-    return PriceMessageType.fromPriceMessageClass((Class<? extends PriceMessage>) subType)
+    return PriceStreamMessageType.fromPriceStreamMessageClass(
+            (Class<? extends PriceStreamMessage>) subType)
         .toString();
   }
 
   @Override
   public JavaType typeFromId(DatabindContext context, String id) {
-    PriceMessageType type = Enum.valueOf(PriceMessageType.class, id);
-    Class<?> subType = type.getPriceMessageClass();
+    PriceStreamMessageType type = Enum.valueOf(PriceStreamMessageType.class, id);
+    Class<?> subType = type.getPriceStreamMessageClass();
     return context.constructSpecializedType(superType, subType);
   }
 

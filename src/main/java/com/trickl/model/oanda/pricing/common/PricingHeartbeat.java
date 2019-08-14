@@ -17,9 +17,9 @@ import lombok.Data;
 @JsonPropertyOrder({"time"})
 @Data
 @Builder
-public class PricingHeartbeat implements PriceMessage {
+public class PricingHeartbeat implements PriceStreamMessage {
   @JsonPropertyDescription("The type of the price message.")
-  private final PriceMessageType type = PriceMessageType.HEARTBEAT;
+  private final PriceStreamMessageType type = PriceStreamMessageType.HEARTBEAT;
 
   /** The date/time when the Heartbeat was created. */
   @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnXXX", timezone = "UTC")

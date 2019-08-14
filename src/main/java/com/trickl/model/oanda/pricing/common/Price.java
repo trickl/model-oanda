@@ -26,9 +26,9 @@ import lombok.Singular;
 })
 @Data
 @Builder
-public class Price implements PriceMessage {
+public class Price implements PriceStreamMessage {
   @JsonPropertyDescription("The type of the price message.")
-  private final PriceMessageType type = PriceMessageType.PRICE;
+  private final PriceStreamMessageType type = PriceStreamMessageType.PRICE;
 
   /** The Price's Instrument. */
   @JsonPropertyDescription("The Price's Instrument.")
