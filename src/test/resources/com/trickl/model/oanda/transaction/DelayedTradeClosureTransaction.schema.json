@@ -76,7 +76,8 @@
         "MARGIN_CALL_EXIT",
         "DELAYED_TRADE_CLOSURE",
         "DAILY_FINANCING",
-        "RESET_RESETTABLE_PL"
+        "RESET_RESETTABLE_PL",
+        "HEARTBEAT"
       ]
     },
     "userID": {

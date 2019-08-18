@@ -1,16 +1,15 @@
 package com.trickl.model.oanda.transaction;
 
-import static lombok.AccessLevel.PRIVATE;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.HashMap;
 import java.util.Map;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /** The possible types of a Transaction. */
-@RequiredArgsConstructor(access = PRIVATE)
-public enum TransactionType {
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+public enum TransactionStreamMessageType {
   CREATE(CreateTransaction.class),
   CLOSE(CloseTransaction.class),
   REOPEN(ReopenTransaction.class),
@@ -45,31 +44,32 @@ public enum TransactionType {
   MARGIN_CALL_EXIT(MarginCallExitTransaction.class),
   DELAYED_TRADE_CLOSURE(DelayedTradeClosureTransaction.class),
   DAILY_FINANCING(DailyFinancingTransaction.class),
-  RESET_RESETTABLE_PL(ResetResettablePandLTransaction.class);
+  RESET_RESETTABLE_PL(ResetResettablePandLTransaction.class),
+  HEARTBEAT(TransactionHeartbeat.class);
 
-  @Getter private final Class<? extends Transaction> transactionClass;
+  @Getter private final Class<? extends TransactionStreamMessage> transactionStreamMessageClass;
 
-  private static final Map<Class<? extends Transaction>, TransactionType> CONSTANTS =
-      new HashMap<Class<? extends Transaction>, TransactionType>();
+  private static final Map<Class<? extends TransactionStreamMessage>, TransactionStreamMessageType>
+      CONSTANTS = new HashMap<>();
 
   static {
-    for (TransactionType c : values()) {
-      CONSTANTS.put(c.transactionClass, c);
+    for (TransactionStreamMessageType c : values()) {
+      CONSTANTS.put(c.transactionStreamMessageClass, c);
     }
   }
 
   /**
    * Create the enum from a string representation.
    *
-   * @param transactionClass The transaction class
+   * @param transactionStreamMessageClass The transaction class
    * @return The enum
    */
   @JsonCreator
-  public static TransactionType fromTransactionClass(
-      Class<? extends Transaction> transactionClass) {
-    TransactionType constant = CONSTANTS.get(transactionClass);
+  public static TransactionStreamMessageType fromTransactionStreamMessageClass(
+      Class<? extends TransactionStreamMessage> transactionStreamMessageClass) {
+    TransactionStreamMessageType constant = CONSTANTS.get(transactionStreamMessageClass);
     if (constant == null) {
-      throw new IllegalArgumentException(transactionClass.toString());
+      throw new IllegalArgumentException(transactionStreamMessageClass.toString());
     } else {
       return constant;
     }

@@ -27,22 +27,21 @@ import lombok.Data;
 @Data
 @Builder
 public class TradeClientExtensionsModifyTransaction extends Transaction {
-  /**
-   * The Type of the Transaction.
-   */
+  /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.TRADE_CLIENT_EXTENSIONS_MODIFY;
-  
+  private final TransactionStreamMessageType type =
+      TransactionStreamMessageType.TRADE_CLIENT_EXTENSIONS_MODIFY;
+
   /** The ID of the Trade who's client extensions are to be modified. */
   @JsonProperty("tradeID")
   @JsonPropertyDescription("The ID of the Trade who's client extensions are to be modified.")
   private String tradeId;
-  
+
   /** The original Client ID of the Trade who's client extensions are to be modified. */
   @JsonProperty("clientTradeID")
   @JsonPropertyDescription(
       "The original Client ID of the Trade who's client extensions are to be modified.")
-  private String clientTradeId;  
+  private String clientTradeId;
 
   private ClientExtensions tradeClientExtensionsModify;
 }

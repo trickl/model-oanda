@@ -41,7 +41,7 @@ public class StopLossOrderTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.STOP_LOSS_ORDER;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.STOP_LOSS_ORDER;
   
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")

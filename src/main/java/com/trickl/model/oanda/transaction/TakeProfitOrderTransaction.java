@@ -40,7 +40,7 @@ public class TakeProfitOrderTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.TAKE_PROFIT_ORDER;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.TAKE_PROFIT_ORDER;
   
   /** The ID of the Trade to close when the price threshold is breached. */
   @JsonProperty("tradeID")

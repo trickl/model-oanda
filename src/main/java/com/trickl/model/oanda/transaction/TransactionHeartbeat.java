@@ -17,11 +17,11 @@ import lombok.Data;
 @JsonPropertyOrder({"type", "lastTransactionID", "time"})
 @Data
 @Builder
-public class TransactionHeartbeat {
+public class TransactionHeartbeat implements TransactionStreamMessage {
 
   /** The string "HEARTBEAT". */
-  @JsonPropertyDescription("The string \"HEARTBEAT\"")
-  private String type;
+  @JsonPropertyDescription("The string \"HEARTBEAT\"")  
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.HEARTBEAT;
 
   /** The ID of the most recent Transaction created for the Account. */
   @JsonProperty("lastTransactionID")

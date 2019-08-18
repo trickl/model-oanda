@@ -12,5 +12,5 @@ public class MarginCallEnterTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.MARGIN_CALL_ENTER; 
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.MARGIN_CALL_ENTER; 
 }

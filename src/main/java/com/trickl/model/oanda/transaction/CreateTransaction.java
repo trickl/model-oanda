@@ -30,7 +30,7 @@ public class CreateTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.CREATE;  
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.CREATE;  
     
   /** The ID of the Division that the Account is in. */
   @JsonProperty("divisionID")

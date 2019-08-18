@@ -44,7 +44,7 @@ public class LimitOrderTransaction extends Transaction
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.LIMIT_ORDER; 
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.LIMIT_ORDER; 
   
   /** The Limit Order's Instrument. */
   @JsonPropertyDescription("The Limit Order's Instrument.")

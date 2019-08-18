@@ -27,7 +27,7 @@ public class ClientConfigureTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.CLIENT_CONFIGURE;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.CLIENT_CONFIGURE;
   
   /** The client-provided alias for the Account. */
   @JsonPropertyDescription("The client-provided alias for the Account.")

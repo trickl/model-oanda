@@ -26,21 +26,20 @@ import lombok.Data;
 @Data
 @Builder
 public class ClientConfigureRejectTransaction extends Transaction {
-    
-  /**
-   * The Type of the Transaction.
-   */
+
+  /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.CLIENT_CONFIGURE_REJECT;
-  
+  private final TransactionStreamMessageType type =
+      TransactionStreamMessageType.CLIENT_CONFIGURE_REJECT;
+
   /** The client-provided alias for the Account. */
   @JsonPropertyDescription("The client-provided alias for the Account.")
   private String alias;
-  
+
   /** The margin rate override for the Account. */
   @JsonPropertyDescription("The margin rate override for the Account.")
   private String marginRate;
-  
+
   /** The reason that the Reject Transaction was created. */
   @JsonPropertyDescription("The reason that the Reject Transaction was created")
   private RejectReason rejectReason;

@@ -16,5 +16,5 @@ public class CloseTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.CLOSE;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.CLOSE;
 }

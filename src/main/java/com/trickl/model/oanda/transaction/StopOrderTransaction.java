@@ -45,7 +45,7 @@ public class StopOrderTransaction extends Transaction
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.STOP_ORDER;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.STOP_ORDER;
   
   /** The Stop Order's Instrument. */
   @JsonPropertyDescription("The Stop Order's Instrument.")

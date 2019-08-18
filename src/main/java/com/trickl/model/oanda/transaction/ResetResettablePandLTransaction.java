@@ -14,9 +14,8 @@ import lombok.Data;
 @Data
 @Builder
 public class ResetResettablePandLTransaction extends Transaction {
-  /**
-   * The Type of the Transaction.
-   */
+  /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.RESET_RESETTABLE_PL;
+  private final TransactionStreamMessageType type =
+      TransactionStreamMessageType.RESET_RESETTABLE_PL;
 }

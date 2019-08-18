@@ -49,7 +49,7 @@ public class MarketOrderTransaction extends Transaction
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.MARKET_ORDER; 
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.MARKET_ORDER; 
   
   /** The Market Order's Instrument. */
   @JsonPropertyDescription("The Market Order's Instrument.")

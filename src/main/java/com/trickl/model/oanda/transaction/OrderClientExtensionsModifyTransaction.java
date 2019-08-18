@@ -29,23 +29,22 @@ import lombok.Data;
 @Data
 @Builder
 public class OrderClientExtensionsModifyTransaction extends Transaction {
-  /**
-   * The Type of the Transaction.
-   */
+  /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.ORDER_CLIENT_EXTENSIONS_MODIFY;
-  
+  private final TransactionStreamMessageType type =
+      TransactionStreamMessageType.ORDER_CLIENT_EXTENSIONS_MODIFY;
+
   /** The ID of the Order who's client extensions are to be modified. */
   @JsonProperty("orderID")
   @JsonPropertyDescription("The ID of the Order who's client extensions are to be modified.")
   private String orderId;
-  
+
   /** The original Client ID of the Order who's client extensions are to be modified. */
   @JsonProperty("clientOrderID")
   @JsonPropertyDescription(
       "The original Client ID of the Order who's client extensions are to be modified.")
   private String clientOrderId;
-  
+
   private ClientExtensions clientExtensionsModify;
 
   private ClientExtensions tradeClientExtensionsModify;

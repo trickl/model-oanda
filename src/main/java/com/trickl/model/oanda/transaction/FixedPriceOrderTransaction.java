@@ -41,7 +41,7 @@ public class FixedPriceOrderTransaction extends Transaction
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.FIXED_PRICE_ORDER; 
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.FIXED_PRICE_ORDER; 
   
   /** The Fixed Price Order's Instrument. */
   @JsonPropertyDescription("The Fixed Price Order's Instrument.")

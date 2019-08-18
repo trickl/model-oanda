@@ -27,31 +27,30 @@ import lombok.Data;
 @Data
 @Builder
 public class TransferFundsRejectTransaction extends Transaction {
-  /**
-   * The Type of the Transaction.
-   */
+  /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.TRANSFER_FUNDS_REJECT;
-  
+  private final TransactionStreamMessageType type =
+      TransactionStreamMessageType.TRANSFER_FUNDS_REJECT;
+
   /**
    * The amount to deposit/withdraw from the Account in the Account's home currency. A positive
    * value indicates a deposit, a negative value indicates a withdrawal.
    */
   @JsonPropertyDescription(
       "The amount to deposit/withdraw from the Account in the Account's home currency. "
-              + "A positive value indicates a deposit, a negative value indicates"
-              + " a withdrawal.")
+          + "A positive value indicates a deposit, a negative value indicates"
+          + " a withdrawal.")
   private String amount;
-  
+
   /** The reason that an Account is being funded. */
   @JsonPropertyDescription("The reason that an Account is being funded.")
   private FundingReason fundingReason;
-  
+
   /** An optional comment that may be attached to a fund transfer for audit purposes. */
   @JsonPropertyDescription(
       "An optional comment that may be attached to a fund transfer for audit purposes")
   private String comment;
-  
+
   /** The reason that the Reject Transaction was created. */
   @JsonPropertyDescription("The reason that the Reject Transaction was created")
   private RejectReason rejectReason;

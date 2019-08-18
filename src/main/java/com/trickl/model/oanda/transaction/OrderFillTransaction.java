@@ -48,7 +48,7 @@ public class OrderFillTransaction extends Transaction
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.ORDER_FILL;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.ORDER_FILL;
   
   /** The ID of the Order filled. */
   @JsonProperty("orderID")

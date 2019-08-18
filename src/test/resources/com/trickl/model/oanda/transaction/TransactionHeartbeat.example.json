@@ -1,3 +1,4 @@
 {
-  "lastTransactionID": 0
+  "lastTransactionID": 0,
+  "type": "HEARTBEAT"
 }

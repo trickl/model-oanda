@@ -31,7 +31,7 @@ public class DailyFinancingTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.DAILY_FINANCING;  
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.DAILY_FINANCING;  
     
   /** The amount of financing paid/collected for the Account. */
   @JsonPropertyDescription("The amount of financing paid/collected for the Account.")

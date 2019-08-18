@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
 import java.time.Instant;
 import lombok.Data;
 
@@ -13,14 +11,8 @@ import lombok.Data;
  * The base Transaction specification. Specifies properties that are common between all Transaction.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.CUSTOM, 
-    include = JsonTypeInfo.As.PROPERTY, 
-    property = "type"
-)
-@JsonTypeIdResolver(TransactionTypeIdResolver.class)
 @Data
-public abstract class Transaction {
+public abstract class Transaction implements TransactionStreamMessage {
 
   /** The Transaction's Identifier. */  
   @JsonPropertyDescription("The Transaction's Identifier.")

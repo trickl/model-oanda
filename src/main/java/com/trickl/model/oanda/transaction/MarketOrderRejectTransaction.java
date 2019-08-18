@@ -1,7 +1,6 @@
 package com.trickl.model.oanda.transaction;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.instrument.HasInstrument;
@@ -39,44 +38,41 @@ import lombok.Data;
 })
 @Data
 @Builder
-public class MarketOrderRejectTransaction extends Transaction
-    implements HasInstrument {
-  /**
-   * The Type of the Transaction.
-   */
+public class MarketOrderRejectTransaction extends Transaction implements HasInstrument {
+  /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.MARKET_ORDER_REJECT; 
-  
+  private final TransactionStreamMessageType type =
+      TransactionStreamMessageType.MARKET_ORDER_REJECT;
+
   /** The Market Order's Instrument. */
   @JsonPropertyDescription("The Market Order's Instrument.")
   private String instrument;
-  
+
   /**
    * The quantity requested to be filled by the Market Order. A positive number of units results in
    * a long Order, and a negative number of units results in a short Order.
    */
   @JsonPropertyDescription(
       "The quantity requested to be filled by the Market Order. A positive number "
-              + "of units results in a long Order, and a negative number of units"
-              + " results in a short Order.")
+          + "of units results in a long Order, and a negative number of units"
+          + " results in a short Order.")
   private String units;
   /**
    * The time-in-force requested for the Market Order. Restricted to FOK or IOC for a MarketOrder.
    */
   @JsonPropertyDescription(
       "The time-in-force requested for the Market Order. Restricted to FOK or IOC"
-              + " for a MarketOrder.")
+          + " for a MarketOrder.")
   private TimeInForce timeInForce;
-  
+
   /** The worst price that the client is willing to have the Market Order filled at. */
   @JsonPropertyDescription(
       "The worst price that the client is willing to have the Market Order filled at.")
   private String priceBound;
-  
+
   /** Specification of how Positions in the Account are modified when the Order is filled. */
   @JsonPropertyDescription(
-      "Specification of how Positions in the Account are modified when the Order "
-              + "is filled.")
+      "Specification of how Positions in the Account are modified when the Order " + "is filled.")
   private PositionFill positionFill;
 
   private MarketOrderTradeClose tradeClose;
@@ -88,7 +84,7 @@ public class MarketOrderRejectTransaction extends Transaction
   private MarketOrderMarginCloseout marginCloseout;
 
   private MarketOrderDelayedTradeClose delayedTradeClose;
-  
+
   /** The reason that the Market Order was created. */
   @JsonPropertyDescription("The reason that the Market Order was created")
   private MarketOrderReason reason;
@@ -102,7 +98,7 @@ public class MarketOrderRejectTransaction extends Transaction
   private TrailingStopLossDetails trailingStopLossOnFill;
 
   private ClientExtensions tradeClientExtensions;
-  
+
   /** The reason that the Reject Transaction was created. */
   @JsonPropertyDescription("The reason that the Reject Transaction was created")
   private RejectReason rejectReason;

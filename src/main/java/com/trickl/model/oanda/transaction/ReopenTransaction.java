@@ -16,5 +16,5 @@ public class ReopenTransaction extends Transaction {
    * The Type of the Transaction.
    */
   @JsonPropertyDescription("The Type of the Transaction.")
-  private final TransactionType type = TransactionType.REOPEN;
+  private final TransactionStreamMessageType type = TransactionStreamMessageType.REOPEN;
 }
