@@ -1,6 +1,7 @@
 package com.trickl.model.oanda.pricing.common;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -23,6 +24,11 @@ import lombok.Singular;
     "asks",
     "closeoutBid",
     "closeoutAsk"
+})
+@JsonIgnoreProperties({
+    "status",
+    "quoteHomeConversionFactors",
+    "unitsAvailable"
 })
 @Data
 @Builder

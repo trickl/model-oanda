@@ -34,7 +34,7 @@
     },
     "id": {
       "description": "The Transaction's Identifier.",
-      "type": "integer"
+      "type": "string"
     },
     "time": {
       "format": "date-time",

@@ -4,7 +4,7 @@
   "properties": {
     "lastTransactionID": {
       "description": "The ID of the most recent Transaction created for the Account",
-      "type": "integer"
+      "type": "string"
     },
     "trades": {
       "description": "The list of Trades that satisfy the request.",
@@ -45,7 +45,8 @@
                   "INVERSE",
                   "BID",
                   "ASK",
-                  "MID"
+                  "MID",
+                  "TRIGGER_DEFAULT"
                 ]
               },
               "tradeClosedIDs": {
@@ -216,7 +217,8 @@
                   "INVERSE",
                   "BID",
                   "ASK",
-                  "MID"
+                  "MID",
+                  "TRIGGER_DEFAULT"
                 ]
               },
               "guaranteedExecutionPremium": {
@@ -349,7 +351,8 @@
                   "INVERSE",
                   "BID",
                   "ASK",
-                  "MID"
+                  "MID",
+                  "TRIGGER_DEFAULT"
                 ]
               },
               "trailingStopValue": {

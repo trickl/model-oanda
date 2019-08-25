@@ -6,6 +6,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import static com.trickl.assertj.core.api.JsonObjectAssertions.assertThat;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.Currency;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -73,7 +74,8 @@ public class JsonSerializationTest {
                 .close(new BigDecimal("0.89554"))
                 .build())
               .build())
-            .build()
+            .build(),
+        new CurrencyPair(Currency.getInstance("GBP"), Currency.getInstance("EUR"))
      );
   }   
 }

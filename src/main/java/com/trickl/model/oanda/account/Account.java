@@ -8,6 +8,9 @@ import com.trickl.model.oanda.order.Order;
 import com.trickl.model.oanda.position.Position;
 import com.trickl.model.oanda.trade.TradeSummary;
 import java.util.List;
+
+import javax.validation.constraints.NotBlank;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -60,6 +63,7 @@ public class Account {
 
   /** The account's identifier. */
   @JsonPropertyDescription("The Account's identifier")
+  @NotBlank
   private String id;
 
   /** Client-assigned alias for the Account. Only provided if the Account has an alias set. */

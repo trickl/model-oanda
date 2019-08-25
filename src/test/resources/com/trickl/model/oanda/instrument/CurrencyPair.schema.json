@@ -1,0 +1,12 @@
+{
+  "id": "urn:jsonschema:com:trickl:model:oanda:instrument:CurrencyPair",
+  "type": "object",
+  "properties": {
+    "sellCurrency": {
+      "type": "string"
+    },
+    "buyCurrency": {
+      "type": "string"
+    }
+  }
+}

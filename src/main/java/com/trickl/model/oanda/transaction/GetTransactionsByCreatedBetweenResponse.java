@@ -45,5 +45,5 @@ public class GetTransactionsByCreatedBetweenResponse {
   /* The ID of the most recent Transaction created for the Account. */
   @JsonProperty("lastTransactionID")
   @JsonPropertyDescription("The ID of the most recent Transaction created for the Account")
-  private int lastTransactionId;
+  private String lastTransactionId;
 }

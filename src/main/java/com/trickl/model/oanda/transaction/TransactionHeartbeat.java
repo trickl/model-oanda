@@ -26,7 +26,7 @@ public class TransactionHeartbeat implements TransactionStreamMessage {
   /** The ID of the most recent Transaction created for the Account. */
   @JsonProperty("lastTransactionID")
   @JsonPropertyDescription("The ID of the most recent Transaction created for the Account")
-  private int lastTransactionId;
+  private String lastTransactionId;
 
   /** The date/time when the TransactionHeartbeat was created. */
   @JsonPropertyDescription("The date/time when the TransactionHeartbeat was created.")

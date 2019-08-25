@@ -20,5 +20,6 @@ public enum OrderTriggerCondition {
   INVERSE,
   BID,
   ASK,
-  MID
+  MID,
+  TRIGGER_DEFAULT
 }

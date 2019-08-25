@@ -18,7 +18,8 @@
         "INVERSE",
         "BID",
         "ASK",
-        "MID"
+        "MID",
+        "TRIGGER_DEFAULT"
       ]
     },
     "tradeClientExtensions": {
@@ -199,7 +200,7 @@
     },
     "id": {
       "description": "The Transaction's Identifier.",
-      "type": "integer"
+      "type": "string"
     },
     "time": {
       "format": "date-time",

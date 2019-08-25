@@ -11,7 +11,7 @@
     },
     "lastTransactionID": {
       "description": "The ID of the most recent Transaction created for the Account",
-      "type": "integer"
+      "type": "string"
     },
     "count": {
       "description": "The number of Transactions that are contained in the pages returned.",

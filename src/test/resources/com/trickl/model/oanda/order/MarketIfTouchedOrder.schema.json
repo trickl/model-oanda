@@ -10,7 +10,8 @@
         "INVERSE",
         "BID",
         "ASK",
-        "MID"
+        "MID",
+        "TRIGGER_DEFAULT"
       ]
     },
     "tradeClientExtensions": {
@@ -112,7 +113,8 @@
         "OPEN_ONLY",
         "REDUCE_FIRST",
         "REDUCE_ONLY",
-        "DEFAULT"
+        "DEFAULT",
+        "POSITION_DEFAULT"
       ]
     },
     "price": {

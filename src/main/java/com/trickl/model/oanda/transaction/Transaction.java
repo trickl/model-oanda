@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import java.time.Instant;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import lombok.Data;
 
 /**
@@ -16,11 +20,13 @@ public abstract class Transaction implements TransactionStreamMessage {
 
   /** The Transaction's Identifier. */  
   @JsonPropertyDescription("The Transaction's Identifier.")
-  private int id;
+  @NotBlank
+  private String id;
   
   /** The date/time when the Transaction was created. */  
   @JsonPropertyDescription("The date/time when the Transaction was created.")
   @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnnX", timezone = "UTC")
+  @NotNull
   private Instant time;
   
   /** The ID of the user that initiated the creation of the Transaction. */

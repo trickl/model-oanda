@@ -4,7 +4,7 @@
   "properties": {
     "lastTransactionID": {
       "description": "The ID of the most recent Transaction created for the Account",
-      "type": "integer"
+      "type": "string"
     },
     "transaction": {
       "description": "The requested transaction",
@@ -21,7 +21,7 @@
         },
         "id": {
           "description": "The Transaction's Identifier.",
-          "type": "integer"
+          "type": "string"
         },
         "time": {
           "format": "date-time",

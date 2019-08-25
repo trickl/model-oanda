@@ -17,7 +17,7 @@
         },
         "id": {
           "description": "The Transaction's Identifier.",
-          "type": "integer"
+          "type": "string"
         },
         "time": {
           "description": "The date\/time when the Transaction was created.",
@@ -118,7 +118,7 @@
         },
         "id": {
           "description": "The Transaction's Identifier.",
-          "type": "integer"
+          "type": "string"
         },
         "time": {
           "description": "The date\/time when the Transaction was created.",
@@ -450,7 +450,7 @@
         },
         "id": {
           "description": "The Transaction's Identifier.",
-          "type": "integer"
+          "type": "string"
         },
         "gainQuoteHomeConversionFactor": {
           "description": "This is the conversion factor in effect for the Account at the time of the OrderFill for converting any gains realized in Instrument quote units into units of the Account's home currency.",

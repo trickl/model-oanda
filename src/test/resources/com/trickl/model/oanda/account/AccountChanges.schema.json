@@ -295,7 +295,7 @@
           },
           "id": {
             "description": "The Transaction's Identifier.",
-            "type": "integer"
+            "type": "string"
           },
           "time": {
             "description": "The date\/time when the Transaction was created.",

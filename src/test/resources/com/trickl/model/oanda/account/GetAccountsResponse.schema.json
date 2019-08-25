@@ -2,10 +2,6 @@
   "id": "urn:jsonschema:com:trickl:model:oanda:account:GetAccountsResponse",
   "type": "object",
   "properties": {
-    "lastTransactionID": {
-      "description": "The ID of the most recent Transaction created for the Account",
-      "type": "string"
-    },
     "accounts": {
       "description": "The list of Accounts the client is authorized to access and their associated properties.",
       "type": "array",
