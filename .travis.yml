@@ -26,15 +26,15 @@ before_deploy:
 - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep
   -v '\[')
 deploy:
-- provider: script
+ provider: script
   script: ".travis/deploy.sh"
   skip_cleanup: true
   on:
     repo: trickl/model-oanda
     all_branches: true
-- provider: releases
+  provider: releases
   api_key:
-    secure: fIprgeLah/zaqST6AF+V25bAm+bO+XXBtqY7BVp3znkVG6RTKGp5MFDziUyV3l74RNLkH57Jdpi7jYNjwf6h3XWVWdHrqjCPGfDwIHtOJS9mH7oS5UG0Q2KzIICHpd7/r2ebKI4l90dwOGSY8BBTIUmD3WRtY5B4X3gZEehAks45c/v3Am3jyRJ2KGd6XbXH7Md08npN6p4Zyzl1zv4qOrH0WAUpuuuDQ/kn0Mn7xALaEEl2jBrmvUZFw25xDUMNmHGMdD8eHSVC2lR/d7g4u1qGC9nvoT8LqvHErzlxVCyaiFhk+Z1KpKeHmtidywzabx8LrrNCzuY8xTb3eY2ESnRVg7U1DiDS1P75XVtITIYIRf9iIESVzIjmsfA2+0jzBzAzqNl3OHutlfKa09RPTayt51H7J3ZGGRyBgEvkQhngDUf9nOoTrJ25COXd7eVWWzpKaliRMNL6XpOm4fadKJ8h0kaRW7HovCeD3qPCpT/QWgOTzffYpTHKmTytiM45rap4HA1z4NRMkHerxng6VdHCEM2sLZcV+M2CxioX2yf2+nj1WWWZey+pz9QPeQFetm8PFaAt/eSNNAEqrhbWGf9UIRlZWbF2rzSeHlHw7w+biDYCyVPxA9IJneYCBVeBm2sSfFqKUnitD3sT7ENohU5fhfn1qReRktDFpPJlPn4=
+    secure: tp1f8utQIJx8+DZM6xE0nf/fn6Lvx3GPAurL+MiSR7pZwjSMJfK1ABCLoVwYHxGIZyLX4lerq9KtWGEk42eHpU15/GexdKYOkswsSjaUi+DH0txwwdEqePxziLrVZ/9wDAqQ4BtCIFZ8++lkOvprxUAJawxJtJSERC+58rsj7jWv8+ufJhixv281EQQBmwgFOk/Gr6sdrONQ4WqTMYaYpukv7Gq3NYGi7hIShDcbJ29KgI9rNp+89NGUTF/z82FQMaxICMv1Dwq+sGvhU3WqsvqBEL2/+xBj1L6lh/SZ+JJClYtTL2nrD4HTffkA498WgY6ZHNVZW48Y88BtS6hPH9BzCOHowEPq6xEOGHyFMvXqYvYu8W6vfIzeTjpHsYNca3WSweHH+0EV+N5vhehM/AMOi8e7b8y5jI/deEFhCXCtIo2ffjUI/8Dq5pVINEr/+DYs+EV0QZt/n/FVWaN/+ODnzJeK5X1X3nTg8B/DXopuNz+tvBYHpsFOpr/iJBWPmXEBpU04dFGHUb8qtgf5IzHATy2ORdMCpMqyYhFve80oIatv3MhcamPU4GwaiiVpHulOVaSzHy2+HOcWSAmBetCQIJNYkZZgMv+MWLXFmJAcAL6wzSzqBW8BFCoR3ah1ogQ/YdheaTAUsF9p6Jw7Jl0MW+ZObrOAEI5a4D4+Qzs=
   file: ".travis.yml"
   on:
     repo: trickl/model-oanda
