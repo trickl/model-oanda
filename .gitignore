@@ -1,8 +1,8 @@
 /target/
 
-# Visual Studio Code
+# Create by VSCode
+.settings/
+.sts4-cache/
 .classpath
 .factorypath
 .project
-.settings/
-
