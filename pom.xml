@@ -5,7 +5,7 @@
      POJOs for interfacing with the Oanda API
   </description>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.trickl</groupId>
+  <groupId>com.github.trickl</groupId>
   <artifactId>model-oanda</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -34,27 +34,42 @@
       <version>2.9.0</version>
     </dependency>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>5.4.0</version>
-        <scope>test</scope>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>2.0.1.Final</version>
     </dependency>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.4.0</version>
-        <scope>test</scope>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.0.2.Final</version>
     </dependency>
     <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-params</artifactId>
-        <version>5.3.2</version>
-        <scope>test</scope>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator-annotation-processor</artifactId>
+      <version>6.0.2.Final</version>
     </dependency>
     <dependency>
-      <groupId>com.trickl</groupId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.4.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.4.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>5.3.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.trickl</groupId>
       <artifactId>assertj-json-serialize</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>0.1.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
