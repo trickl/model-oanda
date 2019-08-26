@@ -26,13 +26,13 @@ before_deploy:
 - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep
   -v '\[')
 deploy:
- provider: script
+- provider: script
   script: ".travis/deploy.sh"
   skip_cleanup: true
   on:
     repo: trickl/model-oanda
     all_branches: true
-  provider: releases
+- provider: releases
   api_key:
     secure: tp1f8utQIJx8+DZM6xE0nf/fn6Lvx3GPAurL+MiSR7pZwjSMJfK1ABCLoVwYHxGIZyLX4lerq9KtWGEk42eHpU15/GexdKYOkswsSjaUi+DH0txwwdEqePxziLrVZ/9wDAqQ4BtCIFZ8++lkOvprxUAJawxJtJSERC+58rsj7jWv8+ufJhixv281EQQBmwgFOk/Gr6sdrONQ4WqTMYaYpukv7Gq3NYGi7hIShDcbJ29KgI9rNp+89NGUTF/z82FQMaxICMv1Dwq+sGvhU3WqsvqBEL2/+xBj1L6lh/SZ+JJClYtTL2nrD4HTffkA498WgY6ZHNVZW48Y88BtS6hPH9BzCOHowEPq6xEOGHyFMvXqYvYu8W6vfIzeTjpHsYNca3WSweHH+0EV+N5vhehM/AMOi8e7b8y5jI/deEFhCXCtIo2ffjUI/8Dq5pVINEr/+DYs+EV0QZt/n/FVWaN/+ODnzJeK5X1X3nTg8B/DXopuNz+tvBYHpsFOpr/iJBWPmXEBpU04dFGHUb8qtgf5IzHATy2ORdMCpMqyYhFve80oIatv3MhcamPU4GwaiiVpHulOVaSzHy2+HOcWSAmBetCQIJNYkZZgMv+MWLXFmJAcAL6wzSzqBW8BFCoR3ah1ogQ/YdheaTAUsF9p6Jw7Jl0MW+ZObrOAEI5a4D4+Qzs=
   file: ".travis.yml"
