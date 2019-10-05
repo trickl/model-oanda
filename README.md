@@ -5,12 +5,24 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a3c9f6a9f6928488b0ee/test_coverage)](https://codeclimate.com/github/trickl/model-oanda/test_coverage)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-POJOs for interfacing with the Oanda API
+POJOs for interfacing with the Oanda v20 API.
+
+Reference Material
+==================
+
+http://developer.oanda.com/rest-live-v20/introduction/
+
+The JSON Schemas are provided by Oanda here:
+https://github.com/oanda/v20-openapi
+
+License and Authorship
+======================
+This library was not produced by Oanda, but independently to support it. It's provided as is, with no guarantees for correctness.
 
 Installation
 ============
 
-To install from Maven Central:
+Available from Maven Central:
 
 ```xml
 <dependency>
