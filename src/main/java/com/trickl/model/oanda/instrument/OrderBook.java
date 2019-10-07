@@ -42,7 +42,7 @@ public class OrderBook {
           + "from the bucket's price to the bucket's price + bucketWidth.")
   private String bucketWidth;
 
-  @JsonProperty(
+  @JsonPropertyDescription(
       "The partitioned order book, divided into buckets using a default"
           + " bucket width. These buckets are only provided for price ranges "
           + "which actually contain order or position data.")

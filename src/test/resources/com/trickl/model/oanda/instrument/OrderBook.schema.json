@@ -2,7 +2,12 @@
   "id": "urn:jsonschema:com:trickl:model:oanda:instrument:OrderBook",
   "type": "object",
   "properties": {
-    "The partitioned order book, divided into buckets using a default bucket width. These buckets are only provided for price ranges which actually contain order or position data.": {
+    "price": {
+      "description": "The price (midpoint) for the order book's instrument at the time of the order book snapshot",
+      "type": "number"
+    },
+    "buckets": {
+      "description": "The partitioned order book, divided into buckets using a default bucket width. These buckets are only provided for price ranges which actually contain order or position data.",
       "type": "array",
       "items": {
         "id": "urn:jsonschema:com:trickl:model:oanda:instrument:OrderBookBucket",
@@ -22,10 +27,6 @@
           }
         }
       }
-    },
-    "price": {
-      "description": "The price (midpoint) for the order book's instrument at the time of the order book snapshot",
-      "type": "number"
     },
     "bucketWidth": {
       "description": "The price width for each bucket. Each bucket covers the price range from the bucket's price to the bucket's price + bucketWidth.",
