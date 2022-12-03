@@ -3,8 +3,11 @@ package com.trickl.model.oanda.order;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * The dynamic state of an Order. This is only relevant to TrailingStopLoss Orders, as no other
@@ -13,6 +16,8 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"id", "trailingStopValue", "triggerDistance", "isTriggerDistanceExact"})
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class DynamicOrderState {
 

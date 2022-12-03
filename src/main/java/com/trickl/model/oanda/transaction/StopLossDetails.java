@@ -5,8 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * StopLossDetails specifies the details of a Stop Loss Order to be created on behalf of a client.
@@ -24,6 +27,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class StopLossDetails {
 
   /**

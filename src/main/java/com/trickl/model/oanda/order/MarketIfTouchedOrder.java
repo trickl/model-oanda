@@ -13,8 +13,11 @@ import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A MarketIfTouchedOrder is an order that is created with a price threshold, and will only be
@@ -51,6 +54,8 @@ import lombok.Data;
     "replacedByOrderID"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class MarketIfTouchedOrder extends Order 
     implements HasInstrument, HasFilledTime, HasTimeInForce, HasUnits, HasPrice {

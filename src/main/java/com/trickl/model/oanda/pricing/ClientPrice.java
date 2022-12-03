@@ -7,8 +7,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.UnitsAvailable;
 import com.trickl.model.oanda.pricing.common.PriceBucket;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** The specification of an Account-specific Price. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,6 +30,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class ClientPrice {
 
   /** The string "PRICE". Used to identify the a Price object when found in a stream. */

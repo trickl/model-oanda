@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.instrument.HasInstrument;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A MarketOrderTransaction represents the creation of a Market Order in the user's account. A
@@ -43,6 +46,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class MarketOrderTransaction extends Transaction
     implements HasInstrument {
   /**

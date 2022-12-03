@@ -17,8 +17,11 @@ import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A MarketOrder is an order that is filled immediately upon creation using the current market
@@ -55,6 +58,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class MarketOrder extends Order 
     implements HasInstrument, HasFilledTime, HasTimeInForce, HasUnits {
       

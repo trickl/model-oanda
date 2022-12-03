@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A TakeProfitOrderTransaction represents the creation of a TakeProfit Order in the user's Account.
@@ -35,6 +38,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TakeProfitOrderTransaction extends Transaction {
   /**
    * The Type of the Transaction.

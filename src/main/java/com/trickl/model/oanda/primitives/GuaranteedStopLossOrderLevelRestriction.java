@@ -3,8 +3,11 @@ package com.trickl.model.oanda.primitives;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A GuaranteedStopLossOrderLevelRestriction represents the total position size that can exist
@@ -15,6 +18,8 @@ import lombok.Data;
 @JsonPropertyOrder({"volume", "priceRange"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class GuaranteedStopLossOrderLevelRestriction {
 
   /**

@@ -13,8 +13,11 @@ import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** A FixedPriceOrder is an order that is filled immediately upon creation using a fixed price. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,6 +46,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class FixedPriceOrder extends Order
     implements HasInstrument, HasFilledTime, HasUnits, HasPrice {
     

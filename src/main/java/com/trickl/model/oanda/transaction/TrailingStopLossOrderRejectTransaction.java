@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A TrailingStopLossOrderRejectTransaction represents the rejection of the creation of a
@@ -36,6 +39,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TrailingStopLossOrderRejectTransaction extends Transaction {
   /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")

@@ -2,12 +2,17 @@ package com.trickl.model.oanda.instrument;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Singular;
-import lombok.Value;
 
-@Value
 @Builder
+@Data
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class GetCandlesResponse {
   @Singular
   @JsonInclude(JsonInclude.Include.NON_EMPTY)

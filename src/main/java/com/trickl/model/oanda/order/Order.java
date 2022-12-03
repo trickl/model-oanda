@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
 import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.time.Instant;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** The base Order definition specifies the properties that are common to all Orders. */
 @JsonInclude(JsonInclude.Include.NON_NULL)

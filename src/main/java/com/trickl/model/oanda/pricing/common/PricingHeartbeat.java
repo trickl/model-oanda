@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.time.Instant;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A PricingHeartbeat object is injected into the Pricing stream to ensure that the HTTP connection
@@ -17,6 +20,8 @@ import lombok.Data;
 @JsonPropertyOrder({"time"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class PricingHeartbeat implements PriceStreamMessage {
   @JsonPropertyDescription("The type of the price message.")
   private final PriceStreamMessageType type = PriceStreamMessageType.HEARTBEAT;

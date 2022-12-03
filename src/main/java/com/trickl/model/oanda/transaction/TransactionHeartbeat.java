@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.time.Instant;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A TransactionHeartbeat object is injected into the Transaction stream to ensure that the HTTP
@@ -17,6 +20,8 @@ import lombok.Data;
 @JsonPropertyOrder({"type", "lastTransactionID", "time"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TransactionHeartbeat implements TransactionStreamMessage {
 
   /** The string "HEARTBEAT". */

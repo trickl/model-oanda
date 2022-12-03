@@ -8,8 +8,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Singular;
 
 /** The Price representation. */
@@ -32,6 +35,8 @@ import lombok.Singular;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class Price implements PriceStreamMessage {
   @JsonPropertyDescription("The type of the price message.")
   private final PriceStreamMessageType type = PriceStreamMessageType.PRICE;

@@ -12,8 +12,11 @@ import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * The specification of a Trade within an Account. This includes the full representation of the
@@ -43,6 +46,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class Trade {
 
   /** The Trade's identifier, unique within the Trade's Account. */    

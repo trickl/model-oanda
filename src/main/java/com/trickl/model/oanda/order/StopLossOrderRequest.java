@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.math.BigDecimal;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A StopLossOrderRequest specifies the parameters that may be set when creating a Stop Loss Order.
@@ -27,6 +30,8 @@ import lombok.Data;
     "clientExtensions"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class StopLossOrderRequest implements OrderRequest, HasTimeInForce, HasPrice {
     

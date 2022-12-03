@@ -8,8 +8,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.transaction.ClientExtensions;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A TrailingStopLossOrder is an order that is linked to an open Trade and created with a price
@@ -44,6 +47,8 @@ import lombok.Data;
     "replacedByOrderID"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class TrailingStopLossOrder extends Order implements HasFilledTime, HasTimeInForce {
     

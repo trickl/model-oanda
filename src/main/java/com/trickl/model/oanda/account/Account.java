@@ -11,8 +11,11 @@ import java.util.List;
 
 import javax.validation.constraints.NotBlank;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * The full details of a client's Account. This includes full open Trade, open Position and pending
@@ -58,6 +61,8 @@ import lombok.Data;
     "lastTransactionID"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class Account {
 

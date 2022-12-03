@@ -5,13 +5,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.time.Instant;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** The Candlestick representation. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"time", "bid", "ask", "mid", "volume", "complete"})
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class Candlestick {
 

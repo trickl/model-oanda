@@ -5,8 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.transaction.ClientExtensions;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A TrailingStopLossOrderRequest specifies the parameters that may be set when creating a Trailing
@@ -25,6 +28,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TrailingStopLossOrderRequest implements OrderRequest, HasTimeInForce {
 
   @JsonPropertyDescription("The type of the Order to create.")

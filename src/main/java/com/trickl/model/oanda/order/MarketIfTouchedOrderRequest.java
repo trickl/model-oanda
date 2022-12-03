@@ -9,8 +9,11 @@ import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.math.BigDecimal;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A MarketIfTouchedOrderRequest specifies the parameters that may be set when creating a
@@ -34,6 +37,8 @@ import lombok.Data;
     "tradeClientExtensions"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class MarketIfTouchedOrderRequest 
     implements OrderRequest, HasInstrument, HasUnits, HasPrice {

@@ -7,8 +7,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.instrument.HasInstrument;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A MarketIfTouchedOrderTransaction represents the creation of a MarketIfTouched Order in the
@@ -42,6 +45,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class MarketIfTouchedOrderTransaction extends Transaction implements HasInstrument {
   /** The Type of the Transaction. */
   @JsonPropertyDescription("The Type of the Transaction.")

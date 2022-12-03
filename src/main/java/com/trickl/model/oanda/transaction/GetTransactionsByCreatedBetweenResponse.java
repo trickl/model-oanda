@@ -5,14 +5,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** The response from the /v3/accounts/{accountId}/transactions endpoint. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"from", "to", "pageSize", "type", "count", "pages", "lastTransactionID"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class GetTransactionsByCreatedBetweenResponse {
   /* The starting time provided in the request. */
   @JsonPropertyDescription("The starting time provided in the request.")

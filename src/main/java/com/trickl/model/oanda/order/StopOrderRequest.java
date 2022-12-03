@@ -10,8 +10,11 @@ import com.trickl.model.oanda.transaction.StopLossDetails;
 import com.trickl.model.oanda.transaction.TakeProfitDetails;
 import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.math.BigDecimal;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** A StopOrderRequest specifies the parameters that may be set when creating a Stop Order. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,6 +35,8 @@ import lombok.Data;
     "tradeClientExtensions"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class StopOrderRequest 
     implements OrderRequest, HasInstrument, HasTimeInForce, HasUnits, HasPrice {

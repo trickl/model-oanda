@@ -7,8 +7,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.instrument.HasInstrument;
 import com.trickl.model.oanda.order.OrderTriggerCondition;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** A StopOrderTransaction represents the creation of a Stop Order in the user's Account. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -39,6 +42,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class StopOrderTransaction extends Transaction
     implements HasInstrument {
   /**

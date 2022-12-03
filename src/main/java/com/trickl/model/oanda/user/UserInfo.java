@@ -4,14 +4,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** A representation of user information, as provided to the user themself. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"username", "userID", "country", "emailAddress"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class UserInfo {
 
   /** The user-provided username. */

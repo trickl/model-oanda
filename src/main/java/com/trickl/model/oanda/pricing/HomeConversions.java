@@ -3,8 +3,11 @@ package com.trickl.model.oanda.pricing;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * HomeConversions represents the factors to use to convert quantities of a given currency into the
@@ -13,6 +16,8 @@ import lombok.Data;
  */
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"currency", "accountGain", "accountLoss", "positionValue"})
 public class HomeConversions {

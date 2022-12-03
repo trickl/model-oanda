@@ -13,8 +13,11 @@ import com.trickl.model.oanda.transaction.TrailingStopLossDetails;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A StopOrder is an order that is created with a price threshold, and will only be filled by a
@@ -51,6 +54,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class StopOrder extends Order 
     implements HasInstrument, HasFilledTime, HasTimeInForce, HasUnits, HasPrice {
     

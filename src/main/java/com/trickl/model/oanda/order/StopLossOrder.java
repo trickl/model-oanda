@@ -8,8 +8,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A StopLossOrder is an order that is linked to an open Trade and created with a price threshold.
@@ -43,6 +46,8 @@ import lombok.Data;
     "replacedByOrderID"
 })
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class StopLossOrder extends Order implements HasFilledTime, HasTimeInForce, HasPrice {
     

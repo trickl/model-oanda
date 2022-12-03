@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * TakeProfitDetails specifies the details of a Take Profit Order to be created on behalf of a
@@ -16,6 +19,8 @@ import lombok.Data;
 @JsonPropertyOrder({"price", "timeInForce", "gtdTime", "clientExtensions"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TakeProfitDetails {
 
   /**

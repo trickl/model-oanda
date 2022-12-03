@@ -8,8 +8,11 @@ import com.trickl.model.oanda.order.Order;
 import com.trickl.model.oanda.position.Position;
 import com.trickl.model.oanda.trade.TradeSummary;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * An AccountState Object is used to represent an Account's current price-dependent state.
@@ -34,6 +37,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class AccountChangesState {
 
   /** The total unrealized profit/loss for all Trades currently open in the Account. */

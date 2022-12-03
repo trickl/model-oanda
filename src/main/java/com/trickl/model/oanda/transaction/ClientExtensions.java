@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * A ClientExtensions object allows a client to attach a clientID, tag and comment to Orders and
@@ -16,6 +19,8 @@ import lombok.Data;
 @JsonPropertyOrder({"id", "tag", "comment"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class ClientExtensions {
 
   /** The Client ID of the Order/Trade. */

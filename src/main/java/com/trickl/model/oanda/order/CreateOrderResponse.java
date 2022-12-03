@@ -8,8 +8,11 @@ import com.trickl.model.oanda.transaction.OrderCancelTransaction;
 import com.trickl.model.oanda.transaction.OrderFillTransaction;
 import com.trickl.model.oanda.transaction.Transaction;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** The response from the /v3/accounts/{accountId}/orders endpoint. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,6 +27,8 @@ import lombok.Data;
 })
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class CreateOrderResponse {
   /*
    * The Transaction that created the Order specified by the request.

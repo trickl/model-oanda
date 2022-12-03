@@ -8,13 +8,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /** The representation of an instrument's order book at a point in time. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"instrument", "time", "price", "bucketWidth", "buckets"})
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Data
 public class OrderBook {
 

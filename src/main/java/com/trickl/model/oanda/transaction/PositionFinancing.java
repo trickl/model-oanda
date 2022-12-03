@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * OpenTradeFinancing is used to pay/collect daily financing charge for a Position within
@@ -15,6 +18,8 @@ import lombok.Data;
 @JsonPropertyOrder({"instrument", "financing", "openTradeFinancings"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class PositionFinancing {
 
   /** The instrument of the Position that financing is being paid/collected for. */

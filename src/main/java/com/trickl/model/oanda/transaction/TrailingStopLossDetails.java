@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.TimeInForce;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * TrailingStopLossDetails specifies the details of a Trailing Stop Loss Order to be created on
@@ -17,6 +20,8 @@ import lombok.Data;
 @JsonPropertyOrder({"distance", "timeInForce", "gtdTime", "clientExtensions"})
 @Data
 @Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TrailingStopLossDetails {
 
   /**
