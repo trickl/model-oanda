@@ -7,10 +7,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.trickl.model.oanda.order.Order;
 import com.trickl.model.oanda.position.Position;
 import com.trickl.model.oanda.trade.TradeSummary;
+import jakarta.validation.constraints.NotBlank;
 import java.util.List;
-
-import javax.validation.constraints.NotBlank;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
