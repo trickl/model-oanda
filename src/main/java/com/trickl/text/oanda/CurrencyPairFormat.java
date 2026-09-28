@@ -17,7 +17,8 @@ public class CurrencyPairFormat {
   public static final String OANDA_FORMAT = "{0}_{1}";
   public static final String SIXCHAR_FORMAT = "{0}{1}";
 
-  private CurrencyPairFormat() {}
+  private CurrencyPairFormat() {
+  }
 
   /**
    * Parse an fx instrument identifier.

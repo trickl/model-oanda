@@ -18,5 +18,6 @@ public class Rfc3339 {
       DateTimeFormatter.ofPattern(WITH_MILLISECOND_PRECISION).withZone(ZoneId.of("UTC"));
   public static final Instant YEAR_OF_1970 = Instant.ofEpochMilli(1);
 
-  private Rfc3339() {}
+  private Rfc3339() {
+  }
 }
